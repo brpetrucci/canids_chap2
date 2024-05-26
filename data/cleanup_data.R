@@ -29,7 +29,6 @@ occurrences <- read.csv(paste0(raw_dir,
 
 # molecular data
 mol <- read.nexus.data(paste0(raw_dir, "canidae_mol.nex"))
-mol_dnabin <- nexus2DNAbin(mol)
 
 # morphological data
 morpho <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
@@ -72,9 +71,38 @@ ranges_df <- t(as.data.frame(ranges))
 colnames(ranges_df) <- c("taxon", "fa_max", "fa_min", "la_max", "la_min")
 rownames(ranges_df) <- 1:nrow(ranges_df)
 
+# add data without fossil occurrences to ranges
+taxa_names <- unique(c(names(morpho), names(mol)))
+nofossil_taxa <- taxa_names[!(taxa_names %in% ranges_df[, 1])]
+ranges_df <- rbind(ranges_df, data.frame(taxon = nofossil_taxa,
+                                         fa_max = rep(0, length(nofossil_taxa)),
+                                         fa_min = rep(0, length(nofossil_taxa)),
+                                         la_max = rep(0, length(nofossil_taxa)),
+                                         la_min = rep(0, length(nofossil_taxa))))
+rownames(ranges_df) <- 1:nrow(ranges_df)
+
 # write ranges to a file
 write.table(ranges_df, paste0(base_dir, "canidae_ranges.tsv"), 
             sep = "\t", quote = FALSE, row.names = FALSE)
+
+# add ?? for molecular data for species without molecular data
+nomol_taxa <- taxa_names[!(taxa_names %in% names(mol))]
+nomol_mol <- lapply(nomol_taxa, function(x) rep("?", length(mol[[1]])))
+names(nomol_mol) <- nomol_taxa
+mol_complete <- c(mol, nomol_mol)
+
+# write DNA to a file
+write.nexus.data(mol_complete, paste0(base_dir, "canidae_mol.nex"))
+
+# add ?? for morphological data for species without morphological data
+nomorpho_taxa <- taxa_names[!(taxa_names %in% names(morpho))]
+nomorpho_morpho <- lapply(nomorpho_taxa, function(x) rep("?", length(morpho[[1]])))
+names(nomorpho_morpho) <- nomorpho_taxa
+morpho_complete <- c(morpho, nomorpho_morpho)
+
+# write DNA to a file
+write.nexus.data(morpho_complete, paste0(base_dir, "canidae_morpho.nex"),
+                 format = "standard")
 
 ###
 # creating a data set without occurrences with >5my uncertainty
@@ -86,15 +114,19 @@ ftrd_occs <- occurrences[!occurrences_filter, ]
 # filter morpho
 ftrd_names <- unique(occurrences$taxon)[!(unique(occurrences$taxon) %in% 
                                             ftrd_occs$taxon)]
-ftrd_morpho <- morpho[-which(names(morpho) %in% ftrd_names)]
+ftrd_morpho <- morpho_complete[-which(names(morpho_complete) %in% ftrd_names)]
+ftrd_mol <- mol_complete[-which(names(mol_complete) %in% ftrd_names)]
 
 # filter ranges
 ftrd_ranges_df <- ranges_df[-which(ranges_df[, 1] %in% ftrd_names), ]
+rownames(ftrd_ranges_df) <- 1:nrow(ftrd_ranges_df)
 
 # write ranges and morpho data
 write.table(ftrd_ranges_df, paste0(base_dir, "ftrd_canidae_ranges.tsv"), 
             sep = "\t", quote = FALSE, row.names = FALSE)
 write.nexus.data(ftrd_morpho, paste0(base_dir, "ftrd_canidae_morpho.nex"),
                  format = "standard")
+write.nexus.data(ftrd_mol, paste0(base_dir, "ftrd_canidae_mol.nex"))
+
 
                                    
