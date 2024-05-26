@@ -31,7 +31,10 @@ occurrences <- read.csv(paste0(raw_dir,
 mol <- read.nexus.data(paste0(raw_dir, "canidae_mol.nex"))
 
 # morphological data
-morpho <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
+morpho_raw <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
+
+# cut state 76 since it is non-variable
+morpho <- lapply(morpho_raw, function(x) x[-76])
 
 ###
 # extract range data
@@ -94,6 +97,10 @@ mol_complete <- c(mol, nomol_mol)
 # write DNA to a file
 write.nexus.data(mol_complete, paste0(base_dir, "canidae_mol.nex"))
 
+# reading partitions and writing to DNA file
+partitions <- readLines(paste0(base_dir, "partitions.txt"))
+write(partitions, paste0(base_dir, "canidae_mol.nex"), append = TRUE)
+
 # add ?? for morphological data for species without morphological data
 nomorpho_taxa <- taxa_names[!(taxa_names %in% names(morpho))]
 nomorpho_morpho <- lapply(nomorpho_taxa, function(x) rep("?", length(morpho[[1]])))
@@ -127,6 +134,4 @@ write.table(ftrd_ranges_df, paste0(base_dir, "ftrd_canidae_ranges.tsv"),
 write.nexus.data(ftrd_morpho, paste0(base_dir, "ftrd_canidae_morpho.nex"),
                  format = "standard")
 write.nexus.data(ftrd_mol, paste0(base_dir, "ftrd_canidae_mol.nex"))
-
-
-                                   
+write(partitions, paste0(base_dir, "ftrd_canidae_mol.nex"), append = TRUE)
