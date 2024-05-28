@@ -1,5 +1,5 @@
 #NEXUS
-[Data written by write.nexus.data.R, Sun May 26 15:24:18 2024]
+[Data written by write.nexus.data.R, Mon May 27 10:13:46 2024]
 BEGIN DATA;
   DIMENSIONS NTAX=156 NCHAR=16570;
   FORMAT DATATYPE=DNA MISSING=? GAP=- INTERLEAVE=YES;
@@ -32664,13 +32664,6 @@ END;
 
 begin sets;
 
-	charset Subset1 = 1-921 11200-11913 11914-12979 922-1643 5508-5875;
-	charset Subset2 = 10585-11199 1644-2237;
-	charset Subset3 = 10100-10584 2238-2870 2871-3572 4062-4802 4803-5507;
-	charset Subset4 = 3573-4061 8364-9099;
-	charset Subset5 = 5876-6580 6581-7315 13526-14010 12980-13525;
-	charset Subset6 = 9100-9358 7316-7914 9359-10099 14011-14742 7915-8363;
-	charset Subset7 = 14743-15426\3 15427-16570\3;
-	charset Subset8 = 14744-15426\3 15428-16570\3;
-	charset Subset9 = 14745-15426\3 15429-16570\3;
+	charset nDNA = 1-14742;
+	charset mtDNA = 14745-16570;
 end;

@@ -1,157 +1,157 @@
-taxon	fa_max	fa_min	la_max	la_min
-Hesperocyon_gregarius	39.7	37	29.5	18.5
-Prohesperocyon_wilsoni	37	33.9	37	33.9
-Hesperocyon_coloradensis	33.9	31.8	33.9	31.8
-Otarocyon_macdonaldi	37	31.8	33.9	31.8
-Mesocyon_temnodon	33.9	31.8	24.7	18.5
-Osbornodon_renjiei	33.9	31.8	31.8	29.5
-Archaeocyon_pavidus	31.8	29.5	31.8	18.5
-Cynodesmus_thooides	31.8	29.5	29.5	18.5
-Osbornodon_sesnoni	31.8	29.5	29.5	24.7
-Oxetocyon_cuspidatus	31.8	29.5	31.8	29.5
-Archaeocyon_leptodus	31.8	29.5	29.5	18.5
-Ectopocynus_antiquus	31.8	29.5	29.5	18.5
-Paraenhydrocyon_josephi	29.5	24.7	23.1	18.5
-Cynarctoides_lemur	29.5	24.7	29.5	18.5
-Phlaocyon_latidens	31.8	29.5	29.5	24.7
-Rhizocyon_oregonensis	29.5	24.7	29.5	24.7
-Enhydrocyon_crassidens	29.5	24.7	23.1	18.5
-Leptocyon_vulpinus	29.5	18.5	18.5	16.3
-Paraenhydrocyon_robustus	23.1	18.5	23.1	18.5
-Cormocyon_haydeni	29.5	18.5	23.1	18.5
-Leptocyon_gregorii	23.1	18.5	23.1	18.5
-Cynarctoides_acridens	29.5	18.5	16.3	12.5
-Enhydrocyon_pahinsintewakpa	29.5	24.7	24.7	18.5
-Otarocyon_cooki	29.5	24.7	29.5	18.5
-Cormocyon_copei	29.5	24.7	23.03	5.333
-Mesocyon_coryphaeus	29.5	24.7	29.5	18.5
-Leptocyon_mollis	29.5	24.7	29.5	24.7
-Mesocyon_brachyops	31.8	18.5	31.8	18.5
-Enhydrocyon_stenocephalus	29.5	24.7	29.5	18.5
-Cynarctoides_roii	29.5	24.7	29.5	24.7
-Philotrox_condoni	29.5	24.7	29.5	18.5
-Phlaocyon_minor	29.5	18.5	18.5	16.3
-Sunkahetanka_geringensis	29.5	24.7	29.5	18.5
-Leptocyon_douglassi	29.5	24.7	29.5	18.5
-Desmocyon_thomsoni	29.5	18.5	18.5	16.3
-Phlaocyon_annectens	23.1	18.5	23.1	18.5
-Phlaocyon_achoros	27.82	23.03	27.82	23.03
-Paraenhydrocyon_wallovianus	27.82	23.03	23.1	18.5
-Cynarctoides_luskensis	23.1	18.5	23.1	18.5
-Osbornodon_brachypus	29.5	18.5	23.1	18.5
-Enhydrocyon_basilatus	29.5	18.5	23.1	18.5
-Phlaocyon_multicuspus	23.1	18.5	23.1	18.5
-Phlaocyon_leucosteus	23.1	18.5	18.5	16.3
-Cynarctoides_harlowi	23.1	18.5	23.1	18.5
-Metatomarctus_canavus	20.44	15.98	20.44	15.98
-Protomarctus_optatus	20.44	15.98	16.3	12.5
-Ectopocynus_simplicidens	18.5	16.3	18.5	16.3
-Phlaocyon_mariae	18.5	16.3	18.5	16.3
-Desmocyon_matthewi	18.5	16.3	18.5	16.3
-Paracynarctus_kelloggi	23.03	5.333	23.03	5.333
-Phlaocyon_marslandensis	18.5	16.3	18.5	16.3
-Paracynarctus_sinclairi	16.3	12.5	16.3	12.5
-Tomarctus_hippophaga	18.5	16.3	16.3	12.5
-Tomarctus_brevirostris	18.5	16.3	15.98	11.63
-Osbornodon_iamonensis	23.03	15.98	23.03	15.98
-Microtomarctus_conferta	18.5	16.3	11.63	5.333
-Osbornodon_fricki	18.5	16.3	16.3	12.5
-Leptocyon_leidyi	23.1	18.5	16.3	12.5
-Euoplocyon_brachygnathus	16.3	12.5	16.3	12.5
-Psalidocyon_marianae	16.3	12.5	16.3	12.5
-Aelurodon_asthenostylus	18.5	16.3	16.3	12.5
-Cynarctoides_emryi	18.5	16.3	18.5	16.3
-Phlaocyon_yatkolai	18.5	16.3	18.5	16.3
-Epicyon_haydeni	16.3	12.5	9.4	4.7
-Aelurodon_taxoides	23.03	5.333	11.63	3.6
-Epicyon_saevus	23.03	5.333	9.4	4.7
-Leptocyon_vafer	23.03	5.333	23.03	5.333
-Aelurodon_ferox	16.3	12.5	12.5	9.4
-Borophagus_secundus	12.5	9.4	9.4	4.7
-Carpocyon_limosus	9.4	4.7	9.4	4.7
-Borophagus_hilli	9.4	4.7	4.7	1.4
-Eucyon_davisi	11.63	5.333	4.7	1.4
-Cynarctus_crucidens	13.82	11.63	12.5	4.7
-Paratomarctus_euthos	23.03	5.333	12.5	4.7
-Carpocyon_robustus	12.5	9.4	12.5	9.4
-Aelurodon_mcgrewi	16.3	12.5	16.3	12.5
-Leptocyon_matthewi	12.5	9.4	12.5	4.7
-Carpocyon_compressus	16.3	12.5	16.3	9.4
-Borophagus_pugnator	12.5	9.4	9.4	4.7
-Aelurodon_stirtoni	16.3	12.5	12.5	9.4
-Carpocyon_webbi	16.3	12.5	9.4	4.7
-Vulpes_stenognathus	12.5	4.7	1.4	0.21
-Paratomarctus_temerarius	18.5	16.3	12.5	4.7
-Cynarctus_saxatilis	16.3	12.5	16.3	12.5
-Eucyon_ferox	9.4	4.7	4.7	1.4
-Cynarctus_voorhiesi	12.5	9.4	12.5	9.4
-Canis_lepophagus	9.4	4.7	4.7	0.014
-Epicyon_aelurodontoides	9.4	4.7	9.4	4.7
-Cynarctus_marylandica	15.98	13.82	15.98	13.82
-Borophagus_orc	9.4	4.7	5.333	3.6
-Euoplocyon_spissidens	18.5	16.3	18.5	16.3
-Urocyon_webbi	9.4	4.7	9.4	4.7
-Tephrocyon_rurestris	18.5	16.3	16.3	12.5
-Metalopex_merriami	18.5	12.5	9.4	4.7
-Borophagus_littoralis	12.5	9.4	11.63	5.333
-Cynarctoides_gawnae	18.5	16.3	18.5	16.3
-Protepicyon_raki	16.3	12.5	16.3	12.5
-Borophagus_parvus	9.4	4.7	9.4	4.7
-Cynarctus_galushai	16.3	12.5	16.3	12.5
-Cerdocyon_texanus	9.4	4.7	4.7	1.4
-Metalopex_macconnelli	12.5	9.4	9.4	4.7
-Canis_edwardii	4.7	1.4	1.4	0.21
-Canis_armbrusteri	1.8	0.774	0.129	0.0117
-Canis_latrans	4.7	1.4	0	0
-Borophagus_diversidens	4.7	1.4	4.7	1.4
-Urocyon_galushai	4.7	1.4	4.7	1.4
-Canis_thooides	4.7	1.4	4.7	1.4
-Urocyon_cinereoargenteus	2.58	1.8	0	0
-Vulpes_velox	4.7	1.4	0	0
-Vulpes_vulpes	3.1	2.58	0	0
-Aenocyon_dirus	3.6	0.774	0.129	0.0117
-Canis_lupus	3.6	2.58	0	0
-Urocyon_minicephalus	1.4	0.21	1.4	0.21
-Urocyon_citrinus	2.58	1.8	2.58	1.8
-Vulpes_lagopus	1.4	0.21	0	0
-Xenocyon_texanus	1.4	0.21	1.4	0.21
-Lupulella_mesomelas	5.333	0.774	0	0
-Cerdocyon_thous	0.3	0.0117	0	0
-Speothos_venaticus	2.58	0.0117	0	0
-Lycaon_pictus	2.58	0.0117	0	0
-Otocyon_megalotis	2.58	0.0117	0	0
-Canis_aureus	2.58	0.774	0	0
-Vulpes_chama	3.6	0.0117	0	0
-Canis_mosbachensis	3.1	2.58	0	0
-Canis_etruscus	11.63	0.774	2.58	0.0117
-Canis_arnensis	5.333	0.0117	2.58	0.0117
-Vulpes_corsac	2.58	0.0117	2.58	0.0117
-Nyctereutes_procyonoides	2.58	0	0	0
-Cuon_alpinus	2.58	0.0117	0.129	0.0117
-Canis_variabilis	2.58	0.774	0.129	0.0117
-Chrysocyon_brachyurus	2.58	0.774	0	0
-Lycalopex_culpaeus	2.58	0.0117	0	0
-Borophagus_dudleyi	9.4	4.7	5.333	3.6
-Vulpes_macrotis	0.129	0.0117	0.129	0.0117
-Canis_chihliensis	3.6	0.774	2.58	0.774
-Lycalopex_gymnocercus	2.58	0.774	0	0
-Lycalopex_vetulus	23.03	5.333	2.58	0.0117
-Lycalopex_griseus	0.3	0.0117	0	0
-Urocyon_littoralis	0.21	0	0	0
-Canis_palmidens	3.6	0.774	3.6	0.774
-Canis_simensis	1.8	0.774	1.8	0.774
-Lycalopex_sechurae	0.129	0.0117	0.129	0.0117
-Dusicyon_australis	0.003752	0.003396	5e-04	0.000236
-Lupulella_adusta	3.6	2.58	0	0
-Canis_anthus	2.58	0.774	0	0
-Canis_falconeri	5.333	2.58	2.58	0.0117
-Canis_antonii	3.6	0.774	3.6	0.774
-outgroup	0	0	0	0
-Vulpes_rueppellii	0	0	0	0
-Vulpes_zerda	0	0	0	0
-Vulpes_pallida	0	0	0	0
-Vulpes_bengalensis	0	0	0	0
-Atelocynus_microtis	0	0	0	0
-Lycalopex_fulvipes	0	0	0	0
-Vulpes_cana	0	0	0	0
-Vulpes_ferrilata	0	0	0	0
+taxon	fa_max	fa_min	la_max	la_min	k
+Hesperocyon_gregarius	39.7	37	29.5	18.5	136
+Prohesperocyon_wilsoni	37	33.9	37	33.9	1
+Hesperocyon_coloradensis	33.9	31.8	33.9	31.8	2
+Otarocyon_macdonaldi	37	31.8	33.9	31.8	3
+Mesocyon_temnodon	33.9	31.8	24.7	18.5	21
+Osbornodon_renjiei	33.9	31.8	31.8	29.5	3
+Archaeocyon_pavidus	31.8	29.5	31.8	18.5	9
+Cynodesmus_thooides	31.8	29.5	29.5	18.5	14
+Osbornodon_sesnoni	31.8	29.5	29.5	24.7	3
+Oxetocyon_cuspidatus	31.8	29.5	31.8	29.5	5
+Archaeocyon_leptodus	31.8	29.5	29.5	18.5	27
+Ectopocynus_antiquus	31.8	29.5	29.5	18.5	2
+Paraenhydrocyon_josephi	29.5	24.7	23.1	18.5	12
+Cynarctoides_lemur	29.5	24.7	29.5	18.5	6
+Phlaocyon_latidens	31.8	29.5	29.5	24.7	3
+Rhizocyon_oregonensis	29.5	24.7	29.5	24.7	3
+Enhydrocyon_crassidens	29.5	24.7	23.1	18.5	8
+Leptocyon_vulpinus	29.5	18.5	18.5	16.3	6
+Paraenhydrocyon_robustus	23.1	18.5	23.1	18.5	2
+Cormocyon_haydeni	29.5	18.5	23.1	18.5	5
+Leptocyon_gregorii	23.1	18.5	23.1	18.5	6
+Cynarctoides_acridens	29.5	18.5	16.3	12.5	48
+Enhydrocyon_pahinsintewakpa	29.5	24.7	24.7	18.5	10
+Otarocyon_cooki	29.5	24.7	29.5	18.5	6
+Cormocyon_copei	29.5	24.7	23.03	5.333	10
+Mesocyon_coryphaeus	29.5	24.7	29.5	18.5	2
+Leptocyon_mollis	29.5	24.7	29.5	24.7	1
+Mesocyon_brachyops	31.8	18.5	31.8	18.5	5
+Enhydrocyon_stenocephalus	29.5	24.7	29.5	18.5	3
+Cynarctoides_roii	29.5	24.7	29.5	24.7	9
+Philotrox_condoni	29.5	24.7	29.5	18.5	8
+Phlaocyon_minor	29.5	18.5	18.5	16.3	12
+Sunkahetanka_geringensis	29.5	24.7	29.5	18.5	5
+Leptocyon_douglassi	29.5	24.7	29.5	18.5	5
+Desmocyon_thomsoni	29.5	18.5	18.5	16.3	33
+Phlaocyon_annectens	23.1	18.5	23.1	18.5	8
+Phlaocyon_achoros	27.82	23.03	27.82	23.03	1
+Paraenhydrocyon_wallovianus	27.82	23.03	23.1	18.5	8
+Cynarctoides_luskensis	23.1	18.5	23.1	18.5	4
+Osbornodon_brachypus	29.5	18.5	23.1	18.5	2
+Enhydrocyon_basilatus	29.5	18.5	23.1	18.5	3
+Phlaocyon_multicuspus	23.1	18.5	23.1	18.5	1
+Phlaocyon_leucosteus	23.1	18.5	18.5	16.3	9
+Cynarctoides_harlowi	23.1	18.5	23.1	18.5	1
+Metatomarctus_canavus	20.44	15.98	20.44	15.98	26
+Protomarctus_optatus	20.44	15.98	16.3	12.5	27
+Ectopocynus_simplicidens	18.5	16.3	18.5	16.3	3
+Phlaocyon_mariae	18.5	16.3	18.5	16.3	1
+Desmocyon_matthewi	18.5	16.3	18.5	16.3	8
+Paracynarctus_kelloggi	23.03	5.333	23.03	5.333	18
+Phlaocyon_marslandensis	18.5	16.3	18.5	16.3	5
+Paracynarctus_sinclairi	16.3	12.5	16.3	12.5	5
+Tomarctus_hippophaga	18.5	16.3	16.3	12.5	36
+Tomarctus_brevirostris	18.5	16.3	15.98	11.63	20
+Osbornodon_iamonensis	23.03	15.98	23.03	15.98	4
+Microtomarctus_conferta	18.5	16.3	11.63	5.333	35
+Osbornodon_fricki	18.5	16.3	16.3	12.5	14
+Leptocyon_leidyi	23.1	18.5	16.3	12.5	25
+Euoplocyon_brachygnathus	16.3	12.5	16.3	12.5	6
+Psalidocyon_marianae	16.3	12.5	16.3	12.5	4
+Aelurodon_asthenostylus	18.5	16.3	16.3	12.5	12
+Cynarctoides_emryi	18.5	16.3	18.5	16.3	2
+Phlaocyon_yatkolai	18.5	16.3	18.5	16.3	1
+Epicyon_haydeni	16.3	12.5	9.4	4.7	70
+Aelurodon_taxoides	23.03	5.333	11.63	3.6	67
+Epicyon_saevus	23.03	5.333	9.4	4.7	78
+Leptocyon_vafer	23.03	5.333	23.03	5.333	53
+Aelurodon_ferox	16.3	12.5	12.5	9.4	52
+Borophagus_secundus	12.5	9.4	9.4	4.7	35
+Carpocyon_limosus	9.4	4.7	9.4	4.7	3
+Borophagus_hilli	9.4	4.7	4.7	1.4	17
+Eucyon_davisi	11.63	5.333	4.7	1.4	32
+Cynarctus_crucidens	13.82	11.63	12.5	4.7	16
+Paratomarctus_euthos	23.03	5.333	12.5	4.7	26
+Carpocyon_robustus	12.5	9.4	12.5	9.4	12
+Aelurodon_mcgrewi	16.3	12.5	16.3	12.5	9
+Leptocyon_matthewi	12.5	9.4	12.5	4.7	18
+Carpocyon_compressus	16.3	12.5	16.3	9.4	17
+Borophagus_pugnator	12.5	9.4	9.4	4.7	18
+Aelurodon_stirtoni	16.3	12.5	12.5	9.4	9
+Carpocyon_webbi	16.3	12.5	9.4	4.7	12
+Vulpes_stenognathus	12.5	4.7	1.4	0.21	22
+Paratomarctus_temerarius	18.5	16.3	12.5	4.7	47
+Cynarctus_saxatilis	16.3	12.5	16.3	12.5	8
+Eucyon_ferox	9.4	4.7	4.7	1.4	23
+Cynarctus_voorhiesi	12.5	9.4	12.5	9.4	5
+Canis_lepophagus	9.4	4.7	4.7	0.014	38
+Epicyon_aelurodontoides	9.4	4.7	9.4	4.7	1
+Cynarctus_marylandica	15.98	13.82	15.98	13.82	2
+Borophagus_orc	9.4	4.7	5.333	3.6	3
+Euoplocyon_spissidens	18.5	16.3	18.5	16.3	1
+Urocyon_webbi	9.4	4.7	9.4	4.7	1
+Tephrocyon_rurestris	18.5	16.3	16.3	12.5	7
+Metalopex_merriami	18.5	12.5	9.4	4.7	6
+Borophagus_littoralis	12.5	9.4	11.63	5.333	8
+Cynarctoides_gawnae	18.5	16.3	18.5	16.3	2
+Protepicyon_raki	16.3	12.5	16.3	12.5	5
+Borophagus_parvus	9.4	4.7	9.4	4.7	3
+Cynarctus_galushai	16.3	12.5	16.3	12.5	5
+Cerdocyon_texanus	9.4	4.7	4.7	1.4	2
+Metalopex_macconnelli	12.5	9.4	9.4	4.7	5
+Canis_edwardii	4.7	1.4	1.4	0.21	31
+Canis_armbrusteri	1.8	0.774	0.129	0.0117	19
+Canis_latrans	4.7	1.4	0	0	103
+Borophagus_diversidens	4.7	1.4	4.7	1.4	28
+Urocyon_galushai	4.7	1.4	4.7	1.4	5
+Canis_thooides	4.7	1.4	4.7	1.4	1
+Urocyon_cinereoargenteus	2.58	1.8	0	0	39
+Vulpes_velox	4.7	1.4	0	0	14
+Vulpes_vulpes	3.1	2.58	0	0	95
+Aenocyon_dirus	3.6	0.774	0.129	0.0117	82
+Canis_lupus	3.6	2.58	0	0	126
+Urocyon_minicephalus	1.4	0.21	1.4	0.21	2
+Urocyon_citrinus	2.58	1.8	2.58	1.8	1
+Vulpes_lagopus	1.4	0.21	0	0	45
+Xenocyon_texanus	1.4	0.21	1.4	0.21	1
+Lupulella_mesomelas	5.333	0.774	0	0	53
+Cerdocyon_thous	0.3	0.0117	0	0	4
+Speothos_venaticus	2.58	0.0117	0	0	2
+Lycaon_pictus	2.58	0.0117	0	0	11
+Otocyon_megalotis	2.58	0.0117	0	0	7
+Canis_aureus	2.58	0.774	0	0	19
+Vulpes_chama	3.6	0.0117	0	0	21
+Canis_mosbachensis	3.1	2.58	0	0	20
+Canis_etruscus	11.63	0.774	2.58	0.0117	44
+Canis_arnensis	5.333	0.0117	2.58	0.0117	11
+Vulpes_corsac	2.58	0.0117	2.58	0.0117	1
+Nyctereutes_procyonoides	2.58	0	0	0	3
+Cuon_alpinus	2.58	0.0117	0.129	0.0117	11
+Canis_variabilis	2.58	0.774	0.129	0.0117	4
+Chrysocyon_brachyurus	2.58	0.774	0	0	8
+Lycalopex_culpaeus	2.58	0.0117	0	0	7
+Borophagus_dudleyi	9.4	4.7	5.333	3.6	2
+Vulpes_macrotis	0.129	0.0117	0.129	0.0117	1
+Canis_chihliensis	3.6	0.774	2.58	0.774	2
+Lycalopex_gymnocercus	2.58	0.774	0	0	10
+Lycalopex_vetulus	23.03	5.333	2.58	0.0117	4
+Lycalopex_griseus	0.3	0.0117	0	0	3
+Urocyon_littoralis	0.21	0	0	0	3
+Canis_palmidens	3.6	0.774	3.6	0.774	1
+Canis_simensis	1.8	0.774	1.8	0.774	1
+Lycalopex_sechurae	0.129	0.0117	0.129	0.0117	1
+Dusicyon_australis	0.003752	0.003396	5e-04	0.000236	3
+Lupulella_adusta	3.6	2.58	0	0	8
+Canis_anthus	2.58	0.774	0	0	5
+Canis_falconeri	5.333	2.58	2.58	0.0117	13
+Canis_antonii	3.6	0.774	3.6	0.774	1
+outgroup	0	0	0	0	0
+Vulpes_rueppellii	0	0	0	0	0
+Vulpes_zerda	0	0	0	0	0
+Vulpes_pallida	0	0	0	0	0
+Vulpes_bengalensis	0	0	0	0	0
+Atelocynus_microtis	0	0	0	0	0
+Lycalopex_fulvipes	0	0	0	0	0
+Vulpes_cana	0	0	0	0	0
+Vulpes_ferrilata	0	0	0	0	0

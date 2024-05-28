@@ -1,0 +1,5 @@
+begin sets;
+
+	charset nDNA = 1-14742;
+	charset mtDNA = 14745-16570;
+end;
