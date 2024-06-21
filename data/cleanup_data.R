@@ -36,6 +36,9 @@ morpho_raw <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
 # cut state 76 since it is non-variable
 morpho <- lapply(morpho_raw, function(x) x[-76])
 
+# cut Vulpes bengalensis since it has so little data
+morpho <- morpho[-(which(names(morpho) == "Vulpes_bengalensis"))]
+
 ###
 # extract range data
 
@@ -43,6 +46,9 @@ morpho <- lapply(morpho_raw, function(x) x[-76])
 get_range <- function(occurrences, name) {
   # get all occurrences with that name
   named_occs <- occurrences[occurrences$taxon == name, ]
+  
+  # number of occurrences
+  n_occs <- nrow(named_occs)
   
   # get highest FA occurrences
   fa_high <- named_occs[which(named_occs$early_age ==
@@ -62,7 +68,7 @@ get_range <- function(occurrences, name) {
   # if la_min is 0, the species is extant, so we know
   # their late age with certainty
   
-  return(c(name, fa_max, fa_min, la_max, la_min))
+  return(c(name, fa_max, fa_min, la_max, la_min, n_occs))
 }
 
 # apply to all species
@@ -71,7 +77,7 @@ ranges <- lapply(unique(occurrences$taxon),
 
 # make it a data frame
 ranges_df <- t(as.data.frame(ranges))
-colnames(ranges_df) <- c("taxon", "fa_max", "fa_min", "la_max", "la_min")
+colnames(ranges_df) <- c("taxon", "fa_max", "fa_min", "la_max", "la_min", "k")
 rownames(ranges_df) <- 1:nrow(ranges_df)
 
 # add data without fossil occurrences to ranges
@@ -81,7 +87,8 @@ ranges_df <- rbind(ranges_df, data.frame(taxon = nofossil_taxa,
                                          fa_max = rep(0, length(nofossil_taxa)),
                                          fa_min = rep(0, length(nofossil_taxa)),
                                          la_max = rep(0, length(nofossil_taxa)),
-                                         la_min = rep(0, length(nofossil_taxa))))
+                                         la_min = rep(0, length(nofossil_taxa)),
+                                         k = 0))
 rownames(ranges_df) <- 1:nrow(ranges_df)
 
 # write ranges to a file
@@ -98,7 +105,7 @@ mol_complete <- c(mol, nomol_mol)
 write.nexus.data(mol_complete, paste0(base_dir, "canidae_mol.nex"))
 
 # reading partitions and writing to DNA file
-partitions <- readLines(paste0(base_dir, "partitions.txt"))
+partitions <- readLines(paste0(base_dir, "partitions_simplified.txt"))
 write(partitions, paste0(base_dir, "canidae_mol.nex"), append = TRUE)
 
 # add ?? for morphological data for species without morphological data

@@ -1,8 +1,12 @@
+rm(list = ls())
 library(stringr)
 
-template_path <- "/Users/jugne/Downloads/canidae_template.xml"
-ranges_path <- "/Users/jugne/Downloads/canidae_ranges.tsv"
-run_path <- "/Users/jugne/Downloads/canidae_run.xml"
+base_path <- "/Users/petrucci/Documents/research/canids_chap2/"
+template_path <- paste0(base_path, "scripts/canidae_template.xml")
+ranges_path <- paste0(base_path, "data/canidae_ranges.tsv")
+run_path <- paste0(base_path, "scripts/canidae_run.xml")
+
+file.remove(run_path)
 
 ranges <- read.delim(ranges_path)
 # tmp_id <- which(ranges$la_max>ranges$fa_min)
@@ -116,3 +120,4 @@ copy_xml <- gsub('<insertRandomWalkRangeBounds/>', uncertainty_ranges, copy_xml)
 
 
 writeLines(copy_xml, run_path)
+

@@ -1,3 +1,4 @@
 output
+*.Rhistory
 tutorials
 .DS_Store
