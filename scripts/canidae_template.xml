@@ -364,14 +364,14 @@ spec="Alignment">
                 <trait id="dateTrait.t:tree" spec="beast.base.evolution.tree.TraitSet" traitname="date-backward" value="
                 <insertDates/>
                 ">
-                    <taxa id="TaxonSet.nDNA" spec="TaxonSet">
-                        <alignment id="nDNA" spec="FilteredAlignment" filter="1-14742">
-                            <data idref="canidae_mol"/>
-                        </alignment>
-                   </taxa>
                 </trait>
-                <taxonset idref="TaxonSet.nDNA"/>
+                <taxonset id="TaxonSet.canidae_morpho2" spec="TaxonSet">
+                    <alignment id="canidae_morpho2" spec="FilteredAlignment" ascertained="true" excludefrom="75" excludeto="77" filter="1,3,6-8,13-15,17-19,21,24-25,27,30,32,34-35,38-39,44-46,49,51-53,56,58,61-63,65,67-70,72-75,78-83,86-94,96-98,105,107-110,112-120,122,123-124">
+                        <data idref="canidae_morpho"/>
+                        <userDataType id="morphDataType.canidae_morpho2" spec="beast.base.evolution.datatype.StandardData" ambiguities="" nrOfStates="2"/>
+                    </alignment>
                 <insertRanges/>
+                </taxonset>
             </tree>
             <parameter id="mutationRate.s:canidae_morpho2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:canidae_morpho3" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
@@ -415,22 +415,17 @@ spec="Alignment">
             <parameter id="samplingProportionFBD.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
             <parameter id="originFBD.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode">45.5</parameter>
         </state>
-        
         <init estimate="false" id="RandomTree.t:tree" initial="@Tree.t:tree" spec="RandomSRangeTree" nodetype="sr.evolution.tree.SRNode" taxonset="@TaxonSet.nDNA">
             <populationModel id="ConstantPopulation0.t" spec="ConstantPopulation">
                 <parameter id="randomPopSize.t" name="popSize">1.0</parameter>
             </populationModel>
             <insertRangeIds/>
         </init>
-        
         <distribution id="posterior" spec="CompoundDistribution">
             <distribution id="prior" spec="CompoundDistribution">
-                <distribution spec="sr.speciation.SRangesBirthDeathModel" id="SRFBD" tree="@Tree.t:tree" conditionOnRhoSampling="true" removalProbability="0.0">
-                    <origin idref="originFBD.t:tree"/>
-                    <diversificationRate idref="diversificationRateFBD.t:tree"/>
-                    <turnover idref="turnoverFBD.t:tree"/>
-                    <samplingProportion idref="samplingProportionFBD.t:tree"/>
-                    <parameter id="rhoFBD.t:tree" spec="parameter.RealParameter" estimate="false" lower="0.0" name="rho" upper="1.0">0.9444</parameter>
+                <distribution id="FBD.t:tree" spec="sa.evolution.speciation.SABirthDeathModel" conditionOnRhoSampling="true" diversificationRate="@diversificationRateFBD.t:tree" origin="@originFBD.t:tree" samplingProportion="@samplingProportionFBD.t:tree" tree="@Tree.t:tree" turnover="@turnoverFBD.t:tree">
+                    <parameter id="rFBD.t:tree" spec="parameter.RealParameter" lower="0.0" name="removalProbability" upper="1.0">0.0</parameter>
+                    <parameter id="rhoFBD.t:tree" spec="parameter.RealParameter" estimate="false" lower="0.0" name="rho" upper="1.0">0.94444</parameter>
                 </distribution>
                 <prior id="ORCRatePriorDistribution.c:canidae_morpho" name="distribution" x="@ORCRates.c:canidae_morpho">
                     <LogNormal id="LogNormalDistributionModel.0" S="@ORCsigma.c:canidae_morpho" meanInRealSpace="true" name="distr">
@@ -1127,9 +1122,7 @@ filter="14745-15426\3,15429-16570\3"/>
             </taxonset>
             <insertRandomWalkRangeBounds/>
          </operator>
-        
         <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="1000" model="@posterior" sanitiseHeaders="true" sort="smart">
-
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
@@ -1178,7 +1171,7 @@ filter="14745-15426\3,15429-16570\3"/>
             <log idref="ORCucldMean.c:mt3DNA"/>
             <log idref="ORCsigma.c:mt3DNA"/>
             <log id="ORCRatesStat.c:mt3DNA" spec="beast.base.evolution.RateStatistic" branchratemodel="@OptimisedRelaxedClock.c:mt3DNA" tree="@Tree.t:tree"/>
-            <log idref="SRFBD"/>
+            <log idref="FBD.t:tree"/>
             <log idref="diversificationRateFBD.t:tree"/>
             <log idref="turnoverFBD.t:tree"/>
             <log idref="samplingProportionFBD.t:tree"/>
@@ -1190,8 +1183,8 @@ filter="14745-15426\3,15429-16570\3"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
         </logger>
-        <logger id="treelog.t:tree" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="1000" mode="tree">
-            <log id="TreeWithMetaDataLogger.t:tree" spec="sr.evolution.tree.TreeWithMetadataLogger" branchratemodel="@OptimisedRelaxedClock.c:canidae_morpho" tree="@Tree.t:tree"/>
+        <logger id="treelog.t:tree" spec="Logger" fileName="$(tree).trees" logEvery="1000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:tree" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:canidae_morpho" tree="@Tree.t:tree"/>
         </logger>
         <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
     </run>
