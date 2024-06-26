@@ -18,7 +18,7 @@ library(paleobioDB)
 # read data
 
 # base directory
-base_dir <- "/Users/petrucci/Documents/research/canids_chap2/data/"
+base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/data/"
 
 # raw data directory
 raw_dir <- paste0(base_dir, "raw_data/")
@@ -37,7 +37,9 @@ morpho_raw <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
 morpho <- lapply(morpho_raw, function(x) x[-76])
 
 # cut Vulpes bengalensis since it has so little data
-morpho <- morpho[-(which(names(morpho) == "Vulpes_bengalensis"))]
+# cut outgroup since we decided we didn't need it
+morpho <- morpho[-(which(names(morpho) == "Vulpes_bengalensis" 
+                         | names(morpho) == "outgroup"))]
 
 ###
 # extract range data
@@ -142,3 +144,4 @@ write.nexus.data(ftrd_morpho, paste0(base_dir, "ftrd_canidae_morpho.nex"),
                  format = "standard")
 write.nexus.data(ftrd_mol, paste0(base_dir, "ftrd_canidae_mol.nex"))
 write(partitions, paste0(base_dir, "ftrd_canidae_mol.nex"), append = TRUE)
+
