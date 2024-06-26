@@ -6,7 +6,7 @@
 #SBATCH --output=output/jobs/job_%j.out
 #SBATCH --error=output/jobs/job_%j.err
 
-#SBATCH --job-name="canidae_run"
+#SBATCH --job-name="canidae_run_big"
 
 #SBATCH --mail-user=petrucci@iastate.edu   # my e-mail
 #SBATCH --mail-type=BEGIN # get notifications for all job cases
@@ -15,4 +15,4 @@
 
 cd /work/LAS/phylo-lab/petrucci/canids_chap2/beast
 
-$HOME/beast/bin/beast scripts/canidae_run.xml
+$HOME/beast/bin/beast scripts/canidae_run_big.xml
