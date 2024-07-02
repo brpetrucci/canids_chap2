@@ -30,6 +30,10 @@ occurrences <- read.csv(paste0(raw_dir,
 # molecular data
 mol <- read.nexus.data(paste0(raw_dir, "canidae_mol.nex"))
 
+# extant taxa
+ext_taxa <- names(mol)[-which(names(mol) %in% c("Aenocyon_dirus", 
+                                                "Dusicyon_australis"))]
+
 # morphological data
 morpho_raw <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
 
@@ -64,11 +68,14 @@ get_range <- function(occurrences, name) {
   la_low <- named_occs[which(named_occs$late_age ==
                                min(named_occs$late_age)), ]
   
-  # max and min for la
-  la_min <- min(la_low$late_age)
-  la_max <- ifelse(la_min == 0, 0, min(la_low$early_age))
-  # if la_min is 0, the species is extant, so we know
-  # their late age with certainty
+  # if species is extant, la_min and la_max are 0
+  if (names_occs$taxon[1] %in% ext_taxa) {
+    la_min <- la_max <- 0
+  } else {
+    # max and min for la
+    la_min <- min(la_low$late_age)
+    la_max <- max(la_low$early_age)
+  }
   
   return(c(name, fa_max, fa_min, la_max, la_min, n_occs))
 }

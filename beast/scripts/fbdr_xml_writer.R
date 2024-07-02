@@ -1,7 +1,7 @@
 rm(list = ls())
 library(stringr)
 
-base_path <- "/Users/petrucci/Documents/research/canids_chap2/"
+base_path <- "/Users/petrucci/Documents/research/canids_chap2/beast/"
 template_path <- paste0(base_path, "scripts/canidae_template.xml")
 ranges_path <- paste0(base_path, "data/canidae_ranges.tsv")
 run_path <- paste0(base_path, "scripts/canidae_run.xml")
