@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --nodes=1 # 1 node per job
-#SBATCH --time=10-00:00:00 # no idea how long this will take, let's be safe 
+#SBATCH --time=12-00:00:00 # no idea how long this will take, let's be safe 
 
 #SBATCH --output=output/jobs/job_%j.out
 #SBATCH --error=output/jobs/job_%j.err
