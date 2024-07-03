@@ -12,18 +12,24 @@ base_dir <- "/Users/petrucci/Documents/research/canids_chap2/"
 output_dir <- paste0(base_dir, "beast/output/")
 
 # read trees
-trees <- read.nexus(file = paste0(output_dir, "tree.trees"))
+trees <- read.nexus(file = paste0(output_dir, "tree_big.trees"))
 
 # read trace
-trace <- read.delim(file = paste0(output_dir, "canidae_run.log"), 
+trace <- read.delim(file = paste0(output_dir, "canidae_run_big.log"), 
                     sep = "\t", comment.char = "#")
 
 # read occurrences csv
 occurrences <- read.csv(paste0(base_dir, 
                                "beast/data/raw_data/canidae_occurrences.csv"))
 
+# read morphological data to get extant species
+mol <- read.nexus.data(paste0(base_dir, "beast/data/raw_data/canidae_mol.nex"))
+ext_taxa <- names(mol)[-which(names(mol) %in% c("Aenocyon_dirus", 
+                                                "Dusicyon_australis"))]
 # read diet data
 #diet <- read.csv(file = "filename")
+diet <- rep(1, length(unique(c(occurrences$taxon, ext_taxa))))
+names(diet) <- unique(c(occurrences$taxon, ext_taxa))
 
 ###
 # make occurrences into a paleobuddy fossil-record object
@@ -33,7 +39,7 @@ occs <- occurrences[, -c(1, 3, 6:7)]
 
 # add extant/extinct column
 occs$Extant <- unlist(lapply(1:nrow(occurrences), 
-                             function(x) any(occurrences[occurrences$taxon == occurrences$taxon[x], ]$late_age == 0)))
+                             function(x) occurrences$taxon[x] %in% ext_taxa))
 
 # reorder columns
 occs <- occs[, c(1, 4, 2, 3)]
@@ -44,7 +50,14 @@ colnames(occs) <- c("Species", "Extant", "MaxT", "MinT")
 # number of fossils per species
 n_occs <- lapply(unique(occs$Species), function(x) sum(occs$Species == x))
 names(n_occs) <- unique(occs$Species)
-n_occs <- t(as.data.frame(n_occs))
+n_occs <- as.data.frame(n_occs)
+
+# add extant species that aren't already there
+for (i in 1:length(ext_taxa)) {
+  if (is.na(n_occs[ext_taxa[i], ])) {
+    n_occs[ext_taxa[i], ] <- 0
+  }
+}
 
 ###
 # manipulate maximum posterior tree and fossils data frame
@@ -164,21 +177,40 @@ fossil_edges <- function(tree, fossils) {
       res <- c(res, length(tree$tip.label) + 1)
       
     } else {
-      # find node for the current 
+      # find node corresponding to the tip of this species
       cur_node <- which(tree$tip.label == fossils$Species[i])
+      
+      # check the time for the tip
       t_tip <- root_time - node.depth.edgelength(tree)[cur_node]
+      
+      # if it is not extant, subtract t_tip to have 
+      # a relative time for the fossil
       t_fossil <- t_fossil - t_tip
       
+      # find edge leading to this tip
       cur_edge <- which(tree$edge[, 2] == cur_node)
+      
+      # and get its length
       cur_edge_len <- tree$edge.length[cur_edge]
       
+      # if cur_edge_len > t_fossil, the fossil goes on this edge, so we just
+      # use cur_node for this fossil; if not, we need to find the right edge
       while (cur_edge_len < t_fossil) {
+        # get new relative fossil time 
         t_fossil <- t_fossil - cur_edge_len
+        
+        # get new node (node right before edge that leads to previous)
         cur_node <- tree$edge[cur_edge, 1]
+        
+        # find edge again
         cur_edge <- which(tree$edge[, 2] == cur_node)
+        
+        # and get its length again
+        # repeat until cur_edge_len > t_fossil
         cur_edge_len <- tree$edge.length[cur_edge]
       }
       
+      # add the last node we visited to the res vector
       res <- c(res, cur_node)
     }
   }
@@ -190,14 +222,22 @@ fossil_edges <- function(tree, fossils) {
 # final manipulation of tree and fossils, and then
 # use FossilSim to place fossils on tree
 
-# create new tree 
+# create new tree to avoid modifying mptree
 fs_tree <- mptree
+
+# data frame of which numbered tip corresponds to which name
 names_tipnum <- data.frame(names = mptree$tip.label,
                            tipnum = 1:length(mptree$tip.label))
+
+# change tip labels to tN to match FossilSim expectation
 fs_tree$tip.label <- paste0("t", unlist(lapply(fs_tree$tip.label, 
                         function(x) names_tipnum[names_tipnum$names == x, 2])))
 
+# run fossil_edges to find which edges each fossil goes on
 f_edges <- fossil_edges(mptree, fossils)
+
+# make FossilSim fossil object with species as numbers and edge numbers
+# for each fossil specimen
 fs_fossils <- data.frame(sp = unlist(lapply(fossils$Species, 
                         function(x) names_tipnum[names_tipnum$names == x, 2])),
                          edge = f_edges,
@@ -205,11 +245,49 @@ fs_fossils <- data.frame(sp = unlist(lapply(fossils$Species,
                          hmax = fossils$SampT)
 fs_fossils <- as.fossils(fs_fossils, from.taxonomy = TRUE)
 
-satree <- SAtree.from.fossils(fs_tree, fs_fossils)$tree
+# get tree with fossils
+satree_obj <- SAtree.from.fossils(fs_tree, fs_fossils)
+satree <- satree_obj$tree
 
-# need to 1. switch names of tips to tN where N is the number on tip.label;
-# 2. do the same for fossils but with just the number; 3. run the edges
-# function to get the node before which a fossil is to be placed; 4. make 
-# fossils into a FossilSim fossils object; 5. run SAtree.from.fossils to get
-# the SA tree; 6. switch the names on the tree back to before, so t1_1 should
-# be outgroup_1
+# vector to hold diet values for each tip
+diet_satree <- c()
+
+# manipulate tip labels back to named species
+for (i in 1:length(satree$tip.label)) {
+  # get tip label
+  label <- satree$tip.label[i]
+  
+  # get species number
+  label_num <- as.numeric(gsub("_[0-9]+", "", gsub("t", "", label)))
+  
+  # get species name
+  label_species <- names_tipnum[label_num, 1]
+  
+  # add diet info to vector
+  diet_satree <- c(diet_satree, diet[label_species])
+  
+  # substitute number in label for species name
+  satree$tip.label[i] <- gsub("t[0-9]+_", paste0(label_species, "_"), label)
+}
+
+# name diet vector
+names(diet_satree) <- satree$tip.label
+
+# correct edge lengths for extant species so they're all at 0
+for (i in 1:length(ext_taxa)) {
+  # check which tip it is
+  tipN <- which(satree$tip.label == paste0(ext_taxa[i], "_", n_occs[ext_taxa[i], ] + 1))
+  
+  # check age of tip
+  tip_age <- max(node.depth.edgelength(satree)) - 
+    node.depth.edgelength(satree)[tipN]
+  
+  # if it is not at 0
+  if (tip_age != 0) {
+    # find edge for this tip
+    tip_edge <- which(satree$edge[, 2] == tipN)
+    
+    # increase length by tip_age to make it 0
+    satree$edge.length[tip_edge] <- satree$edge.length[tip_edge] + tip_age
+  }
+}

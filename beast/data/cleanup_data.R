@@ -69,7 +69,7 @@ get_range <- function(occurrences, name) {
                                min(named_occs$late_age)), ]
   
   # if species is extant, la_min and la_max are 0
-  if (names_occs$taxon[1] %in% ext_taxa) {
+  if (named_occs$taxon[1] %in% ext_taxa) {
     la_min <- la_max <- 0
   } else {
     # max and min for la
