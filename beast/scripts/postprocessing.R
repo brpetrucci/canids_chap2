@@ -1,5 +1,5 @@
 ### 
-# load packages
+# load packages 
 library(ape)
 library(paleobuddy)
 library(FossilSim)
@@ -28,8 +28,10 @@ ext_taxa <- names(mol)[-which(names(mol) %in% c("Aenocyon_dirus",
                                                 "Dusicyon_australis"))]
 # read diet data
 #diet <- read.csv(file = "filename")
-diet <- rep(1, length(unique(c(occurrences$taxon, ext_taxa))))
-names(diet) <- unique(c(occurrences$taxon, ext_taxa))
+diet_raw <- read.delim(paste0(base_dir, "revbayes/data/diet.txt"),
+                   sep = " ")
+diet <- diet_raw[, 1] - 1
+names(diet) <- rownames(diet_raw)
 
 ###
 # make occurrences into a paleobuddy fossil-record object
@@ -53,11 +55,11 @@ names(n_occs) <- unique(occs$Species)
 n_occs <- as.data.frame(n_occs)
 
 # add extant species that aren't already there
-for (i in 1:length(ext_taxa)) {
-  if (is.na(n_occs[ext_taxa[i], ])) {
-    n_occs[ext_taxa[i], ] <- 0
-  }
+no_fossil_taxa <- ext_taxa[!(ext_taxa %in% colnames(n_occs))]
+for (taxa in no_fossil_taxa) {
+  n_occs[, no_fossil_taxa] <- 0
 }
+n_occs <- t(n_occs)
 
 ###
 # manipulate maximum posterior tree and fossils data frame
@@ -271,23 +273,53 @@ for (i in 1:length(satree$tip.label)) {
 }
 
 # name diet vector
-names(diet_satree) <- satree$tip.label
+names(diet_satree) <- satree$tip.label 
 
+# # find tips that don't have data
+# nodiet_tipnums <- which(is.na(diet_satree))
+
+# # get final tree that doesn't have the tips without data
+# satree_final <- drop.tip(satree, nodiet_tipnums)
+# 
+# # do the same with diet
+# diet_final <- diet_satree[-nodiet_tipnums]
+# 
 # correct edge lengths for extant species so they're all at 0
-for (i in 1:length(ext_taxa)) {
+for (i in 1:length(ext_taxa[which(ext_taxa %in% names(diet))])) {
   # check which tip it is
   tipN <- which(satree$tip.label == paste0(ext_taxa[i], "_", n_occs[ext_taxa[i], ] + 1))
-  
+
   # check age of tip
-  tip_age <- max(node.depth.edgelength(satree)) - 
+  tip_age <- max(node.depth.edgelength(satree)) -
     node.depth.edgelength(satree)[tipN]
-  
+
   # if it is not at 0
   if (tip_age != 0) {
     # find edge for this tip
     tip_edge <- which(satree$edge[, 2] == tipN)
-    
+
     # increase length by tip_age to make it 0
     satree$edge.length[tip_edge] <- satree$edge.length[tip_edge] + tip_age
   }
 }
+
+# save diet data
+write.nexus.data(diet_satree, paste0(base_dir, "revbayes/data/canidae_diet.nex"),
+                 format = "standard")
+
+# correct node labels
+satree$node.label <- (length(satree$tip.label) + 1):(2*length(satree$tip.label) - 1)
+
+# and save tree
+write.nexus(satree, file = paste0(base_dir, "revbayes/data/canidae_tree.nex"),
+            translate = TRUE)
+
+# get extant tree
+satree_extant <- drop.fossil(satree)
+write.nexus(satree_extant, file = paste0(base_dir, "revbayes/data/canidae_tree_extant.nex"),
+            translate = TRUE)
+
+# select those data
+diet_extant <- diet_satree[satree_extant$tip.label]
+write.nexus.data(diet_extant, paste0(base_dir, "revbayes/data/canidae_diet_extant.nex"),
+                 format = "standard")

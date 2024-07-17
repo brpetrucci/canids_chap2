@@ -1,0 +1,43 @@
+#NEXUS
+[Data written by write.nexus.data.R, Wed Jul 17 09:22:52 2024]
+BEGIN DATA;
+  DIMENSIONS NTAX=34 NCHAR=1;
+  FORMAT DATATYPE=STANDARD MISSING=? GAP=- INTERLEAVE=NO symbols="01";
+  MATRIX
+    Vulpes_vulpes_96                 1
+    Vulpes_rueppellii_1              1
+    Vulpes_zerda_1                   1
+    Vulpes_chama_22                  1
+    Vulpes_pallida_1                 1
+    Vulpes_velox_15                  1
+    Vulpes_macrotis_2                1
+    Vulpes_lagopus_46                1
+    Otocyon_megalotis_8              1
+    Nyctereutes_procyonoides_4       1
+    Urocyon_cinereoargenteus_40      1
+    Canis_aureus_20                  1
+    Canis_anthus_6                   1
+    Canis_latrans_104                1
+    Canis_lupus_127                  0
+    Cuon_alpinus_12                  0
+    Lycaon_pictus_12                 0
+    Canis_simensis_2                 1
+    Lupulella_mesomelas_54           1
+    Lupulella_adusta_9               1
+    Atelocynus_microtis_1            1
+    Cerdocyon_thous_5                1
+    Chrysocyon_brachyurus_9          1
+    Speothos_venaticus_3             0
+    Lycalopex_culpaeus_8             1
+    Lycalopex_griseus_4              1
+    Lycalopex_gymnocercus_11         1
+    Lycalopex_sechurae_2             1
+    Lycalopex_vetulus_5              1
+    Lycalopex_fulvipes_1             1
+    Urocyon_littoralis_4             1
+    Vulpes_cana_1                    1
+    Vulpes_corsac_2                  1
+    Vulpes_ferrilata_1               1
+  ;
+END;
+

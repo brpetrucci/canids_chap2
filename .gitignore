@@ -1,4 +1,5 @@
 output
+*history.txt
 *.Rhistory
 tutorials
 .DS_Store

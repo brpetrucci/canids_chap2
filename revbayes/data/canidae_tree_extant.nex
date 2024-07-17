@@ -1,0 +1,81 @@
+#NEXUS
+[R-package APE, Wed Jul 17 09:23:25 2024]
+
+BEGIN TAXA;
+	DIMENSIONS NTAX = 34;
+	TAXLABELS
+		Vulpes_vulpes_96
+		Vulpes_rueppellii_1
+		Vulpes_zerda_1
+		Vulpes_chama_22
+		Vulpes_pallida_1
+		Vulpes_velox_15
+		Vulpes_macrotis_2
+		Vulpes_lagopus_46
+		Otocyon_megalotis_8
+		Nyctereutes_procyonoides_4
+		Urocyon_cinereoargenteus_40
+		Canis_aureus_20
+		Canis_anthus_6
+		Canis_latrans_104
+		Canis_lupus_127
+		Cuon_alpinus_12
+		Lycaon_pictus_12
+		Canis_simensis_2
+		Lupulella_mesomelas_54
+		Lupulella_adusta_9
+		Atelocynus_microtis_1
+		Cerdocyon_thous_5
+		Chrysocyon_brachyurus_9
+		Speothos_venaticus_3
+		Lycalopex_culpaeus_8
+		Lycalopex_griseus_4
+		Lycalopex_gymnocercus_11
+		Lycalopex_sechurae_2
+		Lycalopex_vetulus_5
+		Lycalopex_fulvipes_1
+		Urocyon_littoralis_4
+		Vulpes_cana_1
+		Vulpes_corsac_2
+		Vulpes_ferrilata_1
+	;
+END;
+BEGIN TREES;
+	TRANSLATE
+		1	Vulpes_vulpes_96,
+		2	Vulpes_rueppellii_1,
+		3	Vulpes_zerda_1,
+		4	Vulpes_chama_22,
+		5	Vulpes_pallida_1,
+		6	Vulpes_velox_15,
+		7	Vulpes_macrotis_2,
+		8	Vulpes_lagopus_46,
+		9	Otocyon_megalotis_8,
+		10	Nyctereutes_procyonoides_4,
+		11	Urocyon_cinereoargenteus_40,
+		12	Canis_aureus_20,
+		13	Canis_anthus_6,
+		14	Canis_latrans_104,
+		15	Canis_lupus_127,
+		16	Cuon_alpinus_12,
+		17	Lycaon_pictus_12,
+		18	Canis_simensis_2,
+		19	Lupulella_mesomelas_54,
+		20	Lupulella_adusta_9,
+		21	Atelocynus_microtis_1,
+		22	Cerdocyon_thous_5,
+		23	Chrysocyon_brachyurus_9,
+		24	Speothos_venaticus_3,
+		25	Lycalopex_culpaeus_8,
+		26	Lycalopex_griseus_4,
+		27	Lycalopex_gymnocercus_11,
+		28	Lycalopex_sechurae_2,
+		29	Lycalopex_vetulus_5,
+		30	Lycalopex_fulvipes_1,
+		31	Urocyon_littoralis_4,
+		32	Vulpes_cana_1,
+		33	Vulpes_corsac_2,
+		34	Vulpes_ferrilata_1
+	;
+	TREE * UNTITLED = [&R] ((11:0.499233061,31:0.499233061)2418:13.49383885,(((((22:5.793094055,(29:2.755884909,(28:2.041179502,(27:1.529196349,((25:1.221054505,30:1.221054505)2430:0.2427502721,26:1.463804777)2429:0.06539157252)2428:0.5119831531)2427:0.714705407)2426:3.037209145)2425:0.4093268682,21:6.202420923)2424:1.411052323,(23:7.039450102,24:7.039450102)2431:0.574023144)2423:0.7540160403,((16:6.19333797,(((14:3.97270644,(15:3.415015569,13:3.415015569)2443:0.5576908708)2441:0.8101630878,12:4.782869528)2440:0.4584038599,18:5.241273388)2439:0.9520645825)2435:1.587722738,(17:7.617758997,(19:5.907034615,20:5.907034615)2456:1.710724382)2454:0.1633017116)2433:0.586428578)2421:4.607647522,(9:12.08087629,((3:6.63915323,(32:5.974434721,((((33:2.415589492,(34:2.201550737,5:2.201550737)2466:0.2140387551)2465:0.9291696603,(1:2.65234876,2:2.65234876)2467:0.6924103917)2464:0.8961278112,((6:0.1624672583,7:0.1624672583)2469:0.9971538654,8:1.159621124)2468:3.08126584)2463:1.159491368,4:5.400378332)2462:0.5740563888)2461:0.6647185098)2460:5.001155255,10:11.64030849)2459:0.4405678055)2457:0.8942605182)2420:1.017935102)2411:0;
+END;
