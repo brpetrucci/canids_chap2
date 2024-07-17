@@ -1,4 +1,5 @@
 #### FBD+HiSSE script for analysis of the effects of diet on Canidae diversification
+loadPlugin("TensorPhylo", "/opt/rit/app/tensorphylo/build/installer/lib")
 
 ###
 # read data
