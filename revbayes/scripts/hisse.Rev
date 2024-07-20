@@ -36,7 +36,7 @@ monitors = VectorMonitors()
 # set the model
 
 # set a separate variable for each speciation and extinction rate
-for (i in 1:num_states) {
+for (i in 1:num_rates) {
   # set loguniform priors for each of the rates
   lambda[i] ~ dnLoguniform(1E-6, 1E2)
   mu[i] ~ dnLoguniform(1E-6, 1E2)
@@ -103,7 +103,7 @@ monitors.append(mnScreen(printgen = 1000))
 mymcmc = mcmc(mymodel, monitors, moves)
 
 # run mcmc
-mymcmc.run(generations = 100000, checkpointInterval = 1000, checkpointFile = "output/checkpoint/hisse.state")
+mymcmc.run(generations = 200000, checkpointInterval = 1000, checkpointFile = "output/checkpoint/hisse.state")
 
 # quit
 q()
