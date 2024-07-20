@@ -1,7 +1,6 @@
 #### HiSSE script for analysis of the effects of diet on Canidae diversification
 loadPlugin("TensorPhylo", "/opt/rit/app/tensorphylo/build/installer/lib")
 
-
 ###
 # read data
 
@@ -69,7 +68,7 @@ for (i in 1:num_states*(num_states - 1)) {
 Q := fnHiddenStateRateMatrix(q_obs, q_hidden, rescaled = false)
 
 # set root state frequencies to a simple Dirichlet prior
-pi ~ dnDirichlet(rep(1, num_states))
+pi ~ dnDirichlet(rep(1, num_rates))
 moves.append(mvDirichletSimplex(pi, weight = 5.0))
 
 # sampling at present
@@ -79,12 +78,12 @@ rho <- 34/36
 root_age <- tree.rootAge()
 
 # set the bisse fbd tree
-timetree ~ dnGLHBDSP(rootAge = root_age, lambda = lambda, mu = mu, eta = Q, pi = pi, taxa = taxa, rho = rho, nStates = num_states)
+timetree ~ dnGLHBDSP(rootAge = root_age, lambda = lambda, mu = mu, eta = Q, pi = pi, taxa = taxa, rho = rho, nStates = num_rates)
 
 # clamp it to the data
 timetree.clamp(tree)
 
-timetree.clampCharData(data)
+timetree.clampCharData(data_exp)
 
 # create our model object
 mymodel = model(timetree)
