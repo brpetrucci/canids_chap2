@@ -12,10 +12,10 @@ base_dir <- "/Users/petrucci/Documents/research/canids_chap2/"
 output_dir <- paste0(base_dir, "beast/output/")
 
 # read trees
-trees <- read.nexus(file = paste0(output_dir, "tree_big.trees"))
+trees <- read.nexus(file = paste0(output_dir, "tree.trees"))
 
 # read trace
-trace <- read.delim(file = paste0(output_dir, "canidae_run_big.log"), 
+trace <- read.delim(file = paste0(output_dir, "canidae_run.log"), 
                     sep = "\t", comment.char = "#")
 
 # read occurrences csv

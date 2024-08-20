@@ -14,6 +14,9 @@ library(ape)
 # PBDB
 library(paleobioDB)
 
+# palaeoverse
+library(palaeoverse)
+
 ###
 # read data
 
@@ -37,13 +40,28 @@ ext_taxa <- names(mol)[-which(names(mol) %in% c("Aenocyon_dirus",
 # morphological data
 morpho_raw <- read.nexus.data(paste0(raw_dir, "canidae_morpho.nex"))
 
-# cut state 76 since it is non-variable
-morpho <- lapply(morpho_raw, function(x) x[-76])
-
 # cut Vulpes bengalensis since it has so little data
 # cut outgroup since we decided we didn't need it
-morpho <- morpho[-(which(names(morpho) == "Vulpes_bengalensis" 
-                         | names(morpho) == "outgroup"))]
+morpho <- morpho_raw[-(which(names(morpho_raw) == "Vulpes_bengalensis" 
+                         | names(morpho_raw) == "outgroup"))]
+
+# check which characters have no variation
+no_var <- c()
+for (i in 1:length(morpho[[1]])) {
+  # get list of values
+  vals <- unlist(lapply(morpho, function(x) x[i]))
+  
+  # get unique characters present
+  chars <- unique(vals)
+  
+  # if there is only one non-? character, add to no_var
+  if (sum(chars != "?") == 1) {
+    no_var <- c(no_var, i)
+  }
+}
+
+# remove the characters with no variation
+morpho <- lapply(morpho, function(x) x[-no_var])
 
 ###
 # extract range data
@@ -134,11 +152,16 @@ write.nexus.data(morpho_complete, paste0(base_dir, "canidae_morpho.nex"),
 occurrences_filter <- (occurrences$early_age - occurrences$late_age) > 5
 ftrd_occs <- occurrences[!occurrences_filter, ]
 
-# filter morpho
+# filter data
 ftrd_names <- unique(occurrences$taxon)[!(unique(occurrences$taxon) %in% 
                                             ftrd_occs$taxon)]
-ftrd_morpho <- morpho_complete[-which(names(morpho_complete) %in% ftrd_names)]
+ftrd_morpho_raw <- morpho_complete[-which(names(morpho_complete) %in% ftrd_names)]
 ftrd_mol <- mol_complete[-which(names(mol_complete) %in% ftrd_names)]
+
+# find which characters in morpho are now unvarying
+
+# remove character 46 from morpho, since it doesn't vary
+ftrd_morpho <- lapply(ftrd_morpho_raw, function(x) x[-46])
 
 # filter ranges
 ftrd_ranges_df <- ranges_df[-which(ranges_df[, 1] %in% ftrd_names), ]
@@ -152,3 +175,19 @@ write.nexus.data(ftrd_morpho, paste0(base_dir, "ftrd_canidae_morpho.nex"),
 write.nexus.data(ftrd_mol, paste0(base_dir, "ftrd_canidae_mol.nex"))
 write(partitions, paste0(base_dir, "ftrd_canidae_mol.nex"), append = TRUE)
 
+###
+# plot ranges
+
+# organize it
+ranges_plot_df <- data.frame(x1 = as.numeric(ranges_df$fa_max), 
+                             x2 = as.numeric(ranges_df$la_max),
+                             y = 1:nrow(ranges_df))
+
+# plot
+plot(1, type = "n", xlab = "", axes = FALSE,
+     ylab = "", xlim = c(40, 0),  
+     ylim = c(0, 158)) 
+segments(x0 = ranges_plot_df$x1, y0 = ranges_plot_df$y, 
+         x1 = ranges_plot_df$x2, y1 = ranges_plot_df$y,
+         lwd = 2)
+axis_geo(side = 1, intervals = "epochs")
