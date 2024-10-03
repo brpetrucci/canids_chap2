@@ -1,0 +1,96 @@
+#### FBD+BiSSE script for analysis of the effects of diet on Canidae diversification
+loadPlugin("TensorPhylo", "/opt/rit/app/tensorphylo/build/installer/lib")
+
+
+###
+# read data
+
+# get the tree
+tree <- readTrees(file = "data/canidae_tree.nex")[1]
+
+# get root age
+root_age <- tree.rootAge()
+
+# get the taxa list
+taxa <- tree.taxa()
+
+# and get character data
+data <- readCharacterData(file = "data/canidae_diet.nex")
+
+# get the number of taxa
+num_taxa <- taxa.size()
+
+# set number of states
+num_states <- 2
+
+# create workspace objects for moves and monitors
+moves = VectorMoves()
+monitors = VectorMonitors()
+
+###
+# set the model
+
+# set a separate variable for each speciation and extinction rate
+for (i in 1:num_states) {
+  # set loguniform priors for each of the rates
+  lambda[i] ~ dnUniform(0, 1E6)
+  mu[i] ~ dnUniform(0, 1E6)
+  phi[i] ~ dnUniform(0, 1E6)
+
+  # append moves 
+  moves.append(mvScale(lambda[i], weight = 3.0))
+  moves.append(mvScale(mu[i], weight = 3.0))
+  moves.append(mvScale(phi[i], weight = 3.0))
+}
+
+# set the rate priors with mean above
+for (i in 1:num_states*(num_states - 1)) {
+  # set exponential prior for transition rate
+  q[i] ~ dnUniform(0, 1E6)
+
+  # append moves 
+  moves.append(mvScale(q[i], lambda = 2.0, tune = true, weight = 3.0))
+}
+
+# create the rate matrix
+Q := fnFreeBinary(q, rescaled = false)
+
+# set root state frequencies to a simple Dirichlet prior
+pi ~ dnDirichlet(rep(1, num_states))
+moves.append(mvDirichletSimplex(pi, weight = 5.0))
+
+# sampling at present
+rho <- 34/36 
+
+# root age
+root_age <- tree.rootAge()
+
+# set the bisse fbd tree
+timetree ~ dnGLHBDSP(rootAge = root_age, lambda = lambda, mu = mu, eta = Q, pi = pi, phi = phi, taxa = taxa, rho = rho, nStates = num_states)
+
+# clamp it to the data
+timetree.clamp(tree)
+
+timetree.clampCharData(data)
+
+# create our model object
+mymodel = model(timetree)
+
+###
+# set up monitors and run analysis
+
+
+# append monitor to log
+monitors.append(mnModel(filename = "output/fbdbisse_lik.log", printgen = 100))
+
+# and to screen
+monitors.append(mnScreen(printgen = 1000))
+
+# creates mcmc object
+mymcmc = mcmc(mymodel, monitors, moves)
+
+# run mcmc
+mymcmc.run(generations = 100000, checkpointInterval = 1000, checkpointFile = "output/checkpoint/fbdbisse_lik.state")
+
+# quit
+q()

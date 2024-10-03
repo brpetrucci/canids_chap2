@@ -1,12 +1,12 @@
 #!/bin/bash
 
 #SBATCH --nodes=1 # 1 node per job
-#SBATCH --time=12-00:00:00 # no idea how long this will take, let's be safe 
+#SBATCH --time=31-00:00:00 # no idea how long this will take, let's be safe 
 
 #SBATCH --output=output/jobs/job_%j.out
 #SBATCH --error=output/jobs/job_%j.err
 
-#SBATCH --job-name="canidae_run_big"
+#SBATCH --job-name="4_canidae_run"
 
 #SBATCH --mail-user=petrucci@iastate.edu   # my e-mail
 #SBATCH --mail-type=BEGIN # get notifications for all job cases
@@ -15,4 +15,4 @@
 
 cd /work/LAS/phylo-lab/petrucci/canids_chap2/beast
 
-$HOME/beast/bin/beast scripts/canidae_run_big.xml
+$HOME/beast/bin/beast scripts/canidae_run.xml

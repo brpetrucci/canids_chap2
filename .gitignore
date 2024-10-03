@@ -2,4 +2,7 @@ output
 *history.txt
 *.Rhistory
 tutorials
+*.log
+*.trees
+*.state
 .DS_Store
