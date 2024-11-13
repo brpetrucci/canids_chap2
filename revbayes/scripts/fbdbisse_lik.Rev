@@ -37,6 +37,11 @@ for (i in 1:num_states) {
   mu[i] ~ dnUniform(0, 1E6)
   phi[i] ~ dnUniform(0, 1E6)
 
+  # set starting values
+  lambda[i].setValue(1)
+  mu[i].setValue(1)
+  phi[i].setValue(1)
+
   # append moves 
   moves.append(mvScale(lambda[i], weight = 3.0))
   moves.append(mvScale(mu[i], weight = 3.0))
@@ -47,6 +52,9 @@ for (i in 1:num_states) {
 for (i in 1:num_states*(num_states - 1)) {
   # set exponential prior for transition rate
   q[i] ~ dnUniform(0, 1E6)
+
+  # set starting values
+  q[i].setValue(1)
 
   # append moves 
   moves.append(mvScale(q[i], lambda = 2.0, tune = true, weight = 3.0))

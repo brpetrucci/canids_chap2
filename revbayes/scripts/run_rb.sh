@@ -7,7 +7,7 @@
 #SBATCH --output=output/jobs/job_%j.out
 #SBATCH --error=output/jobs/job_%j.err
 
-#SBATCH --job-name="fbdhisse_canidae"
+#SBATCH --job-name="fbdbisse_canidae"
 
 #SBATCH --mail-user=petrucci@iastate.edu   # my e-mail
 #SBATCH --mail-type=BEGIN # get notifications for all job cases
@@ -22,4 +22,4 @@ module load revbayes/dev-tp-sa-fix.tensorphylo
 cd /work/LAS/phylo-lab/petrucci/canids_chap2/revbayes
 
 # source it, the parameter combination, and the actual script
-rb scripts/fbdhisse_lik.Rev 
+rb scripts/fbdbisse_lik.Rev 
