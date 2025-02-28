@@ -1,4 +1,4 @@
-"taxon"	"diet"
+"taxon" "diet"
 "Hesperocyon_gregarius" 2
 "Prohesperocyon_wilsoni" 2
 "Hesperocyon_coloradensis" 2

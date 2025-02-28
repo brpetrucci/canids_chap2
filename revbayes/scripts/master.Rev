@@ -1,0 +1,145 @@
+### master script for analysis of the effects of diet on Canidae diversification
+
+# load tensorphylo
+loadPlugin("TensorPhylo", "/opt/rit/app/tensorphylo/build/installer/lib")
+
+###
+# set variables for this run
+
+# number of hidden states
+num_hidden <- v(1, 2)[hiddenComb]
+
+# which trait
+trait <- v("diet", "size", "diet_size")[traitComb]
+
+# set num_states
+num_states <- ifelse(trait == "diet_size", 4, 2)
+
+# fbd, extant, or ultrametric tree?
+tree_type <- v("fbd", "extant", "ultra")[treeComb]
+
+# tree file
+tree_file <- "data/canidae_tree_" + tree_type + ".nex"
+
+# data file
+data_file <- "data/canidae_" + trait + ".nex"
+
+# output file
+output_file <- tree_type + "_" + ifelse(num_states == 4, "mu", "bi") + ifelse(num_hidden == 2, "hi", "") + ".log"  
+
+###
+# read data
+
+# get the tree
+tree <- readTrees(file = tree_file)[1]
+
+# get root age
+root_age <- tree.rootAge()
+
+# get the taxa list
+taxa <- tree.taxa()
+
+# and get character data
+data <- readCharacterData(file = data_file)
+
+# get the number of taxa
+num_taxa <- taxa.size()
+
+# set number of rates
+num_rates <- num_states * num_hidden
+
+# expand the data file
+data_exp <- data.expandCharacters(num_hidden)
+
+# create workspace objects for moves and monitors
+moves = VectorMoves()
+monitors = VectorMonitors()
+
+###
+# set the model
+
+# set a separate variable for each speciation and extinction rate
+for (i in 1:num_rates) {
+  # set loguniform priors for each of the rates
+  lambda[i] ~ dnLoguniform(1E-6, 1E2)
+  mu[i] ~ dnLoguniform(1E-6, 1E2)
+
+  # set initial values to avoid it getting stuck on weirdly high ones
+  lambda[i].setValue(1)
+  mu[i].setValue(1)
+
+  # append moves 
+  moves.append(mvScale(lambda[i], weight = 3.0))
+  moves.append(mvScale(mu[i], weight = 3.0))
+
+  # if tree_type is fbd or extant, set phi argument
+  if (tree_type == "fbd" || tree_type "extant") { 
+    phi[i] ~ dnLoguniform(1E-6, 1E2)
+    phi[i].setValue(1)
+    moves.append(mvScale(phi[i], weight = 3.0))
+  } else {
+    phi[i] <- 0
+  }
+
+}
+
+# set the observed and hidden rate priors with mean above
+for (i in 1:num_states*(num_states - 1)) {
+  # set q with an exponential prior with mean equal to the true value
+  q_obs[i] ~ dnExp(0.01)
+  q_hidden[i] ~ dnExp(0.01)
+
+  # set values so it doesn't get stuck
+  q_obs[i].setValue(0.01)
+  q_hidden[i].setValue(0.01)
+
+  # append moves 
+  moves.append(mvScale(q_obs[i], weight = 3.0))
+  moves.append(mvScale(q_hidden[i], weight = 3.0))
+}
+
+# create the rate matrix
+Q := fnHiddenStateRateMatrix(q_obs, q_hidden, rescaled = false)
+
+# set root state frequencies to a simple Dirichlet prior
+pi ~ dnDirichlet(rep(1, num_rates))
+moves.append(mvDirichletSimplex(pi, weight = 5.0))
+
+# sampling at present
+rho <- 34/36 
+
+# root age
+root_age <- tree.rootAge()
+
+# set the bisse fbd tree
+timetree ~ dnGLHBDSP(rootAge = root_age, lambda = lambda, mu = mu, eta = Q, pi = pi, phi = phi, taxa = taxa, rho = rho, nStates = num_rates)
+
+# clamp it to the data
+timetree.clamp(tree)
+
+timetree.clampCharData(data_exp)
+
+# create our model object
+mymodel = model(timetree)
+
+###
+# set up monitors and run analysis
+
+
+# append monitor to log
+monitors.append(mnModel(filename = "output/" + output_file, printgen = 100))
+
+# and to screen
+monitors.append(mnScreen(printgen = 1000))
+
+# if there are hidden states, look at ancestral states
+monitors.append(mnJointConditionalAncestralState(printgen = 100, filename = "output/anc_states/" + output_file, glhbdsp = timetree, tree = timetree, type = "NaturalNumbers"))
+
+# creates mcmc object
+mymcmc = mcmc(mymodel, monitors, moves)
+
+# run mcmc
+mymcmc.run(generations = 100000, checkpointInterval = 1000, checkpointFile = "output/checkpoint/" + output_file)
+
+# quit
+q()

@@ -2,9 +2,9 @@ rm(list = ls())
 library(stringr)
 
 base_path <- "/Users/petrucci/Documents/research/canids_chap2/beast/"
-template_path <- paste0(base_path, "scripts/canidae_template.xml")
-ranges_path <- paste0(base_path, "data/canidae_ranges.tsv")
-run_path <- paste0(base_path, "scripts/canidae_run.xml")
+template_path <- paste0(base_path, "scripts/ftrd_canidae_template.xml")
+ranges_path <- paste0(base_path, "data/ftrd_canidae_ranges.tsv")
+run_path <- paste0(base_path, "scripts/ftrd_canidae_run.xml")
 
 file.remove(run_path)
 

@@ -1,0 +1,644 @@
+#NEXUS
+
+Begin taxa;
+	Dimensions ntax=316;
+		Taxlabels
+			Prohesperocyon_wilsoni_first
+			Hesperocyon_gregarius_first
+			Hesperocyon_coloradensis_first
+			Mesocyon_temnodon_first
+			Mesocyon_brachyops_first
+			Mesocyon_coryphaeus_first
+			Cynodesmus_thooides_first
+			Cynodesmus_martini_first
+			Sunkahetanka_geringensis_first
+			Philotrox_condoni_first
+			Enhydrocyon_pahinsintewakpa_first
+			Enhydrocyon_crassidens_first
+			Enhydrocyon_stenocephalus_first
+			Enhydrocyon_basilatus_first
+			Osbornodon_renjiei_first
+			Osbornodon_sesnoni_first
+			Osbornodon_iamonensis_first
+			Osbornodon_brachypus_first
+			Osbornodon_fricki_first
+			Paraenhydrocyon_josephi_first
+			Paraenhydrocyon_robustus_first
+			Paraenhydrocyon_wallovianus_first
+			Caedocyon_tedfordi_first
+			Ectopocynus_antiquus_first
+			Ectopocynus_intermedius_first
+			Ectopocynus_simplicidens_first
+			Archaeocyon_pavidus_first
+			Archaeocyon_leptodus_first
+			Archaeocyon_falkenbachi_first
+			Oxetocyon_cuspidatus_first
+			Otarocyon_macdonaldi_first
+			Otarocyon_cooki_first
+			Rhizocyon_oregonensis_first
+			Cynarctoides_lemur_first
+			Cynarctoides_roii_first
+			Cynarctoides_harlowi_first
+			Cynarctoides_luskensis_first
+			Cynarctoides_gawnae_first
+			Cynarctoides_acridens_first
+			Cynarctoides_emryi_first
+			Phlaocyon_minor_first
+			Phlaocyon_latidens_first
+			Phlaocyon_annectens_first
+			Phlaocyon_achoros_first
+			Phlaocyon_multicuspus_first
+			Phlaocyon_marslandensis_first
+			Phlaocyon_leucosteus_first
+			Phlaocyon_yatkolai_first
+			Phlaocyon_mariae_first
+			Cormocyon_haydeni_first
+			Cormocyon_copei_first
+			Desmocyon_thomsoni_first
+			Desmocyon_matthewi_first
+			Paracynarctus_kelloggi_first
+			Paracynarctus_sinclairi_first
+			Cynarctus_galushai_first
+			Cynarctus_marylandica_first
+			Cynarctus_saxatilis_first
+			Cynarctus_voorhiesi_first
+			Cynarctus_crucidens_first
+			Metatomarctus_canavus_first
+			Euoplocyon_spissidens_first
+			Euoplocyon_brachygnathus_first
+			Psalidocyon_marianae_first
+			Microtomarctus_conferta_first
+			Protomarctus_optatus_first
+			Tephrocyon_rurestris_first
+			Tomarctus_hippophaga_first
+			Tomarctus_brevirostris_first
+			Aelurodon_asthenostylus_first
+			Aelurodon_mcgrewi_first
+			Aelurodon_stirtoni_first
+			Aelurodon_ferox_first
+			Aelurodon_taxoides_first
+			Paratomarctus_temerarius_first
+			Paratomarctus_euthos_first
+			Carpocyon_compressus_first
+			Carpocyon_webbi_first
+			Carpocyon_robustus_first
+			Carpocyon_limosus_first
+			Protepicyon_raki_first
+			Epicyon_aelurodontoides_first
+			Epicyon_saevus_first
+			Epicyon_haydeni_first
+			Borophagus_littoralis_first
+			Borophagus_pugnator_first
+			Borophagus_orc_first
+			Borophagus_parvus_first
+			Borophagus_secundus_first
+			Borophagus_hilli_first
+			Borophagus_dudleyi_first
+			Borophagus_diversidens_first
+			Leptocyon_mollis_first
+			Leptocyon_douglassi_first
+			Leptocyon_vulpinus_first
+			Leptocyon_gregorii_first
+			Leptocyon_leidyi_first
+			Leptocyon_vafer_first
+			Leptocyon_matthewi_first
+			Vulpes_stenognathus_first
+			Vulpes_vulpes_first
+			Vulpes_rueppellii_first
+			Vulpes_zerda_first
+			Vulpes_chama_first
+			Vulpes_pallida_first
+			Vulpes_velox_first
+			Vulpes_macrotis_first
+			Vulpes_lagopus_first
+			Otocyon_megalotis_first
+			Nyctereutes_procyonoides_first
+			Metalopex_macconnelli_first
+			Metalopex_merriami_first
+			Urocyon_webbi_first
+			Urocyon_galushai_first
+			Urocyon_citrinus_first
+			Urocyon_minicephalus_first
+			Urocyon_cinereoargenteus_first
+			Eucyon_davisi_first
+			Eucyon_ferox_first
+			Canis_thooides_first
+			Canis_lepophagus_first
+			Canis_aureus_first
+			Canis_anthus_first
+			Canis_arnensis_first
+			Canis_etruscus_first
+			Canis_falconeri_first
+			Canis_antonii_first
+			Canis_edwardii_first
+			Canis_mosbachensis_first
+			Canis_palmidens_first
+			Canis_variabilis_first
+			Canis_chihliensis_first
+			Canis_latrans_first
+			Canis_armbrusteri_first
+			Aenocyon_dirus_first
+			Canis_lupus_first
+			Xenocyon_texanus_first
+			Cuon_alpinus_first
+			Lycaon_pictus_first
+			Canis_simensis_first
+			Lupulella_mesomelas_first
+			Lupulella_adusta_first
+			Cerdocyon_texanus_first
+			Atelocynus_microtis_first
+			Cerdocyon_thous_first
+			Chrysocyon_brachyurus_first
+			Speothos_venaticus_first
+			Lycalopex_culpaeus_first
+			Lycalopex_griseus_first
+			Lycalopex_gymnocercus_first
+			Lycalopex_sechurae_first
+			Lycalopex_vetulus_first
+			Lycalopex_fulvipes_first
+			Dusicyon_australis_first
+			Urocyon_littoralis_first
+			Vulpes_cana_first
+			Vulpes_corsac_first
+			Vulpes_ferrilata_first
+			Prohesperocyon_wilsoni_last
+			Hesperocyon_gregarius_last
+			Hesperocyon_coloradensis_last
+			Mesocyon_temnodon_last
+			Mesocyon_brachyops_last
+			Mesocyon_coryphaeus_last
+			Cynodesmus_thooides_last
+			Cynodesmus_martini_last
+			Sunkahetanka_geringensis_last
+			Philotrox_condoni_last
+			Enhydrocyon_pahinsintewakpa_last
+			Enhydrocyon_crassidens_last
+			Enhydrocyon_stenocephalus_last
+			Enhydrocyon_basilatus_last
+			Osbornodon_renjiei_last
+			Osbornodon_sesnoni_last
+			Osbornodon_iamonensis_last
+			Osbornodon_brachypus_last
+			Osbornodon_fricki_last
+			Paraenhydrocyon_josephi_last
+			Paraenhydrocyon_robustus_last
+			Paraenhydrocyon_wallovianus_last
+			Caedocyon_tedfordi_last
+			Ectopocynus_antiquus_last
+			Ectopocynus_intermedius_last
+			Ectopocynus_simplicidens_last
+			Archaeocyon_pavidus_last
+			Archaeocyon_leptodus_last
+			Archaeocyon_falkenbachi_last
+			Oxetocyon_cuspidatus_last
+			Otarocyon_macdonaldi_last
+			Otarocyon_cooki_last
+			Rhizocyon_oregonensis_last
+			Cynarctoides_lemur_last
+			Cynarctoides_roii_last
+			Cynarctoides_harlowi_last
+			Cynarctoides_luskensis_last
+			Cynarctoides_gawnae_last
+			Cynarctoides_acridens_last
+			Cynarctoides_emryi_last
+			Phlaocyon_minor_last
+			Phlaocyon_latidens_last
+			Phlaocyon_annectens_last
+			Phlaocyon_achoros_last
+			Phlaocyon_multicuspus_last
+			Phlaocyon_marslandensis_last
+			Phlaocyon_leucosteus_last
+			Phlaocyon_yatkolai_last
+			Phlaocyon_mariae_last
+			Cormocyon_haydeni_last
+			Cormocyon_copei_last
+			Desmocyon_thomsoni_last
+			Desmocyon_matthewi_last
+			Paracynarctus_kelloggi_last
+			Paracynarctus_sinclairi_last
+			Cynarctus_galushai_last
+			Cynarctus_marylandica_last
+			Cynarctus_saxatilis_last
+			Cynarctus_voorhiesi_last
+			Cynarctus_crucidens_last
+			Metatomarctus_canavus_last
+			Euoplocyon_spissidens_last
+			Euoplocyon_brachygnathus_last
+			Psalidocyon_marianae_last
+			Microtomarctus_conferta_last
+			Protomarctus_optatus_last
+			Tephrocyon_rurestris_last
+			Tomarctus_hippophaga_last
+			Tomarctus_brevirostris_last
+			Aelurodon_asthenostylus_last
+			Aelurodon_mcgrewi_last
+			Aelurodon_stirtoni_last
+			Aelurodon_ferox_last
+			Aelurodon_taxoides_last
+			Paratomarctus_temerarius_last
+			Paratomarctus_euthos_last
+			Carpocyon_compressus_last
+			Carpocyon_webbi_last
+			Carpocyon_robustus_last
+			Carpocyon_limosus_last
+			Protepicyon_raki_last
+			Epicyon_aelurodontoides_last
+			Epicyon_saevus_last
+			Epicyon_haydeni_last
+			Borophagus_littoralis_last
+			Borophagus_pugnator_last
+			Borophagus_orc_last
+			Borophagus_parvus_last
+			Borophagus_secundus_last
+			Borophagus_hilli_last
+			Borophagus_dudleyi_last
+			Borophagus_diversidens_last
+			Leptocyon_mollis_last
+			Leptocyon_douglassi_last
+			Leptocyon_vulpinus_last
+			Leptocyon_gregorii_last
+			Leptocyon_leidyi_last
+			Leptocyon_vafer_last
+			Leptocyon_matthewi_last
+			Vulpes_stenognathus_last
+			Vulpes_vulpes_last
+			Vulpes_rueppellii_last
+			Vulpes_zerda_last
+			Vulpes_chama_last
+			Vulpes_pallida_last
+			Vulpes_velox_last
+			Vulpes_macrotis_last
+			Vulpes_lagopus_last
+			Otocyon_megalotis_last
+			Nyctereutes_procyonoides_last
+			Metalopex_macconnelli_last
+			Metalopex_merriami_last
+			Urocyon_webbi_last
+			Urocyon_galushai_last
+			Urocyon_citrinus_last
+			Urocyon_minicephalus_last
+			Urocyon_cinereoargenteus_last
+			Eucyon_davisi_last
+			Eucyon_ferox_last
+			Canis_thooides_last
+			Canis_lepophagus_last
+			Canis_aureus_last
+			Canis_anthus_last
+			Canis_arnensis_last
+			Canis_etruscus_last
+			Canis_falconeri_last
+			Canis_antonii_last
+			Canis_edwardii_last
+			Canis_mosbachensis_last
+			Canis_palmidens_last
+			Canis_variabilis_last
+			Canis_chihliensis_last
+			Canis_latrans_last
+			Canis_armbrusteri_last
+			Aenocyon_dirus_last
+			Canis_lupus_last
+			Xenocyon_texanus_last
+			Cuon_alpinus_last
+			Lycaon_pictus_last
+			Canis_simensis_last
+			Lupulella_mesomelas_last
+			Lupulella_adusta_last
+			Cerdocyon_texanus_last
+			Atelocynus_microtis_last
+			Cerdocyon_thous_last
+			Chrysocyon_brachyurus_last
+			Speothos_venaticus_last
+			Lycalopex_culpaeus_last
+			Lycalopex_griseus_last
+			Lycalopex_gymnocercus_last
+			Lycalopex_sechurae_last
+			Lycalopex_vetulus_last
+			Lycalopex_fulvipes_last
+			Dusicyon_australis_last
+			Urocyon_littoralis_last
+			Vulpes_cana_last
+			Vulpes_corsac_last
+			Vulpes_ferrilata_last
+			;
+End;
+Begin trees;
+	Translate
+		     1 Prohesperocyon_wilsoni_first,
+		     2 Hesperocyon_gregarius_first,
+		     3 Hesperocyon_coloradensis_first,
+		     4 Mesocyon_temnodon_first,
+		     5 Mesocyon_brachyops_first,
+		     6 Mesocyon_coryphaeus_first,
+		     7 Cynodesmus_thooides_first,
+		     8 Cynodesmus_martini_first,
+		     9 Sunkahetanka_geringensis_first,
+		    10 Philotrox_condoni_first,
+		    11 Enhydrocyon_pahinsintewakpa_first,
+		    12 Enhydrocyon_crassidens_first,
+		    13 Enhydrocyon_stenocephalus_first,
+		    14 Enhydrocyon_basilatus_first,
+		    15 Osbornodon_renjiei_first,
+		    16 Osbornodon_sesnoni_first,
+		    17 Osbornodon_iamonensis_first,
+		    18 Osbornodon_brachypus_first,
+		    19 Osbornodon_fricki_first,
+		    20 Paraenhydrocyon_josephi_first,
+		    21 Paraenhydrocyon_robustus_first,
+		    22 Paraenhydrocyon_wallovianus_first,
+		    23 Caedocyon_tedfordi_first,
+		    24 Ectopocynus_antiquus_first,
+		    25 Ectopocynus_intermedius_first,
+		    26 Ectopocynus_simplicidens_first,
+		    27 Archaeocyon_pavidus_first,
+		    28 Archaeocyon_leptodus_first,
+		    29 Archaeocyon_falkenbachi_first,
+		    30 Oxetocyon_cuspidatus_first,
+		    31 Otarocyon_macdonaldi_first,
+		    32 Otarocyon_cooki_first,
+		    33 Rhizocyon_oregonensis_first,
+		    34 Cynarctoides_lemur_first,
+		    35 Cynarctoides_roii_first,
+		    36 Cynarctoides_harlowi_first,
+		    37 Cynarctoides_luskensis_first,
+		    38 Cynarctoides_gawnae_first,
+		    39 Cynarctoides_acridens_first,
+		    40 Cynarctoides_emryi_first,
+		    41 Phlaocyon_minor_first,
+		    42 Phlaocyon_latidens_first,
+		    43 Phlaocyon_annectens_first,
+		    44 Phlaocyon_achoros_first,
+		    45 Phlaocyon_multicuspus_first,
+		    46 Phlaocyon_marslandensis_first,
+		    47 Phlaocyon_leucosteus_first,
+		    48 Phlaocyon_yatkolai_first,
+		    49 Phlaocyon_mariae_first,
+		    50 Cormocyon_haydeni_first,
+		    51 Cormocyon_copei_first,
+		    52 Desmocyon_thomsoni_first,
+		    53 Desmocyon_matthewi_first,
+		    54 Paracynarctus_kelloggi_first,
+		    55 Paracynarctus_sinclairi_first,
+		    56 Cynarctus_galushai_first,
+		    57 Cynarctus_marylandica_first,
+		    58 Cynarctus_saxatilis_first,
+		    59 Cynarctus_voorhiesi_first,
+		    60 Cynarctus_crucidens_first,
+		    61 Metatomarctus_canavus_first,
+		    62 Euoplocyon_spissidens_first,
+		    63 Euoplocyon_brachygnathus_first,
+		    64 Psalidocyon_marianae_first,
+		    65 Microtomarctus_conferta_first,
+		    66 Protomarctus_optatus_first,
+		    67 Tephrocyon_rurestris_first,
+		    68 Tomarctus_hippophaga_first,
+		    69 Tomarctus_brevirostris_first,
+		    70 Aelurodon_asthenostylus_first,
+		    71 Aelurodon_mcgrewi_first,
+		    72 Aelurodon_stirtoni_first,
+		    73 Aelurodon_ferox_first,
+		    74 Aelurodon_taxoides_first,
+		    75 Paratomarctus_temerarius_first,
+		    76 Paratomarctus_euthos_first,
+		    77 Carpocyon_compressus_first,
+		    78 Carpocyon_webbi_first,
+		    79 Carpocyon_robustus_first,
+		    80 Carpocyon_limosus_first,
+		    81 Protepicyon_raki_first,
+		    82 Epicyon_aelurodontoides_first,
+		    83 Epicyon_saevus_first,
+		    84 Epicyon_haydeni_first,
+		    85 Borophagus_littoralis_first,
+		    86 Borophagus_pugnator_first,
+		    87 Borophagus_orc_first,
+		    88 Borophagus_parvus_first,
+		    89 Borophagus_secundus_first,
+		    90 Borophagus_hilli_first,
+		    91 Borophagus_dudleyi_first,
+		    92 Borophagus_diversidens_first,
+		    93 Leptocyon_mollis_first,
+		    94 Leptocyon_douglassi_first,
+		    95 Leptocyon_vulpinus_first,
+		    96 Leptocyon_gregorii_first,
+		    97 Leptocyon_leidyi_first,
+		    98 Leptocyon_vafer_first,
+		    99 Leptocyon_matthewi_first,
+		   100 Vulpes_stenognathus_first,
+		   101 Vulpes_vulpes_first,
+		   102 Vulpes_rueppellii_first,
+		   103 Vulpes_zerda_first,
+		   104 Vulpes_chama_first,
+		   105 Vulpes_pallida_first,
+		   106 Vulpes_velox_first,
+		   107 Vulpes_macrotis_first,
+		   108 Vulpes_lagopus_first,
+		   109 Otocyon_megalotis_first,
+		   110 Nyctereutes_procyonoides_first,
+		   111 Metalopex_macconnelli_first,
+		   112 Metalopex_merriami_first,
+		   113 Urocyon_webbi_first,
+		   114 Urocyon_galushai_first,
+		   115 Urocyon_citrinus_first,
+		   116 Urocyon_minicephalus_first,
+		   117 Urocyon_cinereoargenteus_first,
+		   118 Eucyon_davisi_first,
+		   119 Eucyon_ferox_first,
+		   120 Canis_thooides_first,
+		   121 Canis_lepophagus_first,
+		   122 Canis_aureus_first,
+		   123 Canis_anthus_first,
+		   124 Canis_arnensis_first,
+		   125 Canis_etruscus_first,
+		   126 Canis_falconeri_first,
+		   127 Canis_antonii_first,
+		   128 Canis_edwardii_first,
+		   129 Canis_mosbachensis_first,
+		   130 Canis_palmidens_first,
+		   131 Canis_variabilis_first,
+		   132 Canis_chihliensis_first,
+		   133 Canis_latrans_first,
+		   134 Canis_armbrusteri_first,
+		   135 Aenocyon_dirus_first,
+		   136 Canis_lupus_first,
+		   137 Xenocyon_texanus_first,
+		   138 Cuon_alpinus_first,
+		   139 Lycaon_pictus_first,
+		   140 Canis_simensis_first,
+		   141 Lupulella_mesomelas_first,
+		   142 Lupulella_adusta_first,
+		   143 Cerdocyon_texanus_first,
+		   144 Atelocynus_microtis_first,
+		   145 Cerdocyon_thous_first,
+		   146 Chrysocyon_brachyurus_first,
+		   147 Speothos_venaticus_first,
+		   148 Lycalopex_culpaeus_first,
+		   149 Lycalopex_griseus_first,
+		   150 Lycalopex_gymnocercus_first,
+		   151 Lycalopex_sechurae_first,
+		   152 Lycalopex_vetulus_first,
+		   153 Lycalopex_fulvipes_first,
+		   154 Dusicyon_australis_first,
+		   155 Urocyon_littoralis_first,
+		   156 Vulpes_cana_first,
+		   157 Vulpes_corsac_first,
+		   158 Vulpes_ferrilata_first,
+		   159 Prohesperocyon_wilsoni_last,
+		   160 Hesperocyon_gregarius_last,
+		   161 Hesperocyon_coloradensis_last,
+		   162 Mesocyon_temnodon_last,
+		   163 Mesocyon_brachyops_last,
+		   164 Mesocyon_coryphaeus_last,
+		   165 Cynodesmus_thooides_last,
+		   166 Cynodesmus_martini_last,
+		   167 Sunkahetanka_geringensis_last,
+		   168 Philotrox_condoni_last,
+		   169 Enhydrocyon_pahinsintewakpa_last,
+		   170 Enhydrocyon_crassidens_last,
+		   171 Enhydrocyon_stenocephalus_last,
+		   172 Enhydrocyon_basilatus_last,
+		   173 Osbornodon_renjiei_last,
+		   174 Osbornodon_sesnoni_last,
+		   175 Osbornodon_iamonensis_last,
+		   176 Osbornodon_brachypus_last,
+		   177 Osbornodon_fricki_last,
+		   178 Paraenhydrocyon_josephi_last,
+		   179 Paraenhydrocyon_robustus_last,
+		   180 Paraenhydrocyon_wallovianus_last,
+		   181 Caedocyon_tedfordi_last,
+		   182 Ectopocynus_antiquus_last,
+		   183 Ectopocynus_intermedius_last,
+		   184 Ectopocynus_simplicidens_last,
+		   185 Archaeocyon_pavidus_last,
+		   186 Archaeocyon_leptodus_last,
+		   187 Archaeocyon_falkenbachi_last,
+		   188 Oxetocyon_cuspidatus_last,
+		   189 Otarocyon_macdonaldi_last,
+		   190 Otarocyon_cooki_last,
+		   191 Rhizocyon_oregonensis_last,
+		   192 Cynarctoides_lemur_last,
+		   193 Cynarctoides_roii_last,
+		   194 Cynarctoides_harlowi_last,
+		   195 Cynarctoides_luskensis_last,
+		   196 Cynarctoides_gawnae_last,
+		   197 Cynarctoides_acridens_last,
+		   198 Cynarctoides_emryi_last,
+		   199 Phlaocyon_minor_last,
+		   200 Phlaocyon_latidens_last,
+		   201 Phlaocyon_annectens_last,
+		   202 Phlaocyon_achoros_last,
+		   203 Phlaocyon_multicuspus_last,
+		   204 Phlaocyon_marslandensis_last,
+		   205 Phlaocyon_leucosteus_last,
+		   206 Phlaocyon_yatkolai_last,
+		   207 Phlaocyon_mariae_last,
+		   208 Cormocyon_haydeni_last,
+		   209 Cormocyon_copei_last,
+		   210 Desmocyon_thomsoni_last,
+		   211 Desmocyon_matthewi_last,
+		   212 Paracynarctus_kelloggi_last,
+		   213 Paracynarctus_sinclairi_last,
+		   214 Cynarctus_galushai_last,
+		   215 Cynarctus_marylandica_last,
+		   216 Cynarctus_saxatilis_last,
+		   217 Cynarctus_voorhiesi_last,
+		   218 Cynarctus_crucidens_last,
+		   219 Metatomarctus_canavus_last,
+		   220 Euoplocyon_spissidens_last,
+		   221 Euoplocyon_brachygnathus_last,
+		   222 Psalidocyon_marianae_last,
+		   223 Microtomarctus_conferta_last,
+		   224 Protomarctus_optatus_last,
+		   225 Tephrocyon_rurestris_last,
+		   226 Tomarctus_hippophaga_last,
+		   227 Tomarctus_brevirostris_last,
+		   228 Aelurodon_asthenostylus_last,
+		   229 Aelurodon_mcgrewi_last,
+		   230 Aelurodon_stirtoni_last,
+		   231 Aelurodon_ferox_last,
+		   232 Aelurodon_taxoides_last,
+		   233 Paratomarctus_temerarius_last,
+		   234 Paratomarctus_euthos_last,
+		   235 Carpocyon_compressus_last,
+		   236 Carpocyon_webbi_last,
+		   237 Carpocyon_robustus_last,
+		   238 Carpocyon_limosus_last,
+		   239 Protepicyon_raki_last,
+		   240 Epicyon_aelurodontoides_last,
+		   241 Epicyon_saevus_last,
+		   242 Epicyon_haydeni_last,
+		   243 Borophagus_littoralis_last,
+		   244 Borophagus_pugnator_last,
+		   245 Borophagus_orc_last,
+		   246 Borophagus_parvus_last,
+		   247 Borophagus_secundus_last,
+		   248 Borophagus_hilli_last,
+		   249 Borophagus_dudleyi_last,
+		   250 Borophagus_diversidens_last,
+		   251 Leptocyon_mollis_last,
+		   252 Leptocyon_douglassi_last,
+		   253 Leptocyon_vulpinus_last,
+		   254 Leptocyon_gregorii_last,
+		   255 Leptocyon_leidyi_last,
+		   256 Leptocyon_vafer_last,
+		   257 Leptocyon_matthewi_last,
+		   258 Vulpes_stenognathus_last,
+		   259 Vulpes_vulpes_last,
+		   260 Vulpes_rueppellii_last,
+		   261 Vulpes_zerda_last,
+		   262 Vulpes_chama_last,
+		   263 Vulpes_pallida_last,
+		   264 Vulpes_velox_last,
+		   265 Vulpes_macrotis_last,
+		   266 Vulpes_lagopus_last,
+		   267 Otocyon_megalotis_last,
+		   268 Nyctereutes_procyonoides_last,
+		   269 Metalopex_macconnelli_last,
+		   270 Metalopex_merriami_last,
+		   271 Urocyon_webbi_last,
+		   272 Urocyon_galushai_last,
+		   273 Urocyon_citrinus_last,
+		   274 Urocyon_minicephalus_last,
+		   275 Urocyon_cinereoargenteus_last,
+		   276 Eucyon_davisi_last,
+		   277 Eucyon_ferox_last,
+		   278 Canis_thooides_last,
+		   279 Canis_lepophagus_last,
+		   280 Canis_aureus_last,
+		   281 Canis_anthus_last,
+		   282 Canis_arnensis_last,
+		   283 Canis_etruscus_last,
+		   284 Canis_falconeri_last,
+		   285 Canis_antonii_last,
+		   286 Canis_edwardii_last,
+		   287 Canis_mosbachensis_last,
+		   288 Canis_palmidens_last,
+		   289 Canis_variabilis_last,
+		   290 Canis_chihliensis_last,
+		   291 Canis_latrans_last,
+		   292 Canis_armbrusteri_last,
+		   293 Aenocyon_dirus_last,
+		   294 Canis_lupus_last,
+		   295 Xenocyon_texanus_last,
+		   296 Cuon_alpinus_last,
+		   297 Lycaon_pictus_last,
+		   298 Canis_simensis_last,
+		   299 Lupulella_mesomelas_last,
+		   300 Lupulella_adusta_last,
+		   301 Cerdocyon_texanus_last,
+		   302 Atelocynus_microtis_last,
+		   303 Cerdocyon_thous_last,
+		   304 Chrysocyon_brachyurus_last,
+		   305 Speothos_venaticus_last,
+		   306 Lycalopex_culpaeus_last,
+		   307 Lycalopex_griseus_last,
+		   308 Lycalopex_gymnocercus_last,
+		   309 Lycalopex_sechurae_last,
+		   310 Lycalopex_vetulus_last,
+		   311 Lycalopex_fulvipes_last,
+		   312 Dusicyon_australis_last,
+		   313 Urocyon_littoralis_last,
+		   314 Vulpes_cana_last,
+		   315 Vulpes_corsac_last,
+		   316 Vulpes_ferrilata_last
+;
+tree STATE_388500000 = (((161[&rate=0.03395579142119418,range=Hesperocyon_coloradensis,orientation=ancestor]:0.0984755132709978,3[&rate=9.218658594510869E-5,orientation=ancestor]:0.0)323[&rate=0.007361184369209925,orientation=ancestor]:4.0434907809789635,(159[&rate=3.178169772653611E-4,range=Prohesperocyon_wilsoni,orientation=descendant]:0.846463769160394,1[&rate=0.0063040401246342425,orientation=descendant]:0.0)318[&rate=0.3920491224499699,orientation=descendant]:0.47666652711970414)626[&rate=0.0013139497557045506,orientation=ancestor]:1.5479713177422099,((160[&rate=7.551835804150749E-6,range=Hesperocyon_gregarius,orientation=ancestor]:9.27400236897384,2[&rate=4.9741999662041897E-5,orientation=ancestor]:0.0)317[&rate=0.013843660794512262,orientation=ancestor]:0.19573420260830687,(((((((((((203[&rate=1.188440002082535E-4,range=Phlaocyon_multicuspus,orientation=ancestor]:1.8880721880653724,45[&rate=1.321321355339891E-4,orientation=ancestor]:0.0)348[&rate=0.01044355204051154,orientation=ancestor]:2.5133530010547602,202[&rate=4.595577741916298E-4,range=Phlaocyon_achoros,orientation=ancestor]:0.0)381[&rate=7.189174749427788E-4,range=Phlaocyon_achoros,orientation=ancestor]:0.23865843436088596,44[&rate=0.001428993772750493,orientation=ancestor]:0.0)341[&rate=0.07371023269137393,orientation=ancestor]:1.238914219743279,(((((206[&rate=4.735540057248201E-4,range=Phlaocyon_yatkolai,orientation=ancestor]:0.3640707849842286,48[&rate=2.3182857082608007E-5,orientation=ancestor]:0.0)561[&rate=0.14199734909031317,orientation=ancestor]:0.8512189669665773,(207[&rate=6.117920278866187E-4,range=Phlaocyon_mariae,orientation=descendant]:0.003668377764309838,49[&rate=5.3444474580075365,orientation=descendant]:0.0)551[&rate=0.09880982521930746,orientation=descendant]:0.23764385710289204)568[&rate=0.058771508966449795,orientation=ancestor]:1.4875402168159084,((204[&rate=9.649862814421001E-5,range=Phlaocyon_marslandensis,orientation=ancestor]:1.379191542997301,46[&rate=0.046071484869495,orientation=ancestor]:0.0)368[&rate=0.010412579808687816,orientation=ancestor]:2.148363216089244,(205[&rate=0.0014543793377222167,range=Phlaocyon_leucosteus,orientation=descendant]:1.2846737399812653,47[&rate=0.05415818224194024,orientation=descendant]:0.0)355[&rate=4.023486968399401E-6,orientation=descendant]:1.0386861013024458)550[&rate=1.3164011628407688,orientation=descendant]:0.040142368872604806)589[&rate=0.009003410966400373,orientation=descendant]:2.3648290856137457,201[&rate=1.3886409967391586,range=Phlaocyon_annectens,orientation=descendant]:0.0)560[&rate=0.026081686912655163,range=Phlaocyon_annectens,orientation=descendant]:0.28861362294486526,43[&rate=4.6238459363432506E-5,orientation=descendant]:0.0)579[&rate=4.796125070326203E-6,orientation=descendant]:4.214433771371748)356[&rate=0.0822979335673851,orientation=ancestor]:1.1067729203967893,200[&rate=0.008528379274637397,range=Phlaocyon_latidens,orientation=ancestor]:0.0)608[&rate=3.069584008476944E-4,range=Phlaocyon_latidens,orientation=ancestor]:1.910495213504106,42[&rate=0.00852504290355023,orientation=ancestor]:0.0)327[&rate=0.168993533793337,orientation=ancestor]:0.44151877107166015,((((((((((((222[&rate=8.54946732250072E-6,range=Psalidocyon_marianae,orientation=ancestor]:0.46940656275698167,64[&rate=0.6501039648585744,orientation=ancestor]:0.0)376[&rate=0.011489834090924474,orientation=ancestor]:4.48480345804594,219[&rate=4.357657426988619E-6,range=Metatomarctus_canavus,orientation=ancestor]:0.0)587[&rate=0.007825098838035545,range=Metatomarctus_canavus,orientation=ancestor]:1.499840622551158,(((221[&rate=1.4337641896045397E-4,range=Euoplocyon_brachygnathus,orientation=descendant]:0.7170131813693104,63[&rate=1.4444822963316588,orientation=descendant]:0.0)539[&rate=0.025177039691341937,orientation=descendant]:2.5949694523638414,220[&rate=3.295693006315276E-4,range=Euoplocyon_spissidens,orientation=descendant]:0.0)534[&rate=3.978313541889247E-5,range=Euoplocyon_spissidens,orientation=descendant]:0.453698420178398,62[&rate=8.044171995080554E-5,orientation=descendant]:0.0)367[&rate=0.04594436652187043,orientation=descendant]:1.2766890932633217)531[&rate=2.8439520968001486E-5,range=Metatomarctus_canavus,orientation=ancestor]:1.1642817823510363,61[&rate=1.4174492792651609E-5,orientation=ancestor]:0.0)562[&rate=6.589014297145641E-4,orientation=ancestor]:0.10464626262750087,(((224[&rate=0.008244166812972608,range=Protomarctus_optatus,orientation=ancestor]:0.19013147661526375,66[&rate=9.144717571245954E-7,orientation=ancestor]:0.0)545[&rate=1.9814587986781755E-5,orientation=ancestor]:0.27297633837771684,((225[&rate=1.8767037328687671E-6,range=Tephrocyon_rurestris,orientation=ancestor]:1.1143510998231498,67[&rate=0.06307366286813151,orientation=ancestor]:0.0)351[&rate=0.0036335034852162653,orientation=ancestor]:0.7528502236706096,(((226[&rate=0.0014373161131204888,range=Tomarctus_hippophaga,orientation=ancestor]:1.0164007743551728,68[&rate=0.0020082026210207463,orientation=ancestor]:0.0)353[&rate=1.7347600595765618E-4,orientation=ancestor]:0.14703659986021478,((227[&rate=0.013229001700273524,range=Tomarctus_brevirostris,orientation=ancestor]:0.7295527467514411,(((((230[&rate=7.725789020989242E-5,range=Aelurodon_stirtoni,orientation=ancestor]:3.526665198871836,72[&rate=0.01666523943917317,orientation=ancestor]:0.0)383[&rate=0.05726357529765955,orientation=ancestor]:1.2174461982374343,(((232[&rate=1.3485857652314226E-4,range=Aelurodon_taxoides,orientation=descendant]:1.086531129020015,74[&rate=0.8413700381239702,orientation=descendant]:0.0)532[&rate=0.16062864224350368,orientation=descendant]:0.30698786615126394,231[&rate=4.6726098727734505E-4,range=Aelurodon_ferox,orientation=descendant]:0.0)533[&rate=0.0031611504803923875,range=Aelurodon_ferox,orientation=descendant]:2.346058772911057,73[&rate=2.310716439075337E-4,orientation=descendant]:0.0)388[&rate=0.1385940861649734,orientation=descendant]:0.5628442518730203)540[&rate=1.5581111001281657E-4,orientation=ancestor]:1.2467603026118432,(229[&rate=9.848863027699067E-4,range=Aelurodon_mcgrewi,orientation=descendant]:0.8166928596877945,71[&rate=8.646084121002034E-4,orientation=descendant]:0.0)386[&rate=0.0010477520520684853,orientation=descendant]:0.4616122319444038)370[&rate=0.4120911136824734,orientation=descendant]:0.11668538388933669,228[&rate=2.4173738000332536E-4,range=Aelurodon_asthenostylus,orientation=descendant]:0.0)543[&rate=9.367143254039886E-5,range=Aelurodon_asthenostylus,orientation=descendant]:0.4166278960191434,70[&rate=2.6108691351695116E-4,orientation=descendant]:0.0)555[&rate=1.2789371370938938,orientation=descendant]:0.1747721312384911)326[&rate=2.7499343014759638E-5,range=Tomarctus_brevirostris,orientation=descendant]:0.11016019755401629,69[&rate=2.8461416617302025E-6,orientation=descendant]:0.0)554[&rate=0.06029394047575255,orientation=descendant]:0.20372124058729568)553[&rate=0.006614873632080693,orientation=ancestor]:0.5881343181182181,((((234[&rate=3.0933449187656425E-4,range=Paratomarctus_euthos,orientation=ancestor]:2.9726799355707403,76[&rate=3.628658080258144E-5,orientation=ancestor]:0.0)581[&rate=5.705208941348879E-4,orientation=ancestor]:0.7598639379081931,233[&rate=5.623080070801915E-4,range=Paratomarctus_temerarius,orientation=ancestor]:0.0)567[&rate=0.0013515057107638497,range=Paratomarctus_temerarius,orientation=ancestor]:8.780981467757451,(((239[&rate=0.002869349952889204,range=Protepicyon_raki,orientation=ancestor]:0.03560888085096536,((((240[&rate=0.001560376587630114,range=Epicyon_aelurodontoides,orientation=ancestor]:0.5679740747527582,82[&rate=3.4798017386000204,orientation=ancestor]:0.0)395[&rate=0.11262112791001638,orientation=ancestor]:0.8454133840800138,241[&rate=0.1184783282961534,range=Epicyon_saevus,orientation=ancestor]:0.0)391[&rate=2.2458583512777723E-4,range=Epicyon_saevus,orientation=ancestor]:5.363536742421343,83[&rate=2.9025565525805805,orientation=ancestor]:0.0)392[&rate=0.0013526615771841948,orientation=ancestor]:0.3449226995097252,((242[&rate=0.0029909280265812957,range=Epicyon_haydeni,orientation=ancestor]:1.0649384789719516,84[&rate=1.4521092994732832E-5,orientation=ancestor]:0.0)373[&rate=0.10903940969478168,orientation=ancestor]:0.46470290175214934,((243[&rate=1.563602973198513E-4,range=Borophagus_littoralis,orientation=ancestor]:1.777743931379625,(((244[&rate=0.018816888302650006,range=Borophagus_pugnator,orientation=ancestor]:0.12465690083406678,(245[&rate=2.8815026407768337E-4,range=Borophagus_orc,orientation=descendant]:1.4921104618499275,87[&rate=3.568622888201855E-4,orientation=descendant]:0.0)403[&rate=0.009766709475447591,orientation=descendant]:2.0308179300142317)507[&rate=0.021621355017415633,range=Borophagus_pugnator,orientation=ancestor]:0.7282000266096933,86[&rate=1.5846544298120426E-4,orientation=ancestor]:0.0)527[&rate=0.003161153576337911,orientation=ancestor]:1.122426922226916,(((((248[&rate=1.6186505925301443E-5,range=Borophagus_hilli,orientation=ancestor]:0.270368390315042,90[&rate=0.01091706111997469,orientation=ancestor]:0.0)506[&rate=0.004701590911854427,orientation=ancestor]:1.4509780688637308,(((250[&rate=9.57076393490064E-4,range=Borophagus_diversidens,orientation=descendant]:0.5448753794427388,92[&rate=1.0122410278443564E-4,orientation=descendant]:0.0)407[&rate=0.07965819786090429,orientation=descendant]:1.280107966861734,249[&rate=0.004344269904497908,range=Borophagus_dudleyi,orientation=descendant]:0.0)511[&rate=2.692631637397085E-5,range=Borophagus_dudleyi,orientation=descendant]:0.412009932328564,91[&rate=0.0025847317812604654,orientation=descendant]:0.0)510[&rate=0.01127966935157612,orientation=descendant]:1.621653925215007)412[&rate=0.07710885791050875,orientation=ancestor]:0.7718279841508915,247[&rate=0.003000338249482709,range=Borophagus_secundus,orientation=ancestor]:0.0)536[&rate=4.1707397884838255E-5,range=Borophagus_secundus,orientation=ancestor]:2.3677921362758543,89[&rate=7.095904905125939E-4,orientation=ancestor]:0.0)524[&rate=0.006387826059103631,orientation=ancestor]:0.9674108700194495,(246[&rate=0.001026086248118982,range=Borophagus_parvus,orientation=descendant]:2.3888681457622187,88[&rate=4.496850609013928,orientation=descendant]:0.0)398[&rate=0.004913609818788757,orientation=descendant]:1.4758773649783183)513[&rate=0.16970453155141704,orientation=descendant]:0.1461921970277551)529[&rate=0.009172077264013628,orientation=descendant]:0.9739201560417268)400[&rate=2.2528239459538648E-6,range=Borophagus_littoralis,orientation=descendant]:0.17215522641831882,85[&rate=0.002313219463653714,orientation=descendant]:0.0)518[&rate=0.045286499242506044,orientation=descendant]:1.4243241721123248)387[&rate=0.2929970870437937,orientation=descendant]:0.19441879387662553)396[&rate=0.07218059634368451,orientation=descendant]:0.8602838035928642)369[&rate=2.551799174000022E-5,range=Protepicyon_raki,orientation=ancestor]:0.47246529851206454,81[&rate=2.5437458358549403E-4,orientation=ancestor]:0.0)382[&rate=0.02761535370197573,orientation=ancestor]:0.7335282281078896,((((236[&rate=5.983739612124245E-4,range=Carpocyon_webbi,orientation=ancestor]:1.6028562241077324,(238[&rate=7.252880541322391E-4,range=Carpocyon_limosus,orientation=descendant]:2.0264443933646614,80[&rate=0.004933184052845929,orientation=descendant]:0.0)394[&rate=0.008001310391155772,orientation=descendant]:3.129589586760419)556[&rate=2.2915877036259617E-4,range=Carpocyon_webbi,orientation=ancestor]:1.480743168465347,(237[&rate=1.274328969061226E-5,range=Carpocyon_robustus,orientation=descendant]:0.2564367448256828,79[&rate=0.05498262489640697,orientation=descendant]:0.0)530[&rate=0.2096621723225848,orientation=descendant]:0.056431389959680445)516[&rate=0.001262340625545082,range=Carpocyon_webbi,orientation=ancestor]:1.9835074847918523,78[&rate=0.004743266373321744,orientation=ancestor]:0.0)390[&rate=0.02235499807270453,orientation=ancestor]:1.7641566166669822,(235[&rate=3.134323731628052E-4,range=Carpocyon_compressus,orientation=descendant]:1.4756780390438795,77[&rate=6.28703602676841E-5,orientation=descendant]:0.0)379[&rate=2.1435928392210332E-4,orientation=descendant]:0.15646082121955907)519[&rate=0.22081356763804832,orientation=descendant]:0.11256099710873357)384[&rate=0.018604844995534435,orientation=descendant]:1.9488705568588838)538[&rate=4.623394811004156E-5,range=Paratomarctus_temerarius,orientation=descendant]:0.19661503882577946,75[&rate=4.8356919366242056E-4,orientation=descendant]:0.0)350[&rate=0.6421065703058341,orientation=descendant]:0.0329868922193981)544[&rate=0.0018484805910314582,orientation=descendant]:0.3318119188849913)362[&rate=6.951692729117048E-4,orientation=descendant]:0.658934061898556)378[&rate=0.4543287844680672,orientation=ancestor]:0.027682722752320643,(223[&rate=2.8980927120448967E-4,range=Microtomarctus_conferta,orientation=descendant]:8.117589279501047,65[&rate=2.537460097970627E-4,orientation=descendant]:0.0)371[&rate=0.03565536164444296,orientation=descendant]:0.29231446328332567)610[&rate=0.019587996092481907,orientation=descendant]:1.672814758058518)582[&rate=0.05620959971974229,orientation=ancestor]:0.844611142216749,((211[&rate=5.449342611424708E-4,range=Desmocyon_matthewi,orientation=ancestor]:0.36565527859618285,((((213[&rate=2.772290040756284E-7,range=Paracynarctus_sinclairi,orientation=ancestor]:1.3384186355243965,55[&rate=0.010827381878330669,orientation=ancestor]:0.0)374[&rate=0.008866089796888263,orientation=ancestor]:1.0717553847293182,212[&rate=0.528888736937909,range=Paracynarctus_kelloggi,orientation=ancestor]:0.0)559[&rate=7.192352312314693E-5,range=Paracynarctus_kelloggi,orientation=ancestor]:0.6431218667624847,54[&rate=0.00579723034149317,orientation=ancestor]:0.0)570[&rate=0.1289914222869943,orientation=ancestor]:0.37813323257489273,(((215[&rate=5.818541251844818E-6,range=Cynarctus_marylandica,orientation=ancestor]:0.49409728017912435,(((218[&rate=1.8511647400864753E-4,range=Cynarctus_crucidens,orientation=ancestor]:1.6119848501522842,60[&rate=0.0037330149333955833,orientation=ancestor]:0.0)389[&rate=0.022592905002305853,orientation=ancestor]:0.5924571108322478,(217[&rate=0.01542816614251456,range=Cynarctus_voorhiesi,orientation=descendant]:0.22013394271757392,59[&rate=2.7134611888573377E-6,orientation=descendant]:0.0)521[&rate=0.004106840956303141,orientation=descendant]:0.7440554200123213)537[&rate=0.03582833341671882,orientation=ancestor]:1.5369780180280035,(216[&rate=5.331960178447862E-4,range=Cynarctus_saxatilis,orientation=descendant]:0.8264016644146643,58[&rate=5.5048253877156025E-5,orientation=descendant]:0.0)372[&rate=7.664420197935714E-4,orientation=descendant]:0.1334031929244759)336[&rate=0.22288667423857653,orientation=descendant]:0.613090536927805)541[&rate=3.1825512088333815E-5,range=Cynarctus_marylandica,orientation=ancestor]:1.3746924442857331,57[&rate=5.29245297454311E-4,orientation=ancestor]:0.0)377[&rate=0.062479698337710686,orientation=ancestor]:0.8787466185650565,(214[&rate=2.823170052256404E-4,range=Cynarctus_galushai,orientation=descendant]:2.3070316948953327,56[&rate=0.009135442315066659,orientation=descendant]:0.0)385[&rate=2.2266603388561012E-5,orientation=descendant]:1.0938594675324822)563[&rate=0.09617883113694069,orientation=descendant]:0.18085616065310361)375[&rate=0.09436928350355274,orientation=descendant]:0.7526702529255687)380[&rate=0.0014425244555557656,range=Desmocyon_matthewi,orientation=descendant]:0.4606149336362684,53[&rate=0.0016953988987618823,orientation=descendant]:0.0)547[&rate=0.02239093124548378,orientation=descendant]:2.9933244888106927)580[&rate=0.007157225274279812,orientation=ancestor]:1.3428717835860944,(210[&rate=1.4614959317435397E-4,range=Desmocyon_thomsoni,orientation=descendant]:3.593121555436962,52[&rate=0.003374477571619451,orientation=descendant]:0.0)600[&rate=0.007403568088653413,orientation=descendant]:1.2510270680156275)546[&rate=0.09093557169801814,orientation=ancestor]:0.23821442125633396,209[&rate=0.003321604545540437,range=Cormocyon_copei,orientation=ancestor]:0.0)601[&rate=0.002603319714363954,range=Cormocyon_copei,orientation=ancestor]:2.0634164707973355,51[&rate=17.6826103414221,orientation=ancestor]:0.0)335[&rate=0.013345157926489888,orientation=ancestor]:1.985688200451012,(((252[&rate=3.6611858148815956E-4,range=Leptocyon_douglassi,orientation=ancestor]:0.9668772093145641,((((253[&rate=9.690631250165718E-4,range=Leptocyon_vulpinus,orientation=ancestor]:3.4151249418630627,95[&rate=0.005365170646125543,orientation=ancestor]:0.0)349[&rate=0.03601102990463771,orientation=ancestor]:1.5654073918092415,(((256[&rate=3.9789844154166065E-4,range=Leptocyon_vafer,orientation=ancestor]:1.0329584645862493,98[&rate=0.024396774450745798,orientation=ancestor]:0.0)361[&rate=0.007704347619935053,orientation=ancestor]:1.3504517907416371,((((((258[&rate=3.193398511598757E-6,range=Vulpes_stenognathus,orientation=ancestor]:0.3900684110114421,(268[&rate=7.408444049923994E-5,range=Nyctereutes_procyonoides,orientation=descendant]:0.20076831602274325,110[&rate=0.010984616130595135,orientation=descendant]:0.0)484[&rate=0.5084442094718534,orientation=descendant]:0.5198395677465794)431[&rate=5.064749027729225E-5,orientation=ancestor]:11.177862176533136,100[&rate=0.01447597434163992,orientation=ancestor]:0.0)517[&rate=0.010561698122228196,orientation=ancestor]:0.9194394561024062,(((314[&rate=0.0021087044844471025,range=Vulpes_cana,orientation=ancestor]:4.595438237660497,(261[&rate=0.0014569723639385487,range=Vulpes_zerda,orientation=ancestor]:0.5175949093575676,(103[&rate=7.327164712925082E-5,orientation=ancestor]:0.39220427515843137,158[&rate=0.011851624011660301,orientation=descendant]:0.39220427515843137)480[&rate=0.003193339599765741,orientation=descendant]:0.1253906341991362)451[&rate=3.418768615814411E-5,orientation=descendant]:4.077843328302929)481[&rate=0.0378933874331198,orientation=ancestor]:1.136468712864878,((262[&rate=8.564618486567448E-4,range=Vulpes_chama,orientation=ancestor]:2.8384564950599205,104[&rate=0.03731854502592344,orientation=ancestor]:0.0)416[&rate=0.006526677013134602,orientation=ancestor]:2.1708537672998376,(((316[&rate=0.0033277029630337275,range=Vulpes_ferrilata,orientation=ancestor]:2.1401649717935674,(315[&rate=0.010440559319799961,range=Vulpes_corsac,orientation=descendant]:0.5567223361358522,157[&rate=7.166815478799639E-4,orientation=descendant]:0.0)419[&rate=8.196214614704919E-5,orientation=descendant]:0.10145077102219746)494[&rate=0.030572626934860847,orientation=ancestor]:1.1070631775861233,((259[&rate=0.0023756072136170165,range=Vulpes_vulpes,orientation=ancestor]:2.2030513601091375,(260[&rate=2.54821593951421E-6,range=Vulpes_rueppellii,orientation=ancestor]:0.03179238174969766,102[&rate=0.0025227373572464557,orientation=descendant]:0.03179238174969766)445[&rate=0.04388043272285735,orientation=descendant]:2.17125897835944)498[&rate=3.5198832754437223E-4,range=Vulpes_vulpes,orientation=descendant]:0.4888802937058281,101[&rate=4.738046130348194E-4,orientation=descendant]:0.0)460[&rate=0.07480899940813569,orientation=descendant]:0.555296495564725)454[&rate=4.1115370082118487E-4,orientation=ancestor]:0.7547983279939618,(((264[&rate=0.002214008479199982,range=Vulpes_velox,orientation=ancestor]:0.5661596495319027,(265[&rate=9.77318093207794E-4,range=Vulpes_macrotis,orientation=descendant]:0.08794000899682046,107[&rate=0.010261782721942687,orientation=descendant]:0.0)493[&rate=2.755865326779621E-5,orientation=descendant]:0.44704609230335474)459[&rate=4.6793187817479245E-5,orientation=ancestor]:0.8847615235143608,106[&rate=0.0011134628224408927,orientation=ancestor]:0.0)443[&rate=0.002569044920810677,orientation=ancestor]:0.18927783869559378,(266[&rate=1.0117633731464834E-4,range=Vulpes_lagopus,orientation=descendant]:0.7167719419129718,108[&rate=0.001953860467086944,orientation=descendant]:0.0)438[&rate=0.09817889119031367,orientation=descendant]:0.9234270698288854)427[&rate=0.01769768083150498,orientation=descendant]:2.3618274656317952)424[&rate=0.04670209525388301,orientation=descendant]:1.0072837849861056)441[&rate=0.001467686583168765,orientation=descendant]:0.7225966881656172)478[&rate=0.06248139701605739,orientation=ancestor]:1.4535762188170231,(263[&rate=0.03670666403657701,range=Vulpes_pallida,orientation=ancestor]:0.11073685433772404,105[&rate=2.6522735985471814E-5,orientation=descendant]:0.11073685433772404)417[&rate=0.012387707807589335,orientation=descendant]:7.074746315004674)469[&rate=0.0010823614813276503,orientation=descendant]:5.632426347062466)520[&rate=0.0020827136350624405,orientation=ancestor]:0.4567124332300665,(((267[&rate=0.00442131229966033,range=Otocyon_megalotis,orientation=descendant]:1.1177501152784095,109[&rate=0.08282385307208491,orientation=descendant]:0.0)461[&rate=0.08250109433456276,orientation=descendant]:4.173719256839581,257[&rate=6.376122130642424E-4,range=Leptocyon_matthewi,orientation=descendant]:0.0)408[&rate=5.044916577501869E-4,range=Leptocyon_matthewi,orientation=descendant]:4.477871192152903,99[&rate=0.005537380985372489,orientation=descendant]:0.0)393[&rate=0.007589634036806693,orientation=descendant]:3.5052813853640377)509[&rate=2.1478113103476284E-4,orientation=ancestor]:0.5345046417470858,(((276[&rate=5.959219796720829E-5,range=Eucyon_davisi,orientation=ancestor]:5.492134077214413,(((300[&rate=5.610552322534475E-5,range=Lupulella_adusta,orientation=ancestor]:3.4674956149641556,142[&rate=0.5788559691001078,orientation=ancestor]:0.0)409[&rate=0.010190753801052247,orientation=ancestor]:2.4888677319535386,(299[&rate=3.880096561689756E-4,range=Lupulella_mesomelas,orientation=descendant]:3.998450190881072,141[&rate=0.8023591520632327,orientation=descendant]:0.0)414[&rate=0.005003791271343173,orientation=descendant]:1.9579131560366223)449[&rate=0.12234442776996386,orientation=ancestor]:0.6124024651826225,((((279[&rate=1.8496047688746871E-4,range=Canis_lepophagus,orientation=ancestor]:0.7128011448987643,(278[&rate=2.2536849318186385E-4,range=Canis_thooides,orientation=descendant]:1.8497981786788085,120[&rate=0.029027212307784177,orientation=descendant]:0.0)406[&rate=1.7167015959802367E-4,orientation=descendant]:0.7109103943575534)399[&rate=1.0473612849363088E-4,range=Canis_lepophagus,orientation=ancestor]:0.8973458607838021,(277[&rate=2.616011570320519E-6,range=Eucyon_ferox,orientation=descendant]:3.208523961730793,119[&rate=0.039318641973593756,orientation=descendant]:0.0)405[&rate=0.0019157586621589304,orientation=descendant]:0.22166123834702933)458[&rate=0.003635053208620427,range=Canis_lepophagus,orientation=ancestor]:0.35586491732292025,121[&rate=0.19309250031690206,orientation=ancestor]:0.0)463[&rate=4.371078557112042E-5,orientation=ancestor]:0.727104820750899,((282[&rate=2.088469425059111E-4,range=Canis_arnensis,orientation=ancestor]:1.5089472250700284,124[&rate=3.37143885863929E-5,orientation=ancestor]:0.0)457[&rate=0.0067086957476191166,orientation=ancestor]:1.696624646916475,(((283[&rate=0.0012901523945972884,range=Canis_etruscus,orientation=ancestor]:2.4344675124607384,125[&rate=1.0445369762074063E-4,orientation=ancestor]:0.0)528[&rate=0.01386542933282094,orientation=ancestor]:1.155603530504461,((280[&rate=1.4017580954090025E-4,range=Canis_aureus,orientation=ancestor]:1.353265007191912,122[&rate=4.0281074357277483E-4,orientation=ancestor]:0.0)437[&rate=0.00742437905287498,orientation=ancestor]:2.9749023184734003,((((281[&rate=0.12490363071067614,range=Canis_anthus,orientation=ancestor]:1.9694449542274504,123[&rate=2.285590572728482E-4,orientation=ancestor]:0.0)446[&rate=0.03408258866092256,orientation=ancestor]:0.9524228372036212,((294[&rate=0.0022031269736822426,range=Canis_lupus,orientation=ancestor]:2.090977031868151,((293[&rate=4.916959595093309E-4,range=Aenocyon_dirus,orientation=ancestor]:0.8985054078845658,135[&rate=0.2558137158460127,orientation=ancestor]:0.0)426[&rate=0.03967405559885377,orientation=ancestor]:0.26497092741742034,(292[&rate=9.355575485993728E-6,range=Canis_armbrusteri,orientation=descendant]:1.129784469699115,134[&rate=0.07314935818928643,orientation=descendant]:0.0)464[&rate=0.044737151683895617,orientation=descendant]:0.6895795287288482)495[&rate=0.23240708613913583,orientation=descendant]:0.2531760219203738)492[&rate=2.6832057147333497E-4,orientation=descendant]:0.7218477965243348,136[&rate=0.09500828826875649,orientation=descendant]:0.0)410[&rate=0.5266153484783549,orientation=descendant]:0.10904296303858585)558[&rate=0.0027430727810664225,orientation=ancestor]:0.4310239474349151,(291[&rate=1.9114363288669459E-4,range=Canis_latrans,orientation=descendant]:3.2489391997052235,133[&rate=1.0155105550800573E-5,orientation=descendant]:0.0)453[&rate=0.17260695358594863,orientation=descendant]:0.10395253916076319)456[&rate=2.5403272602323893E-5,orientation=ancestor]:0.7391252824380654,((287[&rate=6.716023209848192E-4,range=Canis_mosbachensis,orientation=ancestor]:2.7589613091211738,129[&rate=9.251861013759113E-4,orientation=ancestor]:0.0)418[&rate=1.3439802218371717E-4,orientation=ancestor]:0.6745896568140566,((298[&rate=3.281537652936838E-4,range=Canis_simensis,orientation=ancestor]:0.027878089906240966,140[&rate=4.3093373749036896E-5,orientation=ancestor]:0.0)462[&rate=0.09635339756929619,orientation=ancestor]:1.6799802365035275,(((288[&rate=9.743115447795076E-4,range=Canis_palmidens,orientation=ancestor]:0.23323766573355087,130[&rate=0.0010886545564787926,orientation=ancestor]:0.0)413[&rate=0.06377795493453074,orientation=ancestor]:0.4112867354514911,(289[&rate=1.4261841129978442E-6,range=Canis_variabilis,orientation=descendant]:0.7675150794413476,131[&rate=2.5895453207607295E-5,orientation=descendant]:0.0)420[&rate=1.4897975504113202E-5,orientation=descendant]:0.7622550803384734)450[&rate=0.025889679731528538,orientation=ancestor]:0.3341075191413305,(286[&rate=4.814003658134392E-4,range=Canis_edwardii,orientation=descendant]:0.5766619339484904,128[&rate=1.3957686017913635,orientation=descendant]:0.0)432[&rate=0.009859626420008259,orientation=descendant]:0.042720493972288276)470[&rate=0.003500276291441656,orientation=descendant]:1.0828642469459568)475[&rate=0.001374818869081153,orientation=descendant]:0.4445126541479705)429[&rate=0.0041519669409720225,orientation=descendant]:0.6584660553688217)439[&rate=1.2508817045178967E-5,orientation=descendant]:0.23615030436126005)476[&rate=0.029148484581345866,orientation=descendant]:1.2566180601663195)436[&rate=0.0325834998582818,orientation=ancestor]:0.2626496287858453,((((285[&rate=6.6525668838720525E-6,range=Canis_antonii,orientation=ancestor]:0.8496674568316989,(284[&rate=4.074508536650618E-4,range=Canis_falconeri,orientation=descendant]:0.9457765397983087,126[&rate=0.011988614838126785,orientation=descendant]:0.0)503[&rate=0.0010202767884814193,orientation=descendant]:0.04134556315366389)421[&rate=5.896781008824963E-4,range=Canis_antonii,orientation=ancestor]:0.05172348431318241,127[&rate=5.584899530494286E-5,orientation=ancestor]:0.0)482[&rate=0.02014007131068295,orientation=ancestor]:1.9068260622550044,(((296[&rate=0.0012283966760000696,range=Cuon_alpinus,orientation=ancestor]:2.3344495584610243,138[&rate=0.01546227315777254,orientation=ancestor]:0.0)489[&rate=0.015649515943359046,orientation=ancestor]:1.7694276376721314,(297[&rate=2.0372307930869924E-5,range=Lycaon_pictus,orientation=descendant]:0.24277645543214413,139[&rate=1.9047185477400518E-4,orientation=descendant]:0.0)488[&rate=0.0023841684033822264,orientation=descendant]:3.9573822623379225)448[&rate=0.15982614137041593,orientation=ancestor]:0.9609550830209423,(295[&rate=0.012217769982539846,range=Xenocyon_texanus,orientation=descendant]:0.06083991636249508,137[&rate=5.363123914882853E-4,orientation=descendant]:0.0)428[&rate=8.004843214663147E-4,orientation=descendant]:3.9122783393126834)411[&rate=1.6151470447495768,orientation=descendant]:0.07842236484507215)501[&rate=8.176698932291354E-4,orientation=ancestor]:0.5462452286031922,(290[&rate=0.008652299542594983,range=Canis_chihliensis,orientation=descendant]:0.22726704051177027,132[&rate=0.005944962391259678,orientation=descendant]:0.0)425[&rate=0.008567704495012912,orientation=descendant]:3.056371983757364)497[&rate=0.1124907497588258,orientation=descendant]:0.061653620378203655)440[&rate=0.1484213033284345,orientation=descendant]:0.372618664785076)442[&rate=0.23155804077247857,orientation=descendant]:0.06648554860425016)415[&rate=0.19115350786598956,orientation=descendant]:0.28222658409351364)496[&rate=0.011228349048051249,orientation=descendant]:0.7506115975575698)508[&rate=0.013700023529586788,range=Eucyon_davisi,orientation=ancestor]:0.010066467607232177,118[&rate=0.051372232480537884,orientation=ancestor]:0.0)397[&rate=0.0013991675600582693,orientation=ancestor]:1.2683072480787612,((301[&rate=4.105797401826083E-6,range=Cerdocyon_texanus,orientation=ancestor]:1.6838749003774973,143[&rate=0.0015318679298579347,orientation=ancestor]:0.0)402[&rate=0.0010978012644342876,orientation=ancestor]:1.7949858120158417,(((304[&rate=5.53576442522093E-4,range=Chrysocyon_brachyurus,orientation=ancestor]:0.8151995386351617,146[&rate=5.480834101877526E-4,orientation=ancestor]:0.0)430[&rate=0.0192360470619654,orientation=ancestor]:4.994112536037267,((312[&rate=0.03312189786444104,range=Dusicyon_australis,orientation=ancestor]:0.0032725802563339074,154[&rate=0.004217560470036161,orientation=ancestor]:0.0)486[&rate=0.04225180872934998,orientation=ancestor]:4.814046147724277,(305[&rate=2.8548044153664536E-4,range=Speothos_venaticus,orientation=descendant]:1.276448804807519,147[&rate=0.004748434285091615,orientation=descendant]:0.0)452[&rate=0.07512072550236455,orientation=descendant]:3.5412296384705964)491[&rate=0.0018034818360006257,orientation=descendant]:0.9916336313943139)487[&rate=0.004825149444688903,orientation=ancestor]:1.6264440401027356,(((303[&rate=0.01962228830775131,range=Cerdocyon_thous,orientation=ancestor]:0.015207622702306477,145[&rate=0.0019869971946804045,orientation=ancestor]:0.0)466[&rate=0.0030990191850156974,orientation=ancestor]:5.867336332237413,((310[&rate=3.3777425206665E-5,range=Lycalopex_vetulus,orientation=ancestor]:0.6415141506483839,((((306[&rate=0.0013221802564370884,range=Lycalopex_culpaeus,orientation=ancestor]:1.5275058892370246,148[&rate=2.8096766290811486,orientation=ancestor]:0.0)434[&rate=0.018718806540931148,orientation=ancestor]:0.4395632901174702,(311[&rate=0.04360682956320674,range=Lycalopex_fulvipes,orientation=ancestor]:1.2178373502325741,156[&rate=0.12715912656294903,orientation=descendant]:1.2178373502325741)479[&rate=1.3455656939579879E-5,orientation=descendant]:0.7492318291219207)455[&rate=0.38363245617094827,orientation=ancestor]:0.1826932493456752,((307[&rate=6.528188941453468E-6,range=Lycalopex_griseus,orientation=ancestor]:0.09680537565976188,149[&rate=6.045579344793725E-4,orientation=ancestor]:0.0)467[&rate=0.0025921248182760913,orientation=ancestor]:1.904825597443966,(308[&rate=3.831712677589105E-4,range=Lycalopex_gymnocercus,orientation=descendant]:1.0520557668046941,150[&rate=9.439950150052045E-4,orientation=descendant]:0.0)433[&rate=4.8396919339054884E-5,orientation=descendant]:0.9495752062990337)474[&rate=0.14002885355588812,orientation=descendant]:0.14813145559644214)468[&rate=0.007009125889866955,orientation=ancestor]:0.4820745398087527,(309[&rate=0.01055059891630546,range=Lycalopex_sechurae,orientation=descendant]:0.013541508498279647,151[&rate=7.900751679578925E-4,orientation=descendant]:0.0)472[&rate=0.005430797232626938,orientation=descendant]:2.5613258671294905)499[&rate=0.04221493866216365,orientation=descendant]:0.25264211461383335)504[&rate=3.7346267505158097E-6,range=Lycalopex_vetulus,orientation=descendant]:2.5853048177686397,152[&rate=0.0026191790439554245,orientation=descendant]:0.0)502[&rate=0.18349921810124978,orientation=descendant]:0.4127600540483236)447[&rate=0.08030823396889356,orientation=ancestor]:0.2543545577518387,((144[&rate=3.2641032112481444E-5,orientation=ancestor]:0.5582110820689223,302[&rate=5.697947872721725E-4,range=Atelocynus_microtis,orientation=descendant]:0.5582110820689223)444[&rate=4.215702940881985E-5,orientation=ancestor]:1.2137659396836122,153[&rate=3.932210701483919E-6,orientation=descendant]:1.7719770217525346)483[&rate=0.0030127520480380827,orientation=descendant]:4.3649214909390235)471[&rate=9.257349176487294E-4,orientation=descendant]:1.298857602083607)505[&rate=0.02954056548923338,orientation=descendant]:0.5771984750733559)514[&rate=0.09098481346381242,orientation=descendant]:0.584796535495359)515[&rate=0.013944164341205377,orientation=descendant]:5.211375466038136)525[&rate=0.03820500707943712,orientation=ancestor]:0.1916437702144389,(((((((((274[&rate=0.005050778339790009,range=Urocyon_minicephalus,orientation=ancestor]:0.7329438769694936,116[&rate=6.41933911026752E-4,orientation=ancestor]:0.0)435[&rate=4.376006279997346E-4,orientation=ancestor]:1.5825872737914637,((275[&rate=0.0019215370823240491,range=Urocyon_cinereoargenteus,orientation=ancestor]:0.8990478645623282,(313[&rate=7.505571533046166E-4,range=Urocyon_littoralis,orientation=descendant]:0.1444360717890413,155[&rate=0.006946086284283715,orientation=descendant]:0.0)490[&rate=8.625801824022194E-4,orientation=descendant]:0.7546117927732869)465[&rate=3.167075836613139E-6,orientation=descendant]:0.9387740652998325,117[&rate=0.02465484725479714,orientation=descendant]:0.0)473[&rate=0.054927119445508744,orientation=descendant]:1.0465899999589199)485[&rate=0.11923337728120133,orientation=ancestor]:0.30277218752463053,(273[&rate=5.362756596949788E-5,range=Urocyon_citrinus,orientation=descendant]:0.602828213878976,115[&rate=0.0011863195287302231,orientation=descendant]:0.0)422[&rate=0.0017457847296550185,orientation=descendant]:0.6819625643179341)423[&rate=0.009754487265304219,orientation=ancestor]:1.6167777381495592,(272[&rate=1.4294296560285038E-4,range=Urocyon_galushai,orientation=descendant]:0.17336778685339826,114[&rate=3.308454036989945E-4,orientation=descendant]:0.0)500[&rate=0.001977602587198117,orientation=descendant]:0.8023060116242169)477[&rate=0.0164156162047322,orientation=ancestor]:1.0819702615568136,271[&rate=6.29335648443573E-7,range=Urocyon_webbi,orientation=ancestor]:0.0)401[&rate=7.514208995312478E-5,range=Urocyon_webbi,orientation=ancestor]:0.02538296659195005,113[&rate=1.5020531580507177E-5,orientation=ancestor]:0.0)404[&rate=0.016648352119855374,orientation=ancestor]:2.964206625993521,270[&rate=1.727889067691536E-4,range=Metalopex_merriami,orientation=ancestor]:0.0)512[&rate=1.9864357528063634E-5,range=Metalopex_merriami,orientation=ancestor]:3.980766178345803,112[&rate=2.3100585199566854E-4,orientation=ancestor]:0.0)548[&rate=1.3015760164994836,orientation=ancestor]:0.04147765428897898,(269[&rate=0.0014328513815609891,range=Metalopex_macconnelli,orientation=descendant]:4.344342719635332,111[&rate=0.1035736709138902,orientation=descendant]:0.0)523[&rate=3.7434557839685645E-4,orientation=descendant]:0.6138778701917182)549[&rate=0.09657230144998111,orientation=descendant]:1.1030048193241182)365[&rate=0.034784028532797794,orientation=descendant]:1.074957179432431)535[&rate=9.800132240654971E-4,orientation=ancestor]:5.581339680453439,(255[&rate=2.13841499599103E-4,range=Leptocyon_leidyi,orientation=descendant]:5.414130805186041,97[&rate=0.003389895591831588,orientation=descendant]:0.0)364[&rate=2.9825127082358884E-4,orientation=descendant]:0.10240324319468996)526[&rate=0.056452595589118734,orientation=descendant]:1.5191778930986821)584[&rate=0.005993026887146359,orientation=descendant]:0.6816986578699655,254[&rate=0.004428620070029769,range=Leptocyon_gregorii,orientation=descendant]:0.0)522[&rate=5.111104106037812E-4,range=Leptocyon_gregorii,orientation=descendant]:0.2277515988414649,96[&rate=8.332071526724453E-4,orientation=descendant]:0.0)569[&rate=0.03328399450821345,orientation=descendant]:2.187451463470019)363[&rate=3.31737369490281E-4,range=Leptocyon_douglassi,orientation=ancestor]:0.16006655287356253,94[&rate=2.444692452696029E-4,orientation=ancestor]:0.0)333[&rate=0.0024792004670050466,orientation=ancestor]:0.8025679816497551,(251[&rate=3.9032293743029605E-7,range=Leptocyon_mollis,orientation=descendant]:0.09197036157686966,93[&rate=0.004101317673359074,orientation=descendant]:0.0)606[&rate=6.197731619377171E-4,orientation=descendant]:0.5449280405994976)576[&rate=0.2972561767844384,orientation=descendant]:0.5398617815123679)337[&rate=3.75273437296992E-5,orientation=ancestor]:2.7813936296953408,(208[&rate=3.6702369824660286E-4,range=Cormocyon_haydeni,orientation=descendant]:1.3223387717959945,50[&rate=0.27386208125126377,orientation=descendant]:0.0)346[&rate=0.0052576488287505545,orientation=descendant]:1.0242748226177376)611[&rate=0.020361148582215743,orientation=ancestor]:0.38974252120336317,((193[&rate=7.707993634028875E-4,range=Cynarctoides_roii,orientation=ancestor]:0.41855427051747185,35[&rate=2.3012768395672596E-7,orientation=ancestor]:0.0)607[&rate=0.007734611274519936,orientation=ancestor]:1.7103871101446373,(((199[&rate=1.9023028229698388E-7,range=Phlaocyon_minor,orientation=ancestor]:2.2362211211354186,41[&rate=1.9256389600522437E-5,orientation=ancestor]:0.0)586[&rate=0.0035894506579376003,orientation=ancestor]:2.4320509814348945,(((((197[&rate=0.0017206718099124162,range=Cynarctoides_acridens,orientation=ancestor]:3.8413169654902735,(198[&rate=7.012767567579314E-5,range=Cynarctoides_emryi,orientation=descendant]:0.7055485233212409,40[&rate=2.316623913921824E-4,orientation=descendant]:0.0)366[&rate=0.06423338795464316,orientation=descendant]:0.4241340491810881)354[&rate=0.00601683058078189,range=Cynarctoides_acridens,orientation=ancestor]:0.1666773074661485,39[&rate=4.0041893060984265E-4,orientation=ancestor]:0.0)334[&rate=0.03572568389871128,orientation=ancestor]:0.553013376952812,(196[&rate=0.010556322166487348,range=Cynarctoides_gawnae,orientation=descendant]:0.09154357935269175,38[&rate=0.004193759130181937,orientation=descendant]:0.0)358[&rate=0.0018494826233878242,orientation=descendant]:1.564528313383473)352[&rate=0.018619945080767603,orientation=descendant]:2.829311621936615,195[&rate=8.61404931752743E-6,range=Cynarctoides_luskensis,orientation=descendant]:0.0)565[&rate=1.8263322293036625E-4,range=Cynarctoides_luskensis,orientation=descendant]:0.21322304047222573,37[&rate=0.005927314070796177,orientation=descendant]:0.0)575[&rate=0.08480872811702497,orientation=descendant]:0.2838579121827891)343[&rate=4.5389881284601695E-4,orientation=ancestor]:5.11143204370509,(((194[&rate=8.529574406503916E-6,range=Cynarctoides_harlowi,orientation=descendant]:0.5482058042311628,36[&rate=8.855597414268295E-5,orientation=descendant]:0.0)566[&rate=5.858183587733547E-4,orientation=descendant]:2.566283713324296,192[&rate=0.43845109551806133,range=Cynarctoides_lemur,orientation=descendant]:0.0)345[&rate=1.8257986648900914E-4,range=Cynarctoides_lemur,orientation=descendant]:3.307007576403887,34[&rate=0.003852159855196982,orientation=descendant]:0.0)595[&rate=0.007704429356647304,orientation=descendant]:0.6854433661811292)628[&rate=0.02975848068135942,orientation=descendant]:1.1674099293169071)603[&rate=0.008350103706176226,orientation=descendant]:1.0006339841360585)339[&rate=4.943682934400622E-4,orientation=descendant]:0.390349935727901)597[&rate=0.05005908867347842,orientation=ancestor]:0.5693037986768168,(191[&rate=0.004178665088576509,range=Rhizocyon_oregonensis,orientation=descendant]:0.31750494706866306,33[&rate=0.37527076031441065,orientation=descendant]:0.0)340[&rate=1.5798084035344045E-7,orientation=descendant]:1.4379328462758032)622[&rate=0.00660552053189196,orientation=ancestor]:1.3539616347126717,((((190[&rate=0.003120256771426826,range=Otarocyon_cooki,orientation=ancestor]:1.4747506033286584,32[&rate=1.225870746573031E-6,orientation=ancestor]:0.0)615[&rate=0.0012005291157045012,orientation=ancestor]:4.5235356141831,189[&rate=0.024525753900342628,range=Otarocyon_macdonaldi,orientation=ancestor]:0.0)618[&rate=1.0256833409701202E-5,range=Otarocyon_macdonaldi,orientation=ancestor]:0.15723671349414303,31[&rate=0.0033007613859835586,orientation=ancestor]:0.0)319[&rate=0.709418662211141,orientation=ancestor]:0.24698907881969134,(188[&rate=0.001279417072964465,range=Oxetocyon_cuspidatus,orientation=descendant]:1.798335964878575,30[&rate=3.359182476120935E-4,orientation=descendant]:0.0)320[&rate=0.02161767908262773,orientation=descendant]:0.7034812386063365)617[&rate=0.9423425305191431,orientation=descendant]:0.04382855488170634)629[&rate=0.08558190262996783,orientation=ancestor]:0.7661485704550088,(((185[&rate=9.521224620388575E-5,range=Archaeocyon_pavidus,orientation=ancestor]:0.31588749259110926,(187[&rate=1.5677834195299523E-8,range=Archaeocyon_falkenbachi,orientation=descendant]:0.02859086210622408,29[&rate=0.09357797979138738,orientation=descendant]:0.0)347[&rate=0.021668770135179077,orientation=descendant]:2.47204021094716)564[&rate=2.3070914804449965E-4,range=Archaeocyon_pavidus,orientation=ancestor]:1.0651558765015636,27[&rate=4.577558620421483E-5,orientation=ancestor]:0.0)324[&rate=0.0015463729818475233,orientation=ancestor]:0.8686464214427225,(186[&rate=1.9625544396957088E-4,range=Archaeocyon_leptodus,orientation=descendant]:5.692713293347396,28[&rate=0.0014004386675186863,orientation=descendant]:0.0)325[&rate=0.0015210846775845642,orientation=descendant]:0.9086010820474613)591[&rate=9.72160731673757E-4,orientation=descendant]:0.5186683686195437)631[&rate=0.03426256414942184,orientation=ancestor]:0.6503261600875376,(((((162[&rate=0.001085297659512779,range=Mesocyon_temnodon,orientation=ancestor]:1.2065410770463103,((178[&rate=2.527766016178439E-4,range=Paraenhydrocyon_josephi,orientation=ancestor]:1.7916279130200543,20[&rate=0.0013232415017901203,orientation=ancestor]:0.0)593[&rate=0.011410846171994112,orientation=ancestor]:0.7244977037223599,((180[&rate=0.0016103854747365476,range=Paraenhydrocyon_wallovianus,orientation=ancestor]:2.4758413226695524,22[&rate=3.635980660179706E-4,orientation=ancestor]:0.0)592[&rate=0.008762734983084577,orientation=ancestor]:3.1061095784256914,(179[&rate=0.0051831790411135835,range=Paraenhydrocyon_robustus,orientation=descendant]:2.8229284876043828,21[&rate=0.12286447875669047,orientation=descendant]:0.0)577[&rate=6.801307776953432E-5,orientation=descendant]:4.476508814938413)330[&rate=0.576731741912847,orientation=descendant]:0.14151576712762548)619[&rate=0.01892705196298147,orientation=descendant]:2.3854898257920283)627[&rate=3.844823450859379E-4,range=Mesocyon_temnodon,orientation=ancestor]:2.166886680277049,((((171[&rate=4.0875235609189694E-5,range=Enhydrocyon_stenocephalus,orientation=ancestor]:0.48803530148202157,13[&rate=1.879791691298554E-4,orientation=ancestor]:0.0)328[&rate=0.07476262455802855,orientation=ancestor]:0.8509995646566573,(169[&rate=1.588044180813804E-4,range=Enhydrocyon_pahinsintewakpa,orientation=descendant]:0.9531778590109106,11[&rate=0.005581727197839473,orientation=descendant]:0.0)342[&rate=0.017424863486418835,orientation=descendant]:1.031074369581976)616[&rate=3.6106834366429947E-4,orientation=ancestor]:0.09123490453612959,((172[&rate=4.936116124566239E-4,range=Enhydrocyon_basilatus,orientation=ancestor]:2.158643804747001,14[&rate=5.508889718654177E-4,orientation=ancestor]:0.0)613[&rate=0.019007450764393845,orientation=ancestor]:1.7093205516376315,(170[&rate=0.0013544926590313947,range=Enhydrocyon_crassidens,orientation=descendant]:2.0018278046518176,12[&rate=1.813130007500618E-5,orientation=descendant]:0.0)598[&rate=0.008616432316283023,orientation=descendant]:2.528789254390489)599[&rate=1.1165510982700945E-4,orientation=descendant]:0.18194340064246717)596[&rate=0.0728688343967252,orientation=ancestor]:2.3300216441514188,(((((184[&rate=4.755271406010641E-6,range=Ectopocynus_simplicidens,orientation=descendant]:0.8705656288619821,26[&rate=0.02215019165112971,orientation=descendant]:0.0)357[&rate=0.04821572666003022,orientation=descendant]:2.638839599110735,183[&rate=0.015153004921441966,range=Ectopocynus_intermedius,orientation=descendant]:0.0)574[&rate=5.664454779427652E-5,range=Ectopocynus_intermedius,orientation=descendant]:6.462514408283521,25[&rate=1.8480311091221644,orientation=descendant]:0.0)602[&rate=0.005784126637876555,orientation=descendant]:2.0756999197524557,182[&rate=0.0012632786436247844,range=Ectopocynus_antiquus,orientation=descendant]:0.0)630[&rate=0.009403631868886613,range=Ectopocynus_antiquus,orientation=descendant]:0.9086017351694871,24[&rate=0.007921298073656645,orientation=descendant]:0.0)620[&rate=0.13127561836443744,orientation=descendant]:0.25093530966864463)322[&rate=0.15625973280539024,orientation=descendant]:1.0965307505318123)552[&rate=0.006304204269108437,range=Mesocyon_temnodon,orientation=ancestor]:0.49976271684198537,(((165[&rate=6.053057263286884E-4,range=Cynodesmus_thooides,orientation=ancestor]:0.7703728353972714,(166[&rate=0.0014470914203779587,range=Cynodesmus_martini,orientation=descendant]:0.4607162859037963,8[&rate=0.0012658056316558067,orientation=descendant]:0.0)604[&rate=0.015374746536499562,orientation=descendant]:3.572303495882192)359[&rate=7.443971957259345E-4,range=Cynodesmus_thooides,orientation=ancestor]:0.6272151726521109,7[&rate=0.004117456429176366,orientation=ancestor]:0.0)321[&rate=0.005242184174114703,orientation=ancestor]:0.9331500806412478,((((167[&rate=5.704958362939394E-5,range=Sunkahetanka_geringensis,orientation=ancestor]:1.0522770767114444,(168[&rate=0.00280236953729076,range=Philotrox_condoni,orientation=descendant]:0.7823593556186417,10[&rate=1.9054264739818517E-4,orientation=descendant]:0.0)338[&rate=0.08531983415928861,orientation=descendant]:0.7511582892617312)331[&rate=3.333572815875331E-4,range=Sunkahetanka_geringensis,orientation=ancestor]:1.6430313193680917,9[&rate=0.006651958339047451,orientation=ancestor]:0.0)332[&rate=0.18719248020660567,orientation=ancestor]:0.43730985061243643,(164[&rate=3.0343171351412073E-4,range=Mesocyon_coryphaeus,orientation=descendant]:2.4022038639247434,6[&rate=0.00784220408341006,orientation=descendant]:0.0)612[&rate=0.052716278523126776,orientation=descendant]:0.44749530450643604)594[&rate=9.178212648121058E-5,orientation=ancestor]:0.7789624109767495,((163[&rate=7.693778504182835E-5,range=Mesocyon_brachyops,orientation=ancestor]:2.814638670661523,(181[&rate=1.4524771415705862E-4,range=Caedocyon_tedfordi,orientation=descendant]:2.465477456394936,23[&rate=6.40022477276771E-5,orientation=descendant]:0.0)609[&rate=0.3482202590927335,orientation=descendant]:0.3177715482248935)614[&rate=0.0012051171751689721,range=Mesocyon_brachyops,orientation=descendant]:2.9816317530704204,5[&rate=3.8004604986863666E-4,orientation=descendant]:0.0)572[&rate=0.012206455325613985,orientation=descendant]:2.2586871883496684)621[&rate=2.9905570916156024E-7,orientation=descendant]:1.2482201701579747)578[&rate=0.054951127180429986,orientation=descendant]:0.25287682092601926)571[&rate=0.0026202919568979054,range=Mesocyon_temnodon,orientation=ancestor]:0.10396808844785355,4[&rate=0.25569778119889347,orientation=ancestor]:0.0)623[&rate=0.005359805890997655,orientation=ancestor]:1.4573574109125644,((((((175[&rate=9.114283955292162E-4,range=Osbornodon_iamonensis,orientation=ancestor]:2.0283188116690276,17[&rate=9.879228673591236E-5,orientation=ancestor]:0.0)583[&rate=9.029619811515749E-6,orientation=ancestor]:1.8689125355447906,(((177[&rate=0.005453660006592655,range=Osbornodon_fricki,orientation=descendant]:2.512197922477192,19[&rate=0.01991978882496725,orientation=descendant]:0.0)557[&rate=0.02520029375013497,orientation=descendant]:2.4239383045270593,176[&rate=1.8264249141539804E-4,range=Osbornodon_brachypus,orientation=descendant]:0.0)605[&rate=4.050549316774442E-5,range=Osbornodon_brachypus,orientation=descendant]:3.227496383988939,18[&rate=0.0052243349203586805,orientation=descendant]:0.0)588[&rate=0.03892889409795503,orientation=descendant]:0.7170300403641434)542[&rate=0.017130772108941643,orientation=descendant]:4.917696888385642,174[&rate=4.6816308429645476E-4,range=Osbornodon_sesnoni,orientation=descendant]:0.0)590[&rate=0.004416881349481865,range=Osbornodon_sesnoni,orientation=descendant]:1.3731936141954577,16[&rate=2.1196640202582296E-6,orientation=descendant]:0.0)329[&rate=0.03574448355935051,orientation=descendant]:1.8252131235866713,173[&rate=0.013288269789718924,range=Osbornodon_renjiei,orientation=descendant]:0.0)624[&rate=0.0014530566687670557,range=Osbornodon_renjiei,orientation=descendant]:0.8476606476861903,15[&rate=1.0010871896614436E-5,orientation=descendant]:0.0)625[&rate=0.003422030775126844,orientation=descendant]:1.0812412032178855)585[&rate=0.22787283346920237,orientation=descendant]:0.3589294469878297)573[&rate=6.339880407663368E-5,orientation=descendant]:3.6663528996758856)360[&rate=5.368347328683533E-4,orientation=descendant]:1.6306453579429814)344[&rate=1.0,orientation=ancestor]:0.0;
+End;

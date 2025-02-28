@@ -1,0 +1,14 @@
+- Canids are attractive because of extant+extinct record
+- The fossil record has problems with regards to small fossils not having all the morphology characters etc
+- 2015 paper using uniform clock left to old ages, node calibrations, then someone else got better ages with FBD model, but divergence times between some pairs of species is always constrained to be at least as old as the first appearance of one taxon (can leave ghost lineages that are old and may be artificial) -> problem with assuming bifurcation! 
+- If A comes from B budding, and B is really old, we'll erroneously assume A is old
+- Genus of Borophagine called epicyon, one of them has a long SR and the other is really short, they're sisters, and there probably was budding. FBD trees would be inferred to have diverged really deep (which doesn't make sense with the fossil record), so FBDR can give us better divergence times, branch lengths, and comparative analysis
+- Branch lengths can be really important if we're talking about traits
+
+- Extinction rates for large hyper carnivores has been the same (2020 paper from Van Vawhatever), kind of weird (maybe PyRate)
+- Everything revolves around hypercarnivory, are there higher extinction rates, did they diversify faster but go extinct faster (shorter durations?)
+- Hypercarnivore is top of the food chain, abundant resources (especially if large prey, more energetic benefit per kill, than something foraging on small prey)
+- But it also leads to a bit of an evolutionary dead end
+
+- Epicyon and borophagus are both bone crackers, but borophagus is small and more "streamlined"? So the fact that the tree shows the borophagus budding from epiceno might mean (as opposed to when they're just sister taxon) some amount of direction in the development of these traits
+- Extant hyper carnivores are small with big heads, but fossil precursor are really big (like gray wolves) so maybe first you need to develop a big body size to catch big prey, and then maintain that head and get smaller to get faster 
