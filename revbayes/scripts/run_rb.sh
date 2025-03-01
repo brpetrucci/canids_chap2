@@ -1,25 +1,21 @@
 #!/bin/bash
 
 #SBATCH --nodes=1 # 1 node per job
-#SBATCH --time=15-00:00:00 # no idea how long this will take, let's be safe 
-#SBATCH --mem=16G
+#SBATCH --time=01:00:00 # just an hour--calling the array itself doesn't take long
+#SBATCH --array=1-18 # 18 parameter combinations
 
-#SBATCH --output=output/jobs/job_%j.out
-#SBATCH --error=output/jobs/job_%j.err
+#SBATCH --output=output/bisse/jobs/array/job_%A_%a.out
+#SBATCH --error=output/bisse/jobs/array/job_%A_%a.err
 
-#SBATCH --job-name="fbdbisse_canidae"
+#SBATCH --job-name="array_fbdsse_canids"
 
 #SBATCH --mail-user=petrucci@iastate.edu   # my e-mail
 #SBATCH --mail-type=BEGIN # get notifications for all job cases
 #SBATCH --mail-type=END
 #SBATCH --mail-type=FAIL
 
-# load modules
-module purge
-module load revbayes/dev-tp-sa-fix.tensorphylo
-
 # go to the correct directory
 cd /work/LAS/phylo-lab/petrucci/canids_chap2/revbayes
 
 # source it, the parameter combination, and the actual script
-rb scripts/fbdbisse_lik.Rev 
+rb ref_${SLURM_ARRAY_TASK_ID}.Rev master.Rev
