@@ -402,7 +402,7 @@ dataType="standard">
 
     <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
 
-    <run id="mcmc" spec="MCMC" chainLength="1000000000">
+    <run id="mcmc" spec="MCMC" chainLength="1000000000" numInitializationAttempts="100000">
         <state id="state" spec="State" storeEvery="5000">
             <tree id="Tree.t:tree" spec="beast.base.evolution.tree.Tree" name="stateNode">
                     <taxa id="TaxonSet.nDNA" spec="TaxonSet">

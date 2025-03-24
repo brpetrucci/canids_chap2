@@ -402,7 +402,7 @@ dataType="standard">
 
     <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
 
-    <run id="mcmc" spec="MCMC" chainLength="1000000000">
+    <run id="mcmc" spec="MCMC" chainLength="1000000000" numInitializationAttempts="100000">
         <state id="state" spec="State" storeEvery="5000">
             <tree id="Tree.t:tree" spec="beast.base.evolution.tree.Tree" name="stateNode">
                     <taxa id="TaxonSet.nDNA" spec="TaxonSet">
@@ -464,7 +464,7 @@ dataType="standard">
             <distribution id="prior" spec="CompoundDistribution">
                 <distribution id="FBD.t:tree" spec="sa.evolution.speciation.SABirthDeathModel" conditionOnRhoSampling="true" diversificationRate="@diversificationRateFBD.t:tree" origin="@originFBD.t:tree" samplingProportion="@samplingProportionFBD.t:tree" tree="@Tree.t:tree" turnover="@turnoverFBD.t:tree">
                     <parameter id="rFBD.t:tree" spec="parameter.RealParameter" lower="0.0" name="removalProbability" upper="1.0">0.0</parameter>
-                    <parameter id="rhoFBD.t:tree" spec="parameter.RealParameter" estimate="false" lower="0.0" name="rho" upper="1.0">944444.0</parameter>
+                    <parameter id="rhoFBD.t:tree" spec="parameter.RealParameter" estimate="false" lower="0.0" name="rho" upper="1.0">0.944444</parameter>
                 </distribution>
                 <prior id="ORCRatePriorDistribution.c:morpho_last" name="distribution" x="@ORCRates.c:morpho_last">
                     <LogNormal id="LogNormalDistributionModel.3" S="@ORCsigma.c:morpho_last" meanInRealSpace="true" name="distr">

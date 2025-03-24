@@ -332,9 +332,9 @@ xml_editor <- function(template_file, taxa_file, out_file, n_scripts = 4) {
 # collect files and run function
 
 # last ages
-template_file <- paste0(scripts_dir, "last_template.xml")
-taxa_file <- paste0(data_dir, "taxa_last.tsv")
-out_file <- "last.xml"
+template_file <- paste0(scripts_dir, "both_template.xml")
+taxa_file <- paste0(data_dir, "taxa_both.tsv")
+out_file <- "both.xml"
 xml_editor(template_file, taxa_file, out_file)
 
 # first ages
