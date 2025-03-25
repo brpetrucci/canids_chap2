@@ -15,11 +15,14 @@ library(stringr)
 # read scripts and data
 
 # base directory
-base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/fbds/"
+fbds_base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/fbds/"
+extant_base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/extant/"
 
 # data and scripts directory
-data_dir <- paste0(base_dir, "data/")
-scripts_dir <- paste0(base_dir, "scripts/")
+fbds_data_dir <- paste0(fbds_base_dir, "data/")
+fbds_scripts_dir <- paste0(fbds_base_dir, "scripts/")
+extant_data_dir <- paste0(extant_base_dir, "data/")
+extant_scripts_dir <- paste0(extant_base_dir, "scripts/")
 
 ###
 # auxiliary functions
@@ -30,8 +33,7 @@ add_spaces <- function(n) {
 }
 
 # drawing from a dirichlet distribution
-rdirichlet <- function (n, alpha) 
-{
+rdirichlet <- function (n, alpha) {
   # length of parameter vector
   l <- length(alpha)
   
@@ -47,125 +49,132 @@ rdirichlet <- function (n, alpha)
 
 ###
 # write function for reading and editing the xml
-xml_editor <- function(template_file, taxa_file, out_file, n_scripts = 4) {
+xml_editor <- function(template_file, out_dir, out_file, taxa_file = NULL, 
+                       fossils = FALSE, n_scripts = 4) {
   # read template script
   temp <- readLines(template_file)
-  
-  # get index to write fossil age uncertainty distributions
-  idx_prior <- max(grep("</prior>", temp))
-  
-  # index for last operator
-  idx_operator <- max(grep("</operator>", temp))
-  
-  # index for idref line (2 lines before screenlog)
-  idx_idref <- grep("screenlog", temp) - 2
-  
-  # get taxa file
-  taxa <- read.delim(taxa_file)
-  
-  # taxa without extant singletons
-  taxa_fossils <- taxa[taxa$min_age != taxa$max_age, ]
   
   # start xml as the same as template
   xml <- temp
   
-  # iterate through each taxon
-  for (i in 1:nrow(taxa_fossils)) {
-    # get this taxon
-    taxon <- taxa_fossils[i, ]
+  # if there are fossils on this datasets
+  if (fossils) {
+    # get index to write fossil age uncertainty distributions
+    idx_prior <- max(grep("</prior>", temp))
     
-    # start prior lines
-    prior_lines <- vector("character", 6)
+    # index for last operator
+    idx_operator <- max(grep("</operator>", temp))
     
-    # add distribution id line
-    prior_lines[1] <- paste0(add_spaces(16), '<distribution id="',
-                             taxon$taxon,
-                             'Set.prior"',
-                             ' spec="sa.math.distributions.SAMRCAPrior"',
-                             ' tipsonly="true" tree="@Tree.t:tree">')
+    # index for idref line (2 lines before screenlog)
+    idx_idref <- grep("screenlog", temp) - 2
     
-    # add taxon set lines
-    prior_lines[2] <- paste0(add_spaces(20), '<taxonset id="',
-                             taxon$taxon,
-                             'Set" spec="TaxonSet">')
-    prior_lines[3] <- paste0(add_spaces(24), '<taxon id="',
-                             taxon$taxon,
-                             '" spec="Taxon"/>')
-    prior_lines[4] <- paste0(add_spaces(20), '</taxonset>')
+    # get taxa file
+    taxa <- read.delim(taxa_file)
     
-    # add uniform distribution
-    prior_lines[5] <- paste0(add_spaces(20), '<Uniform id="FossilAges.', i,
-                             '" lower="', taxon$min_age,
-                             '" name="distr" upper="', taxon$max_age,
-                             '"/>')
-    prior_lines[6] <- paste0(add_spaces(16), '</distribution>')
+    # taxa without extant singletons
+    taxa_fossils <- taxa[taxa$min_age != taxa$max_age, ]
     
-    # add to xml
-    xml <- c(xml[1:idx_prior], prior_lines, xml[(idx_prior + 1):length(xml)])
+    # iterate through each taxon
+    for (i in 1:nrow(taxa_fossils)) {
+      # get this taxon
+      taxon <- taxa_fossils[i, ]
+      
+      # start prior lines
+      prior_lines <- vector("character", 6)
+      
+      # add distribution id line
+      prior_lines[1] <- paste0(add_spaces(16), '<distribution id="',
+                               taxon$taxon,
+                               'Set.prior"',
+                               ' spec="sa.math.distributions.SAMRCAPrior"',
+                               ' tipsonly="true" tree="@Tree.t:tree">')
+      
+      # add taxon set lines
+      prior_lines[2] <- paste0(add_spaces(20), '<taxonset id="',
+                               taxon$taxon,
+                               'Set" spec="TaxonSet">')
+      prior_lines[3] <- paste0(add_spaces(24), '<taxon id="',
+                               taxon$taxon,
+                               '" spec="Taxon"/>')
+      prior_lines[4] <- paste0(add_spaces(20), '</taxonset>')
+      
+      # add uniform distribution
+      prior_lines[5] <- paste0(add_spaces(20), '<Uniform id="FossilAges.', i,
+                               '" lower="', taxon$min_age,
+                               '" name="distr" upper="', taxon$max_age,
+                               '"/>')
+      prior_lines[6] <- paste0(add_spaces(16), '</distribution>')
+      
+      # add to xml
+      xml <- c(xml[1:idx_prior], prior_lines, xml[(idx_prior + 1):length(xml)])
+      
+      # add to prior index
+      lines_added <- length(prior_lines)
+      idx_prior <- idx_prior + lines_added
+      
+      # write operator line
+      operator <- paste0(add_spaces(8), '<operator id="tipDatesSampler.',
+                         taxon$taxon, 'Set" ',
+                         'spec="sa.evolution.operators.',
+                         'SampledNodeDateRandomWalker" ',
+                         'taxonset="@', taxon$taxon, 'Set" ',
+                         'tree="@Tree.t:tree" weight="1.0" windowSize="1.0"/>')
+      
+      # add to xml
+      xml <- c(xml[1:(idx_operator + lines_added)], operator,
+               xml[(idx_operator + lines_added + 1):length(xml)])
+      
+      # add to lines_added and index
+      lines_added <- lines_added + 1
+      idx_operator <- idx_operator + lines_added
+      
+      # write idref line
+      idref <- paste0(add_spaces(12), '<log idref="', taxon$taxon, 'Set.prior"/>')
+      
+      # add to xml
+      xml <- c(xml[1:(idx_idref + lines_added)], idref,
+               xml[(idx_idref + lines_added + 1):length(xml)])
+      
+      # add to lines_added
+      lines_added <- lines_added + 1
+      idx_idref <- idx_idref + lines_added
+    }
     
-    # add to prior index
-    lines_added <- length(prior_lines)
-    idx_prior <- idx_prior + lines_added
-    
-    # write operator line
-    operator <- paste0(add_spaces(8), '<operator id="tipDatesSampler.',
-                       taxon$taxon, 'Set" ',
-                       'spec="sa.evolution.operators.',
-                       'SampledNodeDateRandomWalker" ',
-                       'taxonset="@', taxon$taxon, 'Set" ',
-                       'tree="@Tree.t:tree" weight="1.0" windowSize="1.0"/>')
-    
-    # add to xml
-    xml <- c(xml[1:(idx_operator + lines_added)], operator,
-             xml[(idx_operator + lines_added + 1):length(xml)])
-    
-    # add to lines_added and index
-    lines_added <- lines_added + 1
-    idx_operator <- idx_operator + lines_added
-    
-    # write idref line
-    idref <- paste0(add_spaces(12), '<log idref="', taxon$taxon, 'Set.prior"/>')
-    
-    # add to xml
-    xml <- c(xml[1:(idx_idref + lines_added)], idref,
-             xml[(idx_idref + lines_added + 1):length(xml)])
-    
-    # add to lines_added
-    lines_added <- lines_added + 1
-    idx_idref <- idx_idref + lines_added
+    # get index where starting ages are supposed to go
+    idx_ages <- grep("<tree id=", xml)
   }
-  
-  # get index where starting ages are supposed to go
-  idx_ages <- grep("<tree id=", xml)
   
   # iterate through number of scripts
   for (i in 1:n_scripts) {
     # start final script
     script <- xml
     
-    # start dates lines
-    dates <- paste0('<trait id="dateTrait.t:tree" ',
-                    'spec="beast.base.evolution.tree.TraitSet" ',
-                    'traitname="date-backward" value="')
-    
-    # iterate through taxa
-    for (j in 1:nrow(taxa)) {
-      # get taxon
-      taxon <- taxa[j, ]
+    # if there are fossils 
+    if (fossils) {
+      # start dates lines
+      dates <- paste0('<trait id="dateTrait.t:tree" ',
+                      'spec="beast.base.evolution.tree.TraitSet" ',
+                      'traitname="date-backward" value="')
       
-      # get age
-      age <- runif(1, taxon$min_age, taxon$max_age)
+      # iterate through taxa
+      for (j in 1:nrow(taxa)) {
+        # get taxon
+        taxon <- taxa[j, ]
+        
+        # get age
+        age <- runif(1, taxon$min_age, taxon$max_age)
+        
+        # append to dates
+        dates <- paste0(dates, taxon$taxon, '=', age,
+                        ifelse(j == nrow(taxa), '">', ','))
+      }
       
-      # append to dates
-      dates <- paste0(dates, taxon$taxon, '=', age,
-                      ifelse(j == nrow(taxa), '">', ','))
+      # add dates to script
+      script <- c(script[1:idx_ages], paste0(add_spaces(16), dates),
+                  script[(idx_ages + 1):(idx_ages + 5)],
+                  paste0(add_spaces(16), "</trait>"),
+                  script[(idx_ages + 6):length(script)])
     }
-    
-    # add dates to script
-    script <- c(script[1:idx_ages], paste0(add_spaces(16), dates),
-                script[(idx_ages + 1):(idx_ages + 5)],
-                paste0(add_spaces(16), "</trait>"),
-                script[(idx_ages + 6):length(script)])
     
     # get index for </state>, i.e. right after the last parameter declaration
     idx_state <- grep("</state>", script)
@@ -324,27 +333,48 @@ xml_editor <- function(template_file, taxa_file, out_file, n_scripts = 4) {
     }
     
     # save script
-    writeLines(script, paste0(scripts_dir, i, '_', out_file))
+    writeLines(script, paste0(out_dir, i, '_', out_file))
   }
 }
 
 ###
 # collect files and run function
 
+# out directory for fbds scripts
+out_dir <- fbds_scripts_dir
+
 # last ages
-template_file <- paste0(scripts_dir, "both_template.xml")
-taxa_file <- paste0(data_dir, "taxa_both.tsv")
+template_file <- paste0(fbds_scripts_dir, "both_template.xml")
+taxa_file <- paste0(fbds_data_dir, "taxa_both.tsv")
 out_file <- "both.xml"
-xml_editor(template_file, taxa_file, out_file)
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
 
 # first ages
-template_file <- paste0(scripts_dir, "first_template.xml")
-taxa_file <- paste0(data_dir, "taxa_first.tsv")
+template_file <- paste0(fbds_scripts_dir, "first_template.xml")
+taxa_file <- paste0(fbds_data_dir, "taxa_first.tsv")
 out_file <- "first.xml"
-xml_editor(template_file, taxa_file, out_file)
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
 
 # last ages
-template_file <- paste0(scripts_dir, "last_template.xml")
-taxa_file <- paste0(data_dir, "taxa_last.tsv")
+template_file <- paste0(fbds_scripts_dir, "last_template.xml")
+taxa_file <- paste0(fbds_data_dir, "taxa_last.tsv")
 out_file <- "last.xml"
-xml_editor(template_file, taxa_file, out_file)
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+
+# out directory for extant scripts
+out_dir <- extant_scripts_dir
+
+# molecular data
+template_file <- paste0(extant_scripts_dir, "mol_template.xml")
+out_file <- "mol.xml"
+xml_editor(template_file, out_dir, out_file)
+
+# morphological data
+template_file <- paste0(extant_scripts_dir, "morpho_template.xml")
+out_file <- "morpho.xml"
+xml_editor(template_file, out_dir, out_file)
+
+# combined data
+template_file <- paste0(extant_scripts_dir, "comb_template.xml")
+out_file <- "comb.xml"
+xml_editor(template_file, out_dir, out_file)

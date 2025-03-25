@@ -61,7 +61,7 @@ dataType="standard">
 
     <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
 
-    <run id="mcmc" spec="MCMC" chainLength="1000000000">
+    <run id="mcmc" spec="MCMC" chainLength="1000000000" numInitializationAttempts="100000">
         <state id="state" spec="State" storeEvery="500000">
             <tree id="Tree.t:tree" spec="beast.base.evolution.tree.Tree" name="stateNode">
                 <taxonset id="TaxonSet.canidae_morpho_extant2" spec="TaxonSet">
@@ -74,16 +74,22 @@ dataType="standard">
             <parameter id="mutationRate.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:canidae_morpho_extant4" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:canidae_morpho_extant3" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="gammaShape.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="ORCsigma.c:canidae_morpho_extant" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
-            <parameter id="ORCRates.c:canidae_morpho_extant" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.5</parameter>
-            <parameter id="BDBirthRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
-            <parameter id="BDDeathRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
+            <parameter id="gammaShape.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">2.32231553817604</parameter>
+            <parameter id="ORCsigma.c:canidae_morpho_extant" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.377825649049643</parameter>
+            <parameter id="ORCRates.c:canidae_morpho_extant" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">1.27002569320107</parameter>
+            <parameter id="BDBirthRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">2.86896108819132</parameter>
+            <parameter id="BDDeathRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.160858006216586</parameter>
         </state>
         <init id="RandomTree.t:tree" spec="RandomTree" estimate="false" initial="@Tree.t:tree" taxa="@canidae_morpho_extant2">
             <populationModel id="ConstantPopulation0.t:tree" spec="ConstantPopulation">
                 <parameter id="randomPopSize.t:tree" spec="parameter.RealParameter" name="popSize">1.0</parameter>
             </populationModel>
+        </init>
+        <init spec="feast.parameter.RandomRealParameter" initial="@BDBirthRate.t:tree">
+            <distr idref="Exponential.3"/>
+        </init>
+        <init spec="feast.parameter.RandomRealParameter" initial="@BDDeathRate.t:tree">
+            <distr idref="Uniform.3"/>
         </init>
         <distribution id="posterior" spec="CompoundDistribution">
             <distribution id="prior" spec="CompoundDistribution">
@@ -217,7 +223,7 @@ filter="30,39,52,75-78">
         <operator id="BirthDeathWilsonBalding.t:tree" spec="WilsonBalding" tree="@Tree.t:tree" weight="3.0"/>
         <operator id="BirthRateScaler.t:tree" spec="kernel.BactrianScaleOperator" parameter="@BDBirthRate.t:tree" upper="10.0" weight="3.0"/>
         <operator id="DeathRateScaler.t:tree" spec="kernel.BactrianScaleOperator" parameter="@BDDeathRate.t:tree" upper="10.0" weight="3.0"/>
-        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="100000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <logger id="tracelog" spec="Logger" fileName="output/$(filebase).log" logEvery="1000000" model="@posterior" sanitiseHeaders="true" sort="smart">
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
@@ -235,12 +241,12 @@ filter="30,39,52,75-78">
             <log idref="BDBirthRate.t:tree"/>
             <log idref="BDDeathRate.t:tree"/>
         </logger>
-        <logger id="screenlog" spec="Logger" logEvery="1000">
+        <logger id="screenlog" spec="Logger" logEvery="1000000">
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
         </logger>
-        <logger id="treelog.t:tree" spec="Logger" fileName="$(tree).trees" logEvery="100000" mode="tree">
+        <logger id="treelog.t:tree" spec="Logger" fileName="output/$(filebase)-$(tree).trees" logEvery="1000000" mode="tree">
             <log id="TreeWithMetaDataLogger.t:tree" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:canidae_morpho_extant" tree="@Tree.t:tree"/>
         </logger>
         <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>

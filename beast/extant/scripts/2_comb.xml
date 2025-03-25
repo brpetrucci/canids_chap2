@@ -100,7 +100,7 @@ dataType="standard">
 
     <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
 
-    <run id="mcmc" spec="MCMC" chainLength="1000000000">
+    <run id="mcmc" spec="MCMC" chainLength="1000000000" numInitializationAttempts="100000">
         <state id="state" spec="State" storeEvery="500000">
             <tree id="Tree.t:tree" spec="beast.base.evolution.tree.Tree" name="stateNode">
                 <taxonset id="TaxonSet.nDNA" spec="TaxonSet">
@@ -109,52 +109,58 @@ dataType="standard">
                     </alignment>
                 </taxonset>
             </tree>
-            <parameter id="rateAC.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAG.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAT.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateCG.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateGT.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="freqParameter.s:nDNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="rateAC.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.577768157883633</parameter>
+            <parameter id="rateAG.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.744142220793317</parameter>
+            <parameter id="rateAT.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.638714536554011</parameter>
+            <parameter id="rateCG.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.150238329520929</parameter>
+            <parameter id="rateGT.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.726883383879909</parameter>
+            <parameter id="freqParameter.s:nDNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.459752 0.088599 0.182209 0.26944</parameter>
             <parameter id="mutationRate.s:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAC.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAG.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAT.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateCG.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateGT.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="freqParameter.s:mt12DNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
+            <parameter id="rateAC.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.306768796447754</parameter>
+            <parameter id="rateAG.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.18782201254683</parameter>
+            <parameter id="rateAT.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.164784686742967</parameter>
+            <parameter id="rateCG.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.576116336345843</parameter>
+            <parameter id="rateGT.s:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.914939730834325</parameter>
+            <parameter id="freqParameter.s:mt12DNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.325337 0.059571 0.353282 0.26181</parameter>
             <parameter id="mutationRate.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAC.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAG.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateAT.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateCG.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="rateGT.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.0</parameter>
-            <parameter id="freqParameter.s:mt3DNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.25</parameter>
-            <parameter id="ORCsigma.c:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
-            <parameter id="ORCRates.c:nDNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.5</parameter>
-            <parameter id="ORCucldMean.c:mt12DNA" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="ORCsigma.c:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
-            <parameter id="ORCRates.c:mt12DNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.5</parameter>
-            <parameter id="ORCucldMean.c:mt3DNA" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="ORCsigma.c:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
-            <parameter id="ORCRates.c:mt3DNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.5</parameter>
-            <parameter id="BDBirthRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
-            <parameter id="BDDeathRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
-            <parameter id="gammaShape.s:nDNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
-            <parameter id="gammaShape.s:mt12DNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
-            <parameter id="gammaShape.s:mt3DNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.0</parameter>
+            <parameter id="rateAC.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.427010917091726</parameter>
+            <parameter id="rateAG.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.972438824022101</parameter>
+            <parameter id="rateAT.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.101047982537901</parameter>
+            <parameter id="rateCG.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.125998116130856</parameter>
+            <parameter id="rateGT.s:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.325815816345885</parameter>
+            <parameter id="freqParameter.s:mt3DNA" spec="parameter.RealParameter" dimension="4" lower="0.0" name="stateNode" upper="1.0">0.204661 0.509847 0.135503 0.149989</parameter>
+            <parameter id="ORCsigma.c:nDNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.361588335428059</parameter>
+            <parameter id="ORCRates.c:nDNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">1.14223516966485</parameter>
+            <parameter id="ORCucldMean.c:mt12DNA" spec="parameter.RealParameter" name="stateNode">13.6246363255651</parameter>
+            <parameter id="ORCsigma.c:mt12DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">1.30746141390106</parameter>
+            <parameter id="ORCRates.c:mt12DNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.822077213940941</parameter>
+            <parameter id="ORCucldMean.c:mt3DNA" spec="parameter.RealParameter" name="stateNode">11.6526504601808</parameter>
+            <parameter id="ORCsigma.c:mt3DNA" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.20438101540911</parameter>
+            <parameter id="ORCRates.c:mt3DNA" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.878109809359307</parameter>
+            <parameter id="BDBirthRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.74960767841878</parameter>
+            <parameter id="BDDeathRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.925406639929861</parameter>
+            <parameter id="gammaShape.s:nDNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">2.34661307732079</parameter>
+            <parameter id="gammaShape.s:mt12DNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">0.315274473279715</parameter>
+            <parameter id="gammaShape.s:mt3DNA" spec="parameter.RealParameter" lower="0.1" name="stateNode">1.07969525383238</parameter>
             <parameter id="mutationRate.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:canidae_morpho_extant4" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
             <parameter id="mutationRate.s:canidae_morpho_extant3" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="gammaShape.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="ORCucldMean.c:morpho" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
-            <parameter id="ORCsigma.c:morpho" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
-            <parameter id="ORCRates.c:morpho" spec="parameter.RealParameter" dimension="0" lower="1.0E-100" name="stateNode">0.5</parameter>
+            <parameter id="gammaShape.s:canidae_morpho_extant2" spec="parameter.RealParameter" name="stateNode">2.25234558852231</parameter>
+            <parameter id="ORCucldMean.c:morpho" spec="parameter.RealParameter" name="stateNode">64.2448805048506</parameter>
+            <parameter id="ORCsigma.c:morpho" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.361674457877081</parameter>
+            <parameter id="ORCRates.c:morpho" spec="parameter.RealParameter" dimension="66" lower="1.0E-100" name="stateNode">0.824872651979882</parameter>
         </state>
         <init id="RandomTree.t:tree" spec="RandomTree" estimate="false" initial="@Tree.t:tree" taxa="@nDNA">
             <populationModel id="ConstantPopulation0.t:tree" spec="ConstantPopulation">
                 <parameter id="randomPopSize.t:tree" spec="parameter.RealParameter" name="popSize">1.0</parameter>
             </populationModel>
+        </init>
+        <init spec="feast.parameter.RandomRealParameter" initial="@BDBirthRate.t:tree">
+            <distr idref="Exponential.8"/>
+        </init>
+        <init spec="feast.parameter.RandomRealParameter" initial="@BDDeathRate.t:tree">
+            <distr idref="Uniform.10"/>
         </init>
         <distribution id="posterior" spec="CompoundDistribution">
             <distribution id="prior" spec="CompoundDistribution">
@@ -826,7 +832,7 @@ filter="30,39,52,75-78">
                 <taxonset id="TaxonSet.canidae_morpho_extant2" spec="TaxonSet" alignment="@canidae_morpho_extant2"/>
             </metric>
         </operator>
-        <logger id="tracelog" spec="Logger" fileName="$(filebase).log" logEvery="100000" model="@posterior" sanitiseHeaders="true" sort="smart">
+        <logger id="tracelog" spec="Logger" fileName="output/$(filebase).log" logEvery="1000000" model="@posterior" sanitiseHeaders="true" sort="smart">
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
@@ -881,13 +887,13 @@ filter="30,39,52,75-78">
             <log idref="ORCsigma.c:morpho"/>
             <log id="ORCRatesStat.c:morpho" spec="beast.base.evolution.RateStatistic" branchratemodel="@OptimisedRelaxedClock.c:morpho" tree="@Tree.t:tree"/>
         </logger>
-        <logger id="screenlog" spec="Logger" logEvery="1000">
+        <logger id="screenlog" spec="Logger" logEvery="1000000">
             <log idref="posterior"/>
             <log idref="likelihood"/>
             <log idref="prior"/>
         </logger>
-        <logger id="treelog.t:tree" spec="Logger" fileName="$(filebase)-$(tree).trees" logEvery="100000" mode="tree">
-            <log id="TreeWithMetaDataLogger.t:tree" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:morpho" tree="@Tree.t:tree"/>
+        <logger id="treelog.t:tree" spec="Logger" fileName="output/$(filebase)-$(tree).trees" logEvery="1000000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:tree" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:nDNA" tree="@Tree.t:tree"/>
         </logger>
         <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
     </run>
