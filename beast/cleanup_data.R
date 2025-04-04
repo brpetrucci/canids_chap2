@@ -21,7 +21,7 @@ library(palaeoverse)
 # read data
 
 # base directory
-base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/data/"
+base_dir <- "/Users/petrucci/Documents/research/canids_chap2/beast/"
 
 # raw data directory
 raw_dir <- paste0(base_dir, "raw_data/")
@@ -148,155 +148,6 @@ write.nexus.data(morpho_complete, paste0(base_dir, "srfbd/morpho.nex"),
                  format = "standard")
 
 ###
-# make specimen level data
-
-# create data frame for occurrences
-fbds_taxa_first <- fbds_taxa_last <- fbds_taxa_both <- 
-  data.frame(matrix(nrow = 0, ncol = 3))
-
-# and for taxa ages
-fbds_first_ages <- fbds_last_ages <- fbds_both_ages <-
-  data.frame(matrix(nrow = 0, ncol = 2))
-
-# create molecular and morpho lists
-mol_first <- mol_last <- mol_both <- morpho_first <- morpho_last <-
-  morpho_both <- list()
-
-# iterate through ranges
-for (i in 1:nrow(ranges_df)) {
-  # extract this row
-  range <- ranges_df[i, -6]
-
-  # check if the species is extant
-  if (range$taxon %in% ext_taxa) {
-    # add extant occurrence to occs
-    ext_occ <- c(paste0(range$taxon, "_ext"), 0, 0)
-    
-    # add ext_occ to the taxa data frames
-    fbds_taxa_first <- rbind(fbds_taxa_first, ext_occ)
-    fbds_taxa_last <- rbind(fbds_taxa_last, ext_occ)
-    fbds_taxa_both <- rbind(fbds_taxa_both, ext_occ)
-    
-    # add 0 to ages
-    fbds_first_ages <- rbind(fbds_first_ages, ext_occ[1:2])
-    fbds_last_ages <- rbind(fbds_last_ages, ext_occ[1:2])
-    fbds_both_ages <- rbind(fbds_both_ages, ext_occ[1:2])
-    
-    # add data to mol
-    mol_first <- c(mol_first, list(mol_complete[[range$taxon]]))
-    mol_last <- c(mol_last, list(mol_complete[[range$taxon]]))
-    mol_both <- c(mol_both, list(mol_complete[[range$taxon]]))
-    
-    # and to morpho
-    morpho_first <- c(morpho_first, list(morpho_complete[[range$taxon]]))
-    morpho_last <- c(morpho_last, list(morpho_complete[[range$taxon]]))
-    morpho_both <- c(morpho_both, list(morpho_complete[[range$taxon]]))
-    
-    # if it is a singleton, just skip to the next species
-    if (all(range[2:length(range)] == 0)) next
-  }
-  
-  # get first and last occurrences
-  fa <- c(paste0(range$taxon, "_first"), range$fa_max, range$fa_min)
-  la <- c(paste0(range$taxon, "_last"), range$la_max, range$la_min)
-  
-  # add fa to first and both
-  fbds_taxa_first <- rbind(fbds_taxa_first, fa)
-  fbds_taxa_both <- rbind(fbds_taxa_both, fa)
-  
-  # get an age from a uniform draw
-  fa_age <- runif(1, as.numeric(fa[3]), as.numeric(fa[2]))
-  
-  # add age to age data frames
-  fbds_first_ages <- rbind(fbds_first_ages, c(fa[1], fa_age))
-  fbds_both_ages <- rbind(fbds_both_ages, c(fa[1], fa_age))
-  
-  # add data to mol
-  mol_first <- c(mol_first, list(mol_complete[[range$taxon]]))
-  mol_both <- c(mol_both, list(mol_complete[[range$taxon]]))
-  
-  # and to morpho
-  morpho_first <- c(morpho_first, list(morpho_complete[[range$taxon]]))
-  morpho_both <- c(morpho_both, list(morpho_complete[[range$taxon]]))
-  
-  # if it is a singleton, add to last as well
-  if (all(fa[-1] == la[-1])) {
-    fbds_taxa_last <- rbind(fbds_taxa_last, fa)
-    fbds_last_ages <- rbind(fbds_last_ages, c(fa[1], fa_age))
-    
-    # and add to mol and morpho
-    mol_last <- c(mol_last, list(mol_complete[[range$taxon]]))
-    morpho_last <- c(morpho_last, list(morpho_complete[[range$taxon]]))
-  } else {
-    # if not add la to last and both
-    fbds_taxa_last <- rbind(fbds_taxa_last, la)
-    fbds_taxa_both <- rbind(fbds_taxa_both, la)
-    
-    # get an age from a uniform draw
-    la_age <- runif(1, as.numeric(la[3]), as.numeric(la[2]))
-    
-    # add age to age data frames
-    fbds_last_ages <- rbind(fbds_last_ages, c(la[1], la_age))
-    fbds_both_ages <- rbind(fbds_both_ages, c(la[1], la_age))
-    
-    # add data to mol
-    mol_last <- c(mol_last, list(mol_complete[[range$taxon]]))
-    mol_both <- c(mol_both, list(mol_complete[[range$taxon]]))
-    
-    # and to morpho
-    morpho_last <- c(morpho_last, list(morpho_complete[[range$taxon]]))
-    morpho_both <- c(morpho_both, list(morpho_complete[[range$taxon]]))
-  }
-}
-
-# name occurrences data frames
-colnames(fbds_taxa_first) <- colnames(fbds_taxa_last) <- 
-  colnames(fbds_taxa_both) <- c("taxon", "max_age", "min_age")
-
-# name ages data frames
-colnames(fbds_first_ages) <- colnames(fbds_last_ages) <-
-  colnames(fbds_both_ages) <- c("taxon", "age")
-
-# and list of molecular and morpho data
-names(mol_first) <- names(morpho_first) <- fbds_taxa_first$taxon
-names(mol_last) <- names(morpho_last) <- fbds_taxa_last$taxon
-names(mol_both) <- names(morpho_both) <- fbds_taxa_both$taxon
-
-# write ranges to files
-write.table(fbds_taxa_first, paste0(base_dir, "fbds/taxa_first.tsv"), 
-            sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(fbds_taxa_last, paste0(base_dir, "fbds/taxa_last.tsv"), 
-            sep = "\t", quote = FALSE, row.names = FALSE)
-write.table(fbds_taxa_both, paste0(base_dir, "fbds/taxa_both.tsv"), 
-            sep = "\t", quote = FALSE, row.names = FALSE)
-
-# write ages to files
-write.table(fbds_first_ages, paste0(base_dir, "fbds/ages_first.dat"),
-            sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
-write.table(fbds_last_ages, paste0(base_dir, "fbds/ages_last.dat"),
-            sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
-write.table(fbds_both_ages, paste0(base_dir, "fbds/ages_both.dat"),
-            sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
-
-# write all molecular data to files
-write.nexus.data(mol_first, paste0(base_dir, "fbds/mol_first.nex"))
-write.nexus.data(mol_last, paste0(base_dir, "fbds/mol_last.nex"))
-write.nexus.data(mol_both, paste0(base_dir, "fbds/mol_both.nex"))
-
-# append partitions to it
-write(partitions, paste0(base_dir, "fbds/mol_first.nex"), append = TRUE)
-write(partitions, paste0(base_dir, "fbds/mol_last.nex"), append = TRUE)
-write(partitions, paste0(base_dir, "fbds/mol_both.nex"), append = TRUE)
-
-# write all morpho data to files
-write.nexus.data(morpho_first, paste0(base_dir, "fbds/morpho_first.nex"),
-                 format = "standard")
-write.nexus.data(morpho_last, paste0(base_dir, "fbds/morpho_last.nex"),
-                 format = "standard")
-write.nexus.data(morpho_both, paste0(base_dir, "fbds/morpho_both.nex"),
-                 format = "standard")
-
-###
 # creating a data set without occurrences with >5my uncertainty
 
 # filter occurrences
@@ -315,16 +166,204 @@ ftrd_mol <- mol_complete[-which(names(mol_complete) %in% ftrd_names)]
 ftrd_morpho <- lapply(ftrd_morpho_raw, function(x) x[-46])
 
 # filter ranges
-ftrd_ranges_df <- ranges_final[-which(ranges_final[, 1] %in% ftrd_names), ]
+ftrd_ranges_df <- ranges_df[-which(ranges_df[, 1] %in% ftrd_names), ]
 rownames(ftrd_ranges_df) <- 1:nrow(ftrd_ranges_df)
 
+# final ranges (change extants to 0 0)
+ftrd_ranges_final <- ftrd_ranges_df
+
+# iterate through extant taxa
+ftrd_ranges_final$la_max[ftrd_ranges_final$taxon %in% ext_taxa] <- 0
+ftrd_ranges_final$la_min[ftrd_ranges_final$taxon %in% ext_taxa] <- 0
+
 # write ranges and morpho data
-write.table(ftrd_ranges_df, paste0(base_dir, "srfbd/ftrd_ranges.tsv"), 
+write.table(ftrd_ranges_final, paste0(base_dir, "srfbd/ftrd_ranges.tsv"), 
             sep = "\t", quote = FALSE, row.names = FALSE)
 write.nexus.data(ftrd_morpho, paste0(base_dir, "srfbd/ftrd_morpho.nex"),
                  format = "standard")
 write.nexus.data(ftrd_mol, paste0(base_dir, "srfbd/ftrd_mol.nex"))
 write(partitions, paste0(base_dir, "srfbd/ftrd_mol.nex"), append = TRUE)
+
+###
+# make specimen level data
+
+# make a function for it
+specimen_data <- function(ranges_df, mol, morpho, prefix = "") {
+  # create data frame for occurrences
+  fbds_taxa_first <- fbds_taxa_last <- fbds_taxa_both <- 
+    data.frame(matrix(nrow = 0, ncol = 3))
+  
+  # and for taxa ages
+  fbds_first_ages <- fbds_last_ages <- fbds_both_ages <-
+    data.frame(matrix(nrow = 0, ncol = 2))
+  
+  # create molecular and morpho lists
+  mol_first <- mol_last <- mol_both <- morpho_first <- morpho_last <-
+    morpho_both <- list()
+  
+  # iterate through ranges
+  for (i in 1:nrow(ranges_df)) {
+    # extract this row
+    range <- ranges_df[i, -6]
+    
+    # check if the species is extant
+    if (range$taxon %in% ext_taxa) {
+      # add extant occurrence to occs
+      ext_occ <- c(paste0(range$taxon, "_ext"), 0, 0)
+      
+      # add ext_occ to the taxa data frames
+      fbds_taxa_first <- rbind(fbds_taxa_first, ext_occ)
+      fbds_taxa_last <- rbind(fbds_taxa_last, ext_occ)
+      fbds_taxa_both <- rbind(fbds_taxa_both, ext_occ)
+      
+      # add 0 to ages
+      fbds_first_ages <- rbind(fbds_first_ages, ext_occ[1:2])
+      fbds_last_ages <- rbind(fbds_last_ages, ext_occ[1:2])
+      fbds_both_ages <- rbind(fbds_both_ages, ext_occ[1:2])
+      
+      # add data to mol
+      mol_first <- c(mol_first, list(mol[[range$taxon]]))
+      mol_last <- c(mol_last, list(mol[[range$taxon]]))
+      mol_both <- c(mol_both, list(mol[[range$taxon]]))
+      
+      # and to morpho
+      morpho_first <- c(morpho_first, list(morpho[[range$taxon]]))
+      morpho_last <- c(morpho_last, list(morpho[[range$taxon]]))
+      morpho_both <- c(morpho_both, list(morpho[[range$taxon]]))
+      
+      # if it is a singleton, just skip to the next species
+      if (all(range[2:length(range)] == 0)) next
+    }
+    
+    # get first and last occurrences
+    fa <- c(paste0(range$taxon, "_first"), range$fa_max, range$fa_min)
+    la <- c(paste0(range$taxon, "_last"), range$la_max, range$la_min)
+    
+    # add fa to first and both
+    fbds_taxa_first <- rbind(fbds_taxa_first, fa)
+    fbds_taxa_both <- rbind(fbds_taxa_both, fa)
+    
+    # get an age from a uniform draw
+    fa_age <- runif(1, as.numeric(fa[3]), as.numeric(fa[2]))
+    
+    # add age to age data frames
+    fbds_first_ages <- rbind(fbds_first_ages, c(fa[1], fa_age))
+    fbds_both_ages <- rbind(fbds_both_ages, c(fa[1], fa_age))
+    
+    # add data to mol
+    mol_first <- c(mol_first, list(mol[[range$taxon]]))
+    mol_both <- c(mol_both, list(mol[[range$taxon]]))
+    
+    # and to morpho
+    morpho_first <- c(morpho_first, list(morpho[[range$taxon]]))
+    morpho_both <- c(morpho_both, list(morpho[[range$taxon]]))
+    
+    # if it is a singleton, add to last as well
+    if (all(fa[-1] == la[-1])) {
+      fbds_taxa_last <- rbind(fbds_taxa_last, fa)
+      fbds_last_ages <- rbind(fbds_last_ages, c(fa[1], fa_age))
+      
+      # and add to mol and morpho
+      mol_last <- c(mol_last, list(mol[[range$taxon]]))
+      morpho_last <- c(morpho_last, list(morpho[[range$taxon]]))
+    } else {
+      # if not add la to last and both
+      fbds_taxa_last <- rbind(fbds_taxa_last, la)
+      fbds_taxa_both <- rbind(fbds_taxa_both, la)
+      
+      # get an age from a uniform draw
+      la_age <- runif(1, as.numeric(la[3]), as.numeric(la[2]))
+      
+      # add age to age data frames
+      fbds_last_ages <- rbind(fbds_last_ages, c(la[1], la_age))
+      fbds_both_ages <- rbind(fbds_both_ages, c(la[1], la_age))
+      
+      # add data to mol
+      mol_last <- c(mol_last, list(mol[[range$taxon]]))
+      mol_both <- c(mol_both, list(mol[[range$taxon]]))
+      
+      # and to morpho
+      morpho_last <- c(morpho_last, list(morpho[[range$taxon]]))
+      morpho_both <- c(morpho_both, list(morpho[[range$taxon]]))
+    }
+  }
+  
+  # name occurrences data frames
+  colnames(fbds_taxa_first) <- colnames(fbds_taxa_last) <- 
+    colnames(fbds_taxa_both) <- c("taxon", "max_age", "min_age")
+  
+  # name ages data frames
+  colnames(fbds_first_ages) <- colnames(fbds_last_ages) <-
+    colnames(fbds_both_ages) <- c("taxon", "age")
+  
+  # and list of molecular and morpho data
+  names(mol_first) <- names(morpho_first) <- fbds_taxa_first$taxon
+  names(mol_last) <- names(morpho_last) <- fbds_taxa_last$taxon
+  names(mol_both) <- names(morpho_both) <- fbds_taxa_both$taxon
+  
+  # write ranges to files
+  write.table(fbds_taxa_first, paste0(base_dir, "fbds/data/", prefix,
+                                      "taxa_first.tsv"), 
+              sep = "\t", quote = FALSE, row.names = FALSE)
+  write.table(fbds_taxa_last, paste0(base_dir, "fbds/data/", prefix,
+                                     "taxa_last.tsv"), 
+              sep = "\t", quote = FALSE, row.names = FALSE)
+  write.table(fbds_taxa_both, paste0(base_dir, "fbds/data/", prefix,
+                                     "taxa_both.tsv"), 
+              sep = "\t", quote = FALSE, row.names = FALSE)
+  
+  # write ages to files
+  write.table(fbds_first_ages, paste0(base_dir, "fbds/data/", prefix,
+                                      "ages_first.dat"),
+              sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
+  write.table(fbds_last_ages, paste0(base_dir, "fbds/data/", prefix,
+                                     "ages_last.dat"),
+              sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
+  write.table(fbds_both_ages, paste0(base_dir, "fbds/data/", prefix,
+                                     "ages_both.dat"),
+              sep = "\t", quote = FALSE, row.names = FALSE, col.names = FALSE)
+  
+  # write all molecular data to files
+  write.nexus.data(mol_first, paste0(base_dir, "fbds/data/", prefix,
+                                     "mol_first.nex"))
+  write.nexus.data(mol_last, paste0(base_dir, "fbds/data/", prefix,
+                                    "mol_last.nex"))
+  write.nexus.data(mol_both, paste0(base_dir, "fbds/data/", prefix,
+                                    "mol_both.nex"))
+  
+  # append partitions to it
+  write(partitions, paste0(base_dir, "fbds/data/", prefix,
+                           "mol_first.nex"), append = TRUE)
+  write(partitions, paste0(base_dir, "fbds/data/", prefix,
+                           "mol_last.nex"), append = TRUE)
+  write(partitions, paste0(base_dir, "fbds/data/", prefix,
+                           "mol_both.nex"), append = TRUE)
+  
+  # write all morpho data to files
+  write.nexus.data(morpho_first, paste0(base_dir, "fbds/data/", prefix,
+                                        "morpho_first.nex"),
+                   format = "standard")
+  write.nexus.data(morpho_last, paste0(base_dir, "fbds/data/", prefix,
+                                       "morpho_last.nex"),
+                   format = "standard")
+  write.nexus.data(morpho_both, paste0(base_dir, "fbds/data/", prefix,
+                                       "morpho_both.nex"),
+                   format = "standard")
+  
+  return(list(FRANGES = fbds_taxa_first, LRANGES = fbds_taxa_last,
+              BRANGES = fbds_taxa_both, FAGES = fbds_first_ages,
+              LAGES = fbds_last_ages, BAGES = fbds_both_ages,
+              FMOL = mol_first, LMOL = mol_last, 
+              BMOL = mol_both, FMORPHO = morpho_first, 
+              LMORPHO = morpho_last, BMORPHO = morpho_both))
+}
+
+# get specimen data for full dataset
+full_fbds_data <- specimen_data(ranges_df, mol_complete, morpho_complete)
+
+# and for ftrd dataset
+ftrd_fbds_data <- specimen_data(ftrd_ranges_df, ftrd_mol, ftrd_morpho,
+                                prefix = "ftrd_")
 
 ###
 # saving extant data

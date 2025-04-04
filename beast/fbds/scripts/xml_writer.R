@@ -361,6 +361,27 @@ taxa_file <- paste0(fbds_data_dir, "taxa_last.tsv")
 out_file <- "last.xml"
 xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
 
+# out directory for fbds ftrd scripts
+out_dir <- fbds_scripts_dir
+
+# last ages
+template_file <- paste0(fbds_scripts_dir, "ftrd_both_template.xml")
+taxa_file <- paste0(fbds_data_dir, "ftrd_taxa_both.tsv")
+out_file <- "ftrd_both.xml"
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+
+# first ages
+template_file <- paste0(fbds_scripts_dir, "ftrd_first_template.xml")
+taxa_file <- paste0(fbds_data_dir, "ftrd_taxa_first.tsv")
+out_file <- "ftrd_first.xml"
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+
+# last ages
+template_file <- paste0(fbds_scripts_dir, "ftrd_last_template.xml")
+taxa_file <- paste0(fbds_data_dir, "ftrd_taxa_last.tsv")
+out_file <- "ftrd_last.xml"
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+
 # out directory for extant scripts
 out_dir <- extant_scripts_dir
 

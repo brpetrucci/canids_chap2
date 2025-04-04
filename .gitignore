@@ -5,4 +5,5 @@ tutorials
 *.log
 *.trees
 *.state
+grant/
 .DS_Store
