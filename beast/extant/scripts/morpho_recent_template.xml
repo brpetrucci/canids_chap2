@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><beast beautitemplate='Standard' beautistatus='' namespace="beast.core:beast.evolution.alignment:beast.evolution.tree.coalescent:beast.core.util:beast.evolution.nuc:beast.evolution.operators:beast.evolution.sitemodel:beast.evolution.substitutionmodel:beast.base.evolution.alignment:beast.pkgmgmt:beast.base.core:beast.base.inference:beast.base.evolution.tree.coalescent:beast.pkgmgmt:beast.base.core:beast.base.inference.util:beast.evolution.nuc:beast.base.evolution.operator:beast.base.inference.operator:beast.base.evolution.sitemodel:beast.base.evolution.substitutionmodel:beast.base.evolution.likelihood" required="BEAST.base v2.7.7:MM v1.2.1:ORC v1.2.0:BEASTLabs v2.0.2" version="2.7">
+
+    <data
+id="morpho_recent"
+spec="Alignment"
+dataType="standard">
+        <sequence id="seq_Atelocynus_microtis" spec="Sequence" taxon="Atelocynus_microtis" totalcount="10" value="1?103100000??001000011000012000011110100001001010011011000000011011110101?0123"/>
+        <sequence id="seq_Canis_anthus" spec="Sequence" taxon="Canis_anthus" totalcount="10" value="????????????????????????????????1??????????????0??????????????????????????0123"/>
+        <sequence id="seq_Canis_aureus" spec="Sequence" taxon="Canis_aureus" totalcount="10" value="11003110111??1110000110000120001111101000010010001121110101010?1011010?0110123"/>
+        <sequence id="seq_Canis_latrans" spec="Sequence" taxon="Canis_latrans" totalcount="10" value="11003110111??111000011100012000111110110001001000112111?101010?1011010?0120123"/>
+        <sequence id="seq_Canis_lupus" spec="Sequence" taxon="Canis_lupus" totalcount="10" value="11003110111??2110000131010120001111101100011011000131111101110?2021010?0120123"/>
+        <sequence id="seq_Canis_simensis" spec="Sequence" taxon="Canis_simensis" totalcount="10" value="11003110100??2010000111100121100111101000010021000120111100010?10110?0?0??0123"/>
+        <sequence id="seq_Cerdocyon_thous" spec="Sequence" taxon="Cerdocyon_thous" totalcount="10" value="110031?00000?2010000110100121000111101000011010000110110010?00?1011111??1?0123"/>
+        <sequence id="seq_Chrysocyon_brachyurus" spec="Sequence" taxon="Chrysocyon_brachyurus" totalcount="10" value="11003110000001010000100101121000111101?000?102000011011?100?00?10?1110??1?0123"/>
+        <sequence id="seq_Cuon_alpinus" spec="Sequence" taxon="Cuon_alpinus" totalcount="10" value="11010021101??1010000111112021200110020220012031000120111000010?1021010?0120123"/>
+        <sequence id="seq_Lupulella_adusta" spec="Sequence" taxon="Lupulella_adusta" totalcount="10" value="11003110?00??201000011100012010011110100?011011000111110000000?1011??0?0??0123"/>
+        <sequence id="seq_Lupulella_mesomelas" spec="Sequence" taxon="Lupulella_mesomelas" totalcount="10" value="11003110100??1010000111010120100111101000011010000110110000000?1011010?0??0123"/>
+        <sequence id="seq_Lycalopex_culpaeus" spec="Sequence" taxon="Lycalopex_culpaeus" totalcount="10" value="11003110000002000000110000120000111101000011010100110110000?00?10?1110001?0123"/>
+        <sequence id="seq_Lycalopex_fulvipes" spec="Sequence" taxon="Lycalopex_fulvipes" totalcount="10" value="????????????????????????????????1??1???????????1???????????????????11?????0123"/>
+        <sequence id="seq_Lycalopex_griseus" spec="Sequence" taxon="Lycalopex_griseus" totalcount="10" value="11003110000002000000110000110000100101000010110000110110011?00?0001010001?0123"/>
+        <sequence id="seq_Lycalopex_gymnocercus" spec="Sequence" taxon="Lycalopex_gymnocercus" totalcount="10" value="11003110000002000000110000110000100101000010110000110110011?00?0001010001?0123"/>
+        <sequence id="seq_Lycalopex_sechurae" spec="Sequence" taxon="Lycalopex_sechurae" totalcount="10" value="11003110000002000000100000120000100101000010110000110110011?00?0001010001?0123"/>
+        <sequence id="seq_Lycalopex_vetulus" spec="Sequence" taxon="Lycalopex_vetulus" totalcount="10" value="11003110000002000000100000121010111101000010110000110110011?00?0001010001?0123"/>
+        <sequence id="seq_Lycaon_pictus" spec="Sequence" taxon="Lycaon_pictus" totalcount="10" value="11010021101??1010000111112021200110020120011031000121111000010?1021010?0120123"/>
+        <sequence id="seq_Nyctereutes_procyonoides" spec="Sequence" taxon="Nyctereutes_procyonoides" totalcount="10" value="01000110100?12000111010000100100111111000111010000000010000?0001???102011?0123"/>
+        <sequence id="seq_Otocyon_megalotis" spec="Sequence" taxon="Otocyon_megalotis" totalcount="10" value="01003110000?000110010100012201000110010100?01100?0100000120?000100?002011?0123"/>
+        <sequence id="seq_Speothos_venaticus" spec="Sequence" taxon="Speothos_venaticus" totalcount="10" value="110100100000?00130001110110??300110000220002030100110110000?00?10?1110?01?0123"/>
+        <sequence id="seq_Urocyon_cinereoargenteus" spec="Sequence" taxon="Urocyon_cinereoargenteus" totalcount="10" value="02013111000??0000000010002120010111111312110010000100010020000?0100002?1100123"/>
+        <sequence id="seq_Urocyon_littoralis" spec="Sequence" taxon="Urocyon_littoralis" totalcount="10" value="??????????????????????????????????????????????????????????????????????????0123"/>
+        <sequence id="seq_Vulpes_cana" spec="Sequence" taxon="Vulpes_cana" totalcount="10" value="??????????????????????????????????????????????????????????????????????????0123"/>
+        <sequence id="seq_Vulpes_chama" spec="Sequence" taxon="Vulpes_chama" totalcount="10" value="0?003110100102000000110100100000111100000000110011100000110?0001003000001?0123"/>
+        <sequence id="seq_Vulpes_corsac" spec="Sequence" taxon="Vulpes_corsac" totalcount="10" value="??????????????????????????????????????????????????????????????????????????0123"/>
+        <sequence id="seq_Vulpes_ferrilata" spec="Sequence" taxon="Vulpes_ferrilata" totalcount="10" value="??????????????????????????????????????????????????????????????????????????0123"/>
+        <sequence id="seq_Vulpes_lagopus" spec="Sequence" taxon="Vulpes_lagopus" totalcount="10" value="110031100001120000001100000210001111010000110100011?0010100?0001010000001?0123"/>
+        <sequence id="seq_Vulpes_macrotis" spec="Sequence" taxon="Vulpes_macrotis" totalcount="10" value="110031101001020000001100001210001111000000110100011000001?0?0001000000001?0123"/>
+        <sequence id="seq_Vulpes_pallida" spec="Sequence" taxon="Vulpes_pallida" totalcount="10" value="??????1???????????????????100???1????1???????????????????10????1010???????0123"/>
+        <sequence id="seq_Vulpes_rueppellii" spec="Sequence" taxon="Vulpes_rueppellii" totalcount="10" value="11000110000102010000010000100000111101000010110001100000110?0001110000000?0123"/>
+        <sequence id="seq_Vulpes_velox" spec="Sequence" taxon="Vulpes_velox" totalcount="10" value="110031101001020000001100001210001111000000110100011000001?0?0001000000001?0123"/>
+        <sequence id="seq_Vulpes_vulpes" spec="Sequence" taxon="Vulpes_vulpes" totalcount="10" value="1100311010010200000011000010000011110100001?01000111000010000001110000000?0123"/>
+        <sequence id="seq_Vulpes_zerda" spec="Sequence" taxon="Vulpes_zerda" totalcount="10" value="0?003110000?02000000110100100000111100000000010011100000110?0101003000001?0123"/>
+        <sequence id="seq_Aenocyon_dirus" spec="Sequence" taxon="Aenocyon_dirus" totalcount="10" value="11013110111??1113000131110020101111101120011011010131111101110?2021010?0120123"/>
+        <sequence id="seq_Dusicyon_australis" spec="Sequence" taxon="Dusicyon_australis" totalcount="10" value="1100310000001201300010000002020010000000001?010100110110111?00?202111000??0123"/>
+        <userDataType id="StandardData.0" spec="beast.base.evolution.datatype.StandardData" ambiguities="" nrOfStates="10"/>
+    </data>
+
+    <map name="Uniform" >beast.base.inference.distribution.Uniform</map>
+
+    <map name="Exponential" >beast.base.inference.distribution.Exponential</map>
+
+    <map name="LogNormal" >beast.base.inference.distribution.LogNormalDistributionModel</map>
+
+    <map name="Normal" >beast.base.inference.distribution.Normal</map>
+
+    <map name="Beta" >beast.base.inference.distribution.Beta</map>
+
+    <map name="Gamma" >beast.base.inference.distribution.Gamma</map>
+
+    <map name="LaplaceDistribution" >beast.base.inference.distribution.LaplaceDistribution</map>
+
+    <map name="prior" >beast.base.inference.distribution.Prior</map>
+
+    <map name="InverseGamma" >beast.base.inference.distribution.InverseGamma</map>
+
+    <map name="OneOnX" >beast.base.inference.distribution.OneOnX</map>
+
+    <run id="mcmc" spec="MCMC" chainLength="3000000000" numInitializationAttempts="100000">
+        <state id="state" spec="State" storeEvery="5000">
+            <tree id="Tree.t:tree" spec="beast.base.evolution.tree.Tree" name="stateNode">
+                <taxonset id="TaxonSet.morpho_recent2" spec="TaxonSet">
+                    <alignment id="morpho_recent2" spec="FilteredAlignment" ascertained="true" excludefrom="54" excludeto="56" filter="1-6,8-13,15-16,18-21,23-25,29,31-36,38,41-43,45,47-51,53-57,59-63,65,68-69,71-73,75-76">
+                        <data idref="morpho_recent"/>
+                        <userDataType id="morphDataType.morpho_recent2" spec="beast.base.evolution.datatype.StandardData" ambiguities="" nrOfStates="2"/>
+                    </alignment>
+                </taxonset>
+            </tree>
+            <parameter id="mutationRate.s:morpho_recent4" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+            <parameter id="mutationRate.s:morpho_recent3" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+            <parameter id="mutationRate.s:morpho_recent2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+            <parameter id="gammaShape.s:morpho_recent2" spec="parameter.RealParameter" name="stateNode">1.0</parameter>
+            <parameter id="ORCsigma.c:morpho_recent" spec="parameter.RealParameter" lower="0.0" name="stateNode">0.2</parameter>
+            <parameter id="ORCRates.c:morpho_recent" spec="parameter.RealParameter" dimension="70" lower="1.0E-100" name="stateNode">0.5</parameter>
+            <parameter id="BDBirthRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="10000.0">1.0</parameter>
+            <parameter id="BDDeathRate.t:tree" spec="parameter.RealParameter" lower="0.0" name="stateNode" upper="1.0">0.5</parameter>
+        </state>
+        <init id="RandomTree.t:tree" spec="RandomTree" estimate="false" initial="@Tree.t:tree" taxa="@morpho_recent2">
+            <populationModel id="ConstantPopulation0.t:tree" spec="ConstantPopulation">
+                <parameter id="randomPopSize.t:tree" spec="parameter.RealParameter" name="popSize">1.0</parameter>
+            </populationModel>
+        </init>
+        <distribution id="posterior" spec="CompoundDistribution">
+            <distribution id="prior" spec="CompoundDistribution">
+                <distribution id="BirthDeath.t:tree" spec="beast.base.evolution.speciation.BirthDeathGernhard08Model" birthDiffRate="@BDBirthRate.t:tree" relativeDeathRate="@BDDeathRate.t:tree" tree="@Tree.t:tree"/>
+                <prior id="BirthRatePrior.t:tree" name="distribution" x="@BDBirthRate.t:tree">
+                    <Exponential id="Exponential.3" name="distr">
+                        <parameter id="RealParameter.4" spec="parameter.RealParameter" estimate="false" name="mean">1.0</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="DeathRatePrior.t:tree" name="distribution" x="@BDDeathRate.t:tree">
+                    <Uniform id="Uniform.3" name="distr"/>
+                </prior>
+                <prior id="ORCRatePriorDistribution.c:morpho_recent" name="distribution" x="@ORCRates.c:morpho_recent">
+                    <LogNormal id="LogNormalDistributionModel.0" S="@ORCsigma.c:morpho_recent" meanInRealSpace="true" name="distr">
+                        <parameter id="RealParameter.1" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                    </LogNormal>
+                </prior>
+                <prior id="ORCsigmaPrior.c:morpho_recent" name="distribution" x="@ORCsigma.c:morpho_recent">
+                    <Exponential id="Exponential.4" name="distr">
+                        <parameter id="RealParameter.5" spec="parameter.RealParameter" estimate="false" name="mean">0.3337</parameter>
+                    </Exponential>
+                </prior>
+                <prior id="GammaShapePrior.s:morpho_recent2" name="distribution" x="@gammaShape.s:morpho_recent2">
+                    <Exponential id="Exponential.0" name="distr">
+                        <mean id="Function$Constant.0" spec="Function$Constant" value="1.0"/>
+                    </Exponential>
+                </prior>
+            </distribution>
+            <distribution id="likelihood" spec="CompoundDistribution" useThreads="true">
+                <distribution id="morphTreeLikelihood.morpho_recent2" spec="TreeLikelihood" data="@morpho_recent2" tree="@Tree.t:tree">
+                    <siteModel id="SiteModel.s:morpho_recent2" spec="SiteModel" gammaCategoryCount="4" mutationRate="@mutationRate.s:morpho_recent2" shape="@gammaShape.s:morpho_recent2">
+                        <substModel id="LewisMK.s:morpho_recent2" spec="morphmodels.evolution.substitutionmodel.LewisMK" datatype="@morphDataType.morpho_recent2"/>
+                    </siteModel>
+                    <branchRateModel id="OptimisedRelaxedClock.c:morpho_recent" spec="beast.base.evolution.branchratemodel.UCRelaxedClockModel" rates="@ORCRates.c:morpho_recent" tree="@Tree.t:tree">
+                        <LogNormal id="ORCLogNormalDistributionModel.c:morpho_recent" S="@ORCsigma.c:morpho_recent" meanInRealSpace="true" name="distr">
+                            <parameter id="RealParameter.0" spec="parameter.RealParameter" estimate="false" name="M">1.0</parameter>
+                        </LogNormal>
+                        <parameter id="ORCucldMean.c:morpho_recent" spec="parameter.RealParameter" estimate="false" name="clock.rate">1.0</parameter>
+                    </branchRateModel>
+                </distribution>
+                <distribution id="morphTreeLikelihood.morpho_recent3" spec="TreeLikelihood" branchRateModel="@OptimisedRelaxedClock.c:morpho_recent" tree="@Tree.t:tree">
+                    <data
+id="morpho_recent3"
+spec="FilteredAlignment"
+ascertained="true"
+data="@morpho_recent"
+excludefrom="17"
+excludeto="20"
+filter="7,14,17,22,26-28,37,40,44,46,58,64,66-67,70,74,75-77">
+                        <userDataType id="morphDataType.morpho_recent3" spec="beast.base.evolution.datatype.StandardData" ambiguities="" nrOfStates="3"/>
+                    </data>
+                    <siteModel id="SiteModel.s:morpho_recent3" spec="SiteModel" gammaCategoryCount="4" mutationRate="@mutationRate.s:morpho_recent3" shape="@gammaShape.s:morpho_recent2">
+                        <substModel id="LewisMK.s:morpho_recent3" spec="morphmodels.evolution.substitutionmodel.LewisMK" datatype="@morphDataType.morpho_recent3"/>
+                    </siteModel>
+                </distribution>
+                <distribution id="morphTreeLikelihood.morpho_recent4" spec="TreeLikelihood" branchRateModel="@OptimisedRelaxedClock.c:morpho_recent" tree="@Tree.t:tree">
+                    <data
+id="morpho_recent4"
+spec="FilteredAlignment"
+ascertained="true"
+data="@morpho_recent"
+excludefrom="3"
+excludeto="7"
+filter="30,39,52,75-78">
+                        <userDataType id="morphDataType.morpho_recent4" spec="beast.base.evolution.datatype.StandardData" ambiguities="" nrOfStates="4"/>
+                    </data>
+                    <siteModel id="SiteModel.s:morpho_recent4" spec="SiteModel" gammaCategoryCount="4" mutationRate="@mutationRate.s:morpho_recent4" shape="@gammaShape.s:morpho_recent2">
+                        <substModel id="LewisMK.s:morpho_recent4" spec="morphmodels.evolution.substitutionmodel.LewisMK" datatype="@morphDataType.morpho_recent4"/>
+                    </siteModel>
+                </distribution>
+            </distribution>
+        </distribution>
+        <operator id="FixMeanMutationRatesOperator" spec="operator.kernel.BactrianDeltaExchangeOperator" delta="0.75" weight="2.0">
+            <parameter idref="mutationRate.s:morpho_recent2"/>
+            <parameter idref="mutationRate.s:morpho_recent3"/>
+            <parameter idref="mutationRate.s:morpho_recent4"/>
+            <weightvector id="weightparameter" spec="parameter.IntegerParameter" dimension="3" estimate="false" lower="0" upper="0">54 17 3</weightvector>
+        </operator>
+        <operator id="gammaShapeScaler.s:morpho_recent2" spec="ScaleOperator" parameter="@gammaShape.s:morpho_recent2" scaleFactor="0.5" weight="0.1"/>
+        <operator id="ORCAdaptableOperatorSampler_sigma.c:morpho_recent" spec="AdaptableOperatorSampler" weight="3.0">
+            <parameter idref="ORCsigma.c:morpho_recent"/>
+            <operator id="ORCucldStdevScaler.c:morpho_recent" spec="orc.consoperators.UcldScalerOperator" distr="@ORCLogNormalDistributionModel.c:morpho_recent" rates="@ORCRates.c:morpho_recent" scaleFactor="0.5" stdev="@ORCsigma.c:morpho_recent" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.2" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCUcldStdevRandomWalk.c:morpho_recent" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@ORCsigma.c:morpho_recent" scaleFactor="0.1" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.3" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCUcldStdevScale.c:morpho_recent" spec="kernel.BactrianScaleOperator" parameter="@ORCsigma.c:morpho_recent" scaleFactor="0.5" upper="10.0" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.4" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCSampleFromPriorOperator_sigma.c:morpho_recent" spec="orc.operators.SampleFromPriorOperator" parameter="@ORCsigma.c:morpho_recent" prior2="@ORCsigmaPrior.c:morpho_recent" weight="1.0"/>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_rates_root.c:morpho_recent" spec="AdaptableOperatorSampler" weight="1.0">
+            <parameter idref="ORCRates.c:morpho_recent"/>
+            <tree idref="Tree.t:tree"/>
+            <operator id="ORCRootOperator1.c:morpho_recent" spec="orc.consoperators.SimpleDistance" clockModel="@OptimisedRelaxedClock.c:morpho_recent" rates="@ORCRates.c:morpho_recent" tree="@Tree.t:tree" twindowSize="0.005" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.5" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRootOperator2.c:morpho_recent" spec="orc.consoperators.SmallPulley" clockModel="@OptimisedRelaxedClock.c:morpho_recent" dwindowSize="0.005" rates="@ORCRates.c:morpho_recent" tree="@Tree.t:tree" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.6" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_rates_internal.c:morpho_recent" spec="AdaptableOperatorSampler" weight="20.0">
+            <parameter idref="ORCRates.c:morpho_recent"/>
+            <tree idref="Tree.t:tree"/>
+            <operator id="ORCInternalnodesOperator.c:morpho_recent" spec="orc.consoperators.InConstantDistanceOperator" clockModel="@OptimisedRelaxedClock.c:morpho_recent" rates="@ORCRates.c:morpho_recent" tree="@Tree.t:tree" twindowSize="0.005" weight="1.0">
+                <kernel id="KernelDistribution$Bactrian.7" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRatesRandomWalk.c:morpho_recent" spec="operator.kernel.BactrianRandomWalkOperator" parameter="@ORCRates.c:morpho_recent" scaleFactor="0.1" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.8" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCRatesScale.c:morpho_recent" spec="kernel.BactrianScaleOperator" parameter="@ORCRates.c:morpho_recent" scaleFactor="0.5" upper="10.0" weight="1.0">
+                <kernelDistribution id="KernelDistribution$Bactrian.9" spec="operator.kernel.KernelDistribution$Bactrian"/>
+            </operator>
+            <operator id="ORCSampleFromPriorOperator.rates.c:morpho_recent" spec="orc.operators.SampleFromPriorOperator" parameter="@ORCRates.c:morpho_recent" prior2="@ORCRatePriorDistribution.c:morpho_recent" weight="1.0"/>
+        </operator>
+        <operator id="ORCAdaptableOperatorSampler_NER.c:morpho_recent" spec="AdaptableOperatorSampler" weight="10.0">
+            <tree idref="Tree.t:tree"/>
+            <operator id="ORCNER_null.c:morpho_recent" spec="Exchange" tree="@Tree.t:tree" weight="1.0"/>
+            <operator id="ORCNER_dAE_dBE_dCE.c:morpho_recent" spec="orc.ner.NEROperator_dAE_dBE_dCE" rates="@ORCRates.c:morpho_recent" tree="@Tree.t:tree" weight="1.0"/>
+            <metric id="RNNIMetric.0" spec="beastlabs.evolution.tree.RNNIMetric" taxonset="@TaxonSet.morpho_recent2"/>
+        </operator>
+        <operator id="BirthDeathBICEPSEpochTop.t:tree" spec="EpochFlexOperator" scaleFactor="0.1" tree="@Tree.t:tree" weight="2.0"/>
+        <operator id="BirthDeathBICEPSEpochAll.t:tree" spec="EpochFlexOperator" fromOldestTipOnly="false" scaleFactor="0.1" tree="@Tree.t:tree" weight="2.0"/>
+        <operator id="BirthDeathBICEPSTreeFlex.t:tree" spec="TreeStretchOperator" scaleFactor="0.01" tree="@Tree.t:tree" weight="2.0"/>
+        <operator id="BirthDeathTreeRootScaler.t:tree" spec="kernel.BactrianScaleOperator" rootOnly="true" scaleFactor="0.1" tree="@Tree.t:tree" upper="10.0" weight="3.0"/>
+        <operator id="BirthDeathUniformOperator.t:tree" spec="kernel.BactrianNodeOperator" tree="@Tree.t:tree" weight="30.0"/>
+        <operator id="BirthDeathSubtreeSlide.t:tree" spec="kernel.BactrianSubtreeSlide" tree="@Tree.t:tree" weight="15.0"/>
+        <operator id="BirthDeathNarrow.t:tree" spec="Exchange" tree="@Tree.t:tree" weight="15.0"/>
+        <operator id="BirthDeathWide.t:tree" spec="Exchange" isNarrow="false" tree="@Tree.t:tree" weight="3.0"/>
+        <operator id="BirthDeathWilsonBalding.t:tree" spec="WilsonBalding" tree="@Tree.t:tree" weight="3.0"/>
+        <operator id="BirthRateScaler.t:tree" spec="kernel.BactrianScaleOperator" parameter="@BDBirthRate.t:tree" upper="10.0" weight="3.0"/>
+        <operator id="DeathRateScaler.t:tree" spec="kernel.BactrianScaleOperator" parameter="@BDDeathRate.t:tree" upper="10.0" weight="3.0"/>
+        <logger id="tracelog" spec="Logger" fileName="output/$(filebase).log" logEvery="1000000" model="@posterior" sanitiseHeaders="true" sort="smart">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+            <log id="TreeHeight.t:tree" spec="beast.base.evolution.tree.TreeHeightLogger" tree="@Tree.t:tree"/>
+            <log idref="mutationRate.s:morpho_recent4"/>
+            <log idref="morphTreeLikelihood.morpho_recent4"/>
+            <log idref="mutationRate.s:morpho_recent3"/>
+            <log idref="morphTreeLikelihood.morpho_recent3"/>
+            <log idref="mutationRate.s:morpho_recent2"/>
+            <log idref="morphTreeLikelihood.morpho_recent2"/>
+            <log idref="gammaShape.s:morpho_recent2"/>
+            <log idref="ORCsigma.c:morpho_recent"/>
+            <log id="ORCRatesStat.c:morpho_recent" spec="beast.base.evolution.RateStatistic" branchratemodel="@OptimisedRelaxedClock.c:morpho_recent" tree="@Tree.t:tree"/>
+            <log idref="BirthDeath.t:tree"/>
+            <log idref="BDBirthRate.t:tree"/>
+            <log idref="BDDeathRate.t:tree"/>
+        </logger>
+        <logger id="screenlog" spec="Logger" logEvery="1000">
+            <log idref="posterior"/>
+            <log idref="likelihood"/>
+            <log idref="prior"/>
+        </logger>
+        <logger id="treelog.t:tree" spec="Logger" fileName="output/$(tree).trees" logEvery="1000000" mode="tree">
+            <log id="TreeWithMetaDataLogger.t:tree" spec="beast.base.evolution.TreeWithMetaDataLogger" branchratemodel="@OptimisedRelaxedClock.c:morpho_recent" tree="@Tree.t:tree"/>
+        </logger>
+        <operatorschedule id="OperatorSchedule" spec="OperatorSchedule"/>
+    </run>
+
+</beast>
