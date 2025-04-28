@@ -386,16 +386,16 @@ xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
 out_dir <- extant_scripts_dir
 
 # molecular data
-template_file <- paste0(extant_scripts_dir, "mol_template.xml")
-out_file <- "mol.xml"
+template_file <- paste0(extant_scripts_dir, "mol_recent_template.xml")
+out_file <- "mol_recent.xml"
 xml_editor(template_file, out_dir, out_file)
 
 # morphological data
-template_file <- paste0(extant_scripts_dir, "morpho_template.xml")
-out_file <- "morpho.xml"
+template_file <- paste0(extant_scripts_dir, "morpho_recent_template.xml")
+out_file <- "morpho_recent.xml"
 xml_editor(template_file, out_dir, out_file)
 
 # combined data
-template_file <- paste0(extant_scripts_dir, "comb_template.xml")
-out_file <- "comb.xml"
+template_file <- paste0(extant_scripts_dir, "comb_recent_template.xml")
+out_file <- "comb_recent.xml"
 xml_editor(template_file, out_dir, out_file)
