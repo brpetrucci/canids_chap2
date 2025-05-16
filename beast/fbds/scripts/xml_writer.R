@@ -50,7 +50,8 @@ rdirichlet <- function (n, alpha) {
 ###
 # write function for reading and editing the xml
 xml_editor <- function(template_file, out_dir, out_file, taxa_file = NULL, 
-                       fossils = FALSE, n_scripts = 4) {
+                       fossils = FALSE, n_scripts = 4,
+                       n_gens = 1000000000) {
   # read template script
   temp <- readLines(template_file)
   
@@ -335,6 +336,11 @@ xml_editor <- function(template_file, out_dir, out_file, taxa_file = NULL,
     # save script
     writeLines(script, paste0(out_dir, i, '_', out_file))
   }
+  
+  idx_chainlen <- grep("mcmc", script)
+  script[idx_chainlen] <- sub('chainLength="([0-9]+)"', 'chainLength="',
+                              n_gens, '"', 
+                              script[idx_chainlen])
 }
 
 ###
@@ -343,16 +349,30 @@ xml_editor <- function(template_file, out_dir, out_file, taxa_file = NULL,
 # out directory for fbds scripts
 out_dir <- fbds_scripts_dir
 
-# last ages
+# both ages
 template_file <- paste0(fbds_scripts_dir, "both_template.xml")
 taxa_file <- paste0(fbds_data_dir, "taxa_both.tsv")
 out_file <- "both.xml"
-xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE,
+           n_gens = 3000000000)
+
+# both ages, ftrd dataset
+template_file <- paste0(fbds_scripts_dir, "ftrd_both_template.xml")
+taxa_file <- paste0(fbds_data_dir, "ftrd_taxa_both.tsv")
+out_file <- "ftrd_both.xml"
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE,
+           n_gens = 3000000000)
 
 # first ages
 template_file <- paste0(fbds_scripts_dir, "first_template.xml")
 taxa_file <- paste0(fbds_data_dir, "taxa_first.tsv")
 out_file <- "first.xml"
+xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
+
+# first ages, ftrd dataset
+template_file <- paste0(fbds_scripts_dir, "ftrd_first_template.xml")
+taxa_file <- paste0(fbds_data_dir, "ftrd_taxa_first.tsv")
+out_file <- "ftrd_first.xml"
 xml_editor(template_file, out_dir, out_file, taxa_file, fossils = TRUE)
 
 # last ages
