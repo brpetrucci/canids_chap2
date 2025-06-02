@@ -4,7 +4,7 @@
 ##.         Data cleanup             ##
 ##     Bruno do Rosario Petrucci     ##
 #######################################
-
+ 
 ###
 # load packages
 
@@ -82,6 +82,9 @@ get_range <- function(occurrences, name, ext_as_zero = TRUE) {
   fa_max <- max(fa_high$early_age)
   fa_min <- max(fa_high$late_age)
   
+  ##### NEED TO CORRECT THIS--soemtimes excludes an occurrence if
+  ##### the late age is lower than late_age of another--need to switch to
+  ##### checking for the min early_age
   # get lowest last age occurrence
   la_low <- named_occs[which(named_occs$late_age ==
                                min(named_occs$late_age)), ]
